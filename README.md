@@ -1,4 +1,4 @@
-Hairy-Octo-Adventure
+iOS app áfangi HR 2013
 ====================
 ### Hópmeðlimir:
 * Auðun Vetle Atlason
