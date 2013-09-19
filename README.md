@@ -2,5 +2,5 @@ Hairy-Octo-Adventure
 ====================
 ### Hópmeðlimir:
 * Auðun Vetle Atlason
-* Snorri
-* Þórarinn
+* Snorri Arnarson
+* Þórarinn Víkingur Sveinsson
