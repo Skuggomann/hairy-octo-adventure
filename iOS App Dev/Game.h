@@ -14,9 +14,11 @@
 @interface Game : CCScene <InputLayerDelegate>
 {
     Octopus *_Octo;
-    
-    
-    
+    CCLayerGradient *_seaLayer;
+    CGSize _winSize;
+    NSDictionary *_configuration;
+    ChipmunkSpace *_space;
+    CCParallaxNode *_parallaxNode;
 }
 
 @end

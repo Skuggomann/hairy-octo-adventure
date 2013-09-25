@@ -23,7 +23,7 @@
                                        Game *gameScene = [[Game alloc] init];
                                        [[CCDirector sharedDirector] replaceScene:gameScene];
                                    }];
-        button.position = ccp(_winSize.width/2, _winSize.height/2); // Position the button in the middle.
+        button.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height/2); // Position the button in the middle.
         
         CCMenu *menu = [CCMenu menuWithItems:button, nil];
         menu.position = CGPointZero;
