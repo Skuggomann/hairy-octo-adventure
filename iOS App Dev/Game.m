@@ -71,7 +71,6 @@
     [self addChild:_parallaxNode];
     
     CCSprite *sand =[self spriteWithColor:[self randomBrightColor]] ;
-    sand.anchorPoint = ccp(0, 0);
     [_parallaxNode addChild:sand z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     
