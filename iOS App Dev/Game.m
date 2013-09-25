@@ -27,7 +27,7 @@
         _space = [[ChipmunkSpace alloc] init];
         CGFloat gravity = [_configuration[@"gravity"] floatValue];
         CGFloat rightForce = [_configuration[@"gravity"] floatValue];
-        _space.gravity = ccp(rightForce, -gravity);
+        _space.gravity = ccp(0.f, -gravity);
         _space.damping = 0.5;
         // Register collision handler
         _collisionHandler = [[Collision alloc] init];
@@ -53,8 +53,7 @@
         _swimming = NO;
         _swimTime = 0;
         
-        
-        
+    
         
         
         // Your initilization code goes here
@@ -140,6 +139,10 @@
     {
         _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 2)), 0);
     }
+    
+    cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
+    Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
+    [_octo.chipmunkBody applyForce:(Rightforce) offset:(cpvzero)];
     
     
     _swimTime -= delta;
