@@ -99,7 +99,7 @@
     
     glDrawArrays(GL_TRIANGLE_STRIP, 0, (GLsizei)_nHillVertices);
     
-    for(int i = MAX(_fromKeyPointI, 1); i <= _toKeyPointI; ++i) {
+    /*for(int i = MAX(_fromKeyPointI, 1); i <= _toKeyPointI; ++i) {
         ccDrawColor4F(1.0, 0, 0, 1.0);
         ccDrawLine(_hillKeyPoints[i-1], _hillKeyPoints[i]);
         ccDrawColor4F(1.0, 1.0, 1.0, 1.0);
@@ -124,7 +124,7 @@
             pt0 = pt1;
             
         }
-    }
+    }*/
     
 }
 - (void) generateBody {
@@ -134,17 +134,12 @@
             [_space smartRemove:shape];
         }
     }
-    //CGPoint p0 = _hillKeyPoints[0];
-    //CGPoint p1 = _hillKeyPoints[kMaxHillKeyPoints-1];
     struct cpPolyline rolypoly;
     rolypoly.capacity = kMaxBorderVertices;
     rolypoly.count = _nBorderVertices;
     rolypoly.verts = _borderVertices;
     
     ChipmunkPolyline *simpleLine = [ChipmunkPolyline fromPolyline:rolypoly];
-    //ChipmunkPolylineSet *contour = [ChipmunkPolylineSet fromPolylineSet:cp]];
-    //ChipmunkPolyline *line = [contour lineAtIndex:0];
-    //ChipmunkPolyline *simpleLine = [line simplifyCurves:1];
     
     _body = [ChipmunkBody staticBody];
     NSArray *bodyShapes = [simpleLine asChipmunkSegmentsWithBody:_body radius:0 offset:cpvzero];
@@ -197,8 +192,6 @@
 
 - (void)dealloc {
     [_stripes release];
-    [_body release];
-    _body = NULL;
     _stripes = NULL;
     [super dealloc];
 }
