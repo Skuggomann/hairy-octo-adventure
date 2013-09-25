@@ -43,8 +43,6 @@
         
         // Create body and shape
         ChipmunkBody *body = [ChipmunkBody staticBody];
-        body.pos = ccp(0.0f, _winSize.height);
-        ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:_winSize.width height:1];
         
         body.pos = ccp(0.0f, _winSize.height);
         ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:999999999 height:1];        
