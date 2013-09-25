@@ -40,6 +40,14 @@
         
         // Setup world
         [self setupGraphicsLandscape];
+        // Create body and shape
+        ChipmunkBody *body = [ChipmunkBody staticBody];
+        body.pos = ccp(0.0f, _winSize.height);
+        ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:_winSize.width height:1];
+        
+        
+        // Add to world
+        [_space addShape:shape];
         
         // Add Octo
         _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"])];
@@ -89,6 +97,7 @@
     
     
 }
+
 
 -(CCSprite *)spriteWithColor:(ccColor4F)bgColor {
     
