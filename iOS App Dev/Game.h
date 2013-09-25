@@ -11,6 +11,11 @@
 
 @interface Game : CCScene
 {
+    CCLayerGradient *_seaLayer;
+    CGSize _winSize;
+    NSDictionary *_configuration;
+    ChipmunkSpace *_space;
+    CCParallaxNode *_parallaxNode;
 }
 
 @end
