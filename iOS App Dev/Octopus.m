@@ -30,6 +30,12 @@
             body.pos = position;
             ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
             
+            
+            
+            
+            
+            //[self addChild: tenticle];
+            
             // Add to space
             [_space addBody:body];
             [_space addShape:shape];

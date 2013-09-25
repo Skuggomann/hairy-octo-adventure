@@ -72,7 +72,12 @@
     _parallaxNode = [CCParallaxNode node];
     [self addChild:_parallaxNode];
     
-    CCSprite *sand =[self spriteWithColor:[self randomBrightColor]] ;
+    CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v1-small.png"];
+    mountains.anchorPoint = ccp(0, 0);
+    mountains.position = ccp(800,0);
+    [_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.1f, 1.0f) positionOffset:CGPointZero];
+    
+    CCSprite *sand =[self spriteWithColor:[self randomBrightColor]];
     sand.anchorPoint = ccp(0, 0);
     [_parallaxNode addChild:sand z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
@@ -134,14 +139,15 @@
         _accumulator -= fixedTimeStep;
     }
     
-    
+
     
     if (_octo.position.x >= (_winSize.width / 2)) //&& _octo.position.x < (_landscapeWidth - (_winSize.width / 2)))
     {
         _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 2)), 0);
     }
+
     
-    
+
     _swimTime -= delta;
     if(_swimming && _swimTime <= 0){
         _swimTime = 0.5;
