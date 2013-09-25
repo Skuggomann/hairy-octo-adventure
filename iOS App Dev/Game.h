@@ -12,10 +12,12 @@
 #import "Collision.h"
 
 
+@class Sand;
 @class Octopus;
 @interface Game : CCScene <InputLayerDelegate>
 {
     Octopus *_octo;
+    Sand *_sand;
     CCLayerGradient *_seaLayer;
     CGSize _winSize;
     NSDictionary *_configuration;
