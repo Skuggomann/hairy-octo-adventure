@@ -21,7 +21,7 @@
         _winSize = [CCDirector sharedDirector].winSize;
         
         // Load configuration file
-        _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"]];
+        _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
         
         // Create physics world
         _space = [[ChipmunkSpace alloc] init];
