@@ -7,7 +7,7 @@
 //
 
 #import "Game.h"
-
+#import "Octopus.h"
 
 @implementation Game
 
@@ -28,8 +28,31 @@
         CGFloat gravity = [_configuration[@"gravity"] floatValue];
         _space.gravity = ccp(0.0f, -gravity);
         
+        // Register collision handler
+        _collisionHandler = [[Collision alloc] init];
+        
+        [_space setDefaultCollisionHandler:_collisionHandler
+                                     begin:@selector(collisionBegan:space:)
+                                  preSolve:nil
+                                 postSolve:nil
+                                  separate:nil];
+
+        
         // Setup world
         [self setupGraphicsLandscape];
+        
+        // Add Octo
+        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"])];
+        [_gameNode addChild:_octo];
+        
+        // Create an input layer
+        InputLayer *inputLayer = [[InputLayer alloc] init];
+        inputLayer.delegate = self;
+        [self addChild:inputLayer];
+        
+        
+        
+        
         
         // Your initilization code goes here
         [self scheduleUpdate];
@@ -51,6 +74,8 @@
     [_parallaxNode addChild:sand z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     
+    _gameNode = [CCNode node];
+    [_parallaxNode addChild:_gameNode z:2 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
 }
 
 -(CCSprite *)spriteWithColor:(ccColor4F)bgColor {
@@ -89,10 +114,40 @@
     }
     
 }
-
+// Update logic goes here
 - (void)update:(ccTime)delta
 {
-    // Update logic goes here
+    // Run the physics engine.
+    CGFloat fixedTimeStep = 1.0f / 240.0f;
+    _accumulator += delta;
+    while (_accumulator > fixedTimeStep)
+    {
+        [_space step:fixedTimeStep];
+        _accumulator -= fixedTimeStep;
+    }
+    
+    
+    
+    if (_octo.position.x >= (_winSize.width / 2)) //&& _octo.position.x < (_landscapeWidth - (_winSize.width / 2)))
+    {
+        _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 2)), 0);
+    }
+    
+}
+
+
+- (void)touchBegan
+{
+    
+}
+
+- (void)touchEnded
+{
+
+    NSLog(@"touch!");
+    
+
+    [_octo swimUp];
 }
 
 @end

@@ -9,16 +9,23 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "InputLayer.h"
+#import "Collision.h"
+
 
 @class Octopus;
 @interface Game : CCScene <InputLayerDelegate>
 {
-    Octopus *_Octo;
+    Octopus *_octo;
     CCLayerGradient *_seaLayer;
     CGSize _winSize;
     NSDictionary *_configuration;
     ChipmunkSpace *_space;
     CCParallaxNode *_parallaxNode;
+    CCNode *_gameNode;
+    ccTime _accumulator;
+    Collision *_collisionHandler;
+    
+    
 }
 
 @end

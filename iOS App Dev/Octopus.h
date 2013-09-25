@@ -12,8 +12,10 @@
 @interface Octopus : CCPhysicsSprite
 {
     ChipmunkSpace *_space;
+    NSDictionary *_configuration;
 }
 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
+- (void)swimUp;
 
 @end

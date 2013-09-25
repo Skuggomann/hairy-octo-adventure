@@ -18,20 +18,22 @@
         self.touchEnabled = YES;
         self.touchMode = kCCTouchesOneByOne;
     }
+    
     return self;
 }
 
+
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    _touchBeganDate = [NSDate date];
+    [_delegate touchBegan];
     return YES;
 }
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CGPoint position = [self convertTouchToNodeSpace:touch];
-    NSTimeInterval timeSinceTouchBegan = [_touchBeganDate timeIntervalSinceNow];
-    [_delegate touchEndedAtPositon:position afterDelay:-timeSinceTouchBegan];
+    [_delegate touchEnded];
 }
+
+
 
 @end

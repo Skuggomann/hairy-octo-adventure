@@ -16,6 +16,10 @@
     {
         _space = space;
         
+        // Load configuration file
+        _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
+        
+        
         if (_space != nil)
         {
             CGSize size = self.textureRect.size;
@@ -37,6 +41,12 @@
     return self;
 }
 
-
+- (void)swimUp
+{
+    
+    cpVect directionalVector = cpvsub(CGPointFromString(_configuration[@"swimDirection"]), CGPointZero);
+    cpVect impulseVector = cpvmult(directionalVector, self.chipmunkBody.mass * [_configuration[@"forceUp"]floatValue]);
+    [self.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+}
 
 @end

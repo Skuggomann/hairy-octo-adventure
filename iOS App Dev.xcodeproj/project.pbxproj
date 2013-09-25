@@ -148,6 +148,7 @@
 		CE84E96917F2F091002007C6 /* Octopus.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96817F2F091002007C6 /* Octopus.m */; };
 		CE84E98A17F311C0002007C6 /* Octo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98917F311C0002007C6 /* Octo.png */; };
 		CE84E98C17F31314002007C6 /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98B17F31314002007C6 /* Configurations.plist */; };
+		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
 		CE87D4DA17F2FB1300026BE4 /* Cliffs v1-small.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D817F2FB1300026BE4 /* Cliffs v1-small.png */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
 /* End PBXBuildFile section */
@@ -485,6 +486,8 @@
 		CE84E96817F2F091002007C6 /* Octopus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Octopus.m; sourceTree = "<group>"; };
 		CE84E98917F311C0002007C6 /* Octo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Octo.png; path = Resources/Octo.png; sourceTree = "<group>"; };
 		CE84E98B17F31314002007C6 /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = "<group>"; };
+		CE84E98D17F31BAF002007C6 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
+		CE84E98E17F31BAF002007C6 /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collision.m; sourceTree = "<group>"; };
 		CE87D4D817F2FB1300026BE4 /* Cliffs v1-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1-small.png"; path = "Resources/Cliffs v1-small.png"; sourceTree = "<group>"; };
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -562,6 +565,8 @@
 				CE84E96517F2EE51002007C6 /* MenuScene.m */,
 				CE84E96717F2F091002007C6 /* Octopus.h */,
 				CE84E96817F2F091002007C6 /* Octopus.m */,
+				CE84E98D17F31BAF002007C6 /* Collision.h */,
+				CE84E98E17F31BAF002007C6 /* Collision.m */,
 				0B312F4217E85CF200D0829B /* Resources */,
 				0B312F5A17E85CF200D0829B /* libs */,
 				0B3130CE17E85CF400D0829B /* Supporting Files */,
@@ -1213,6 +1218,7 @@
 				CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */,
 				CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */,
 				CE84E96917F2F091002007C6 /* Octopus.m in Sources */,
+				CE84E98F17F31BAF002007C6 /* Collision.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
