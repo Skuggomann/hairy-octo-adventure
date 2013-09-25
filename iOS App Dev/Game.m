@@ -88,6 +88,11 @@
     
     // 3: Draw into the texture
     // You'll add this later
+    CCSprite *noise = [CCSprite spriteWithFile:@"Noise.png"];
+    [noise setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_ZERO}];
+    noise.position = ccp(_winSize.width/2, _winSize.height/2);
+    [noise visit];
+    
     
     // 4: Call CCRenderTexture:end
     [rt end];

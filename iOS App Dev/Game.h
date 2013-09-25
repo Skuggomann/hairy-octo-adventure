@@ -25,7 +25,7 @@
     ccTime _accumulator;
     Collision *_collisionHandler;
     
-    
+    	
 }
 
 @end
