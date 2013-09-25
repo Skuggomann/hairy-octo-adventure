@@ -41,13 +41,12 @@
         // Setup world
         [self setupGraphicsLandscape];
         
-        // Create body and shape
-        ChipmunkBody *body = [ChipmunkBody staticBody];
-        
+        // Create upper boundry.
+        ChipmunkBody *body = [ChipmunkBody staticBody];        
         body.pos = ccp(0.0f, _winSize.height);
         ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:999999999 height:1];        
+        shape.elasticity = 1.0f;
         
-        // Add to world
         [_space addShape:shape];
         
         // Add Octo

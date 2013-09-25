@@ -30,7 +30,7 @@
             body.pos = position;
             ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
             
-            
+            shape.elasticity = 1.0f;
             
             
             
@@ -40,7 +40,8 @@
             [_space addBody:body];
             [_space addShape:shape];
             
-            // Add to pysics sprite
+            // Add self to body and body to self
+            body.data = self;
             self.chipmunkBody = body;
         }
     }
