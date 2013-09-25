@@ -26,8 +26,9 @@
         // Create physics world
         _space = [[ChipmunkSpace alloc] init];
         CGFloat gravity = [_configuration[@"gravity"] floatValue];
-        _space.gravity = ccp(0.0f, -gravity);
-        
+        CGFloat rightForce = [_configuration[@"gravity"] floatValue];
+        _space.gravity = ccp(rightForce, -gravity);
+        _space.damping = 0.5;
         // Register collision handler
         _collisionHandler = [[Collision alloc] init];
         
@@ -49,6 +50,8 @@
         InputLayer *inputLayer = [[InputLayer alloc] init];
         inputLayer.delegate = self;
         [self addChild:inputLayer];
+        _swimming = NO;
+        _swimTime = 0;
         
         
         
@@ -133,21 +136,25 @@
         _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 2)), 0);
     }
     
+    
+    _swimTime -= delta;
+    if(_swimming && _swimTime <= 0){
+        _swimTime = 0.5;
+        [_octo swimUp];
+    }
 }
 
 
 - (void)touchBegan
 {
+    NSLog(@"touch!");
     
+    _swimming = YES;
 }
 
 - (void)touchEnded
 {
-
-    NSLog(@"touch!");
-    
-
-    [_octo swimUp];
+    _swimming = NO;
 }
 
 @end

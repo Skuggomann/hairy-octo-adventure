@@ -24,7 +24,8 @@
     CCNode *_gameNode;
     ccTime _accumulator;
     Collision *_collisionHandler;
-    
+    Boolean _swimming;
+    CGFloat _swimTime;
     
 }
 
