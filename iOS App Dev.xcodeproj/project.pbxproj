@@ -143,6 +143,9 @@
 		0B3130E117E85D0D00D0829B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3130E017E85D0D00D0829B /* ImageIO.framework */; };
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* Game.m */; };
+		CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96217F2EB48002007C6 /* InputLayer.m */; };
+		CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96517F2EE51002007C6 /* MenuScene.m */; };
+		CE84E96917F2F091002007C6 /* Octopus.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96817F2F091002007C6 /* Octopus.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -470,6 +473,12 @@
 		0B31313C17E85ECE00D0829B /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
 		0B31313E17E8662800D0829B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0B31313F17E8662800D0829B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		CE84E96117F2EB48002007C6 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
+		CE84E96217F2EB48002007C6 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
+		CE84E96417F2EE51002007C6 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		CE84E96517F2EE51002007C6 /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
+		CE84E96717F2F091002007C6 /* Octopus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Octopus.h; sourceTree = "<group>"; };
+		CE84E96817F2F091002007C6 /* Octopus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Octopus.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,10 +544,16 @@
 			children = (
 				0B3130D217E85CF400D0829B /* AppDelegate.h */,
 				0B3130D317E85CF400D0829B /* AppDelegate.m */,
-				0B3130D817E85CF400D0829B /* IntroLayer.h */,
-				0B3130D917E85CF400D0829B /* IntroLayer.m */,
 				0B31313E17E8662800D0829B /* Game.h */,
 				0B31313F17E8662800D0829B /* Game.m */,
+				CE84E96117F2EB48002007C6 /* InputLayer.h */,
+				CE84E96217F2EB48002007C6 /* InputLayer.m */,
+				0B3130D817E85CF400D0829B /* IntroLayer.h */,
+				0B3130D917E85CF400D0829B /* IntroLayer.m */,
+				CE84E96417F2EE51002007C6 /* MenuScene.h */,
+				CE84E96517F2EE51002007C6 /* MenuScene.m */,
+				CE84E96717F2F091002007C6 /* Octopus.h */,
+				CE84E96817F2F091002007C6 /* Octopus.m */,
 				0B312F4217E85CF200D0829B /* Resources */,
 				0B312F5A17E85CF200D0829B /* libs */,
 				0B3130CE17E85CF400D0829B /* Supporting Files */,
@@ -1179,6 +1194,9 @@
 				0B3130D417E85CF400D0829B /* AppDelegate.m in Sources */,
 				0B3130DA17E85CF400D0829B /* IntroLayer.m in Sources */,
 				0B31314017E8662800D0829B /* Game.m in Sources */,
+				CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */,
+				CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */,
+				CE84E96917F2F091002007C6 /* Octopus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

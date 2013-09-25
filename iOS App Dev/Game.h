@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "InputLayer.h"
 
-@interface Game : CCScene
+@class Octopus;
+@interface Game : CCScene <InputLayerDelegate>
 {
+    Octopus *_Octo;
+    
+    
+    
 }
 
 @end
