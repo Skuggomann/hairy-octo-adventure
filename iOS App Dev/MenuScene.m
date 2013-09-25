@@ -21,7 +21,7 @@
         CCMenuItemLabel *button = [CCMenuItemLabel itemWithLabel:label block:^(id sender)
                                    {
                                        Game *gameScene = [[Game alloc] init];
-                                       [[CCDirector sharedDirector] replaceScene:gameScene];
+                                       [[CCDirector sharedDirector] pushScene:gameScene];
                                    }];
         button.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height/2); // Position the button in the middle.
         
