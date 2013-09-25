@@ -10,6 +10,7 @@
 // Import the interfaces
 #import "IntroLayer.h"
 #import "Game.h"
+#import "MenuScene.h"
 
 #pragma mark - IntroLayer
 
@@ -60,8 +61,8 @@
 - (void)onEnter
 {
 	[super onEnter];
-    Game *game = [[Game alloc] init];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:game]];
+    MenuScene *menu = [[MenuScene alloc] init];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:menu]];
 }
 
 @end

@@ -8,6 +8,8 @@
 	<string>{200,200}</string>
 	<key>forceUp</key>
 	<string>180.0f</string>
+	<key>rightForce</key>
+	<string>50.0f</string>
 	<key>gravity</key>
 	<string>100.0f</string>
 </dict>
