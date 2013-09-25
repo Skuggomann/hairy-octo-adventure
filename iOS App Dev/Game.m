@@ -26,7 +26,6 @@
         // Create physics world
         _space = [[ChipmunkSpace alloc] init];
         CGFloat gravity = [_configuration[@"gravity"] floatValue];
-        CGFloat rightForce = [_configuration[@"gravity"] floatValue];
         _space.gravity = ccp(0.f, -gravity);
         _space.damping = 0.5;
         // Register collision handler
@@ -142,7 +141,7 @@
     
     cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
-    [_octo.chipmunkBody applyForce:(Rightforce) offset:(cpvzero)];
+    [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
     
     
     _swimTime -= delta;
