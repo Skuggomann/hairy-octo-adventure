@@ -63,9 +63,7 @@
 
 - (void)setupGraphicsLandscape
 {
-    // Sea
-    //_seaLayer =[CCLayerGradient layerWithColor:ccc4(89, 67, 245, 255) fadingTo:ccc4(67, 219, 245, 255)];//TODO: make purple/blueish and opacity.
-    //[self addChild:_seaLayer];	
+
     
     _parallaxNode = [CCParallaxNode node];
     [self addChild:_parallaxNode];
@@ -79,9 +77,17 @@
     sand.anchorPoint = ccp(0, 0);
     [_parallaxNode addChild:sand z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
+    // Sea
+    _seaLayer = [CCLayerColor layerWithColor:ccc4(89, 67, 245, 255) width:_winSize.width  height:_winSize.height];
+    _seaLayer.anchorPoint = CGPointZero;
+    _seaLayer.opacity = 60;
+    [_parallaxNode addChild:_seaLayer z:2 parallaxRatio:ccp(0.0f, 0.0f) positionOffset:CGPointZero];
     
     _gameNode = [CCNode node];
-    [_parallaxNode addChild:_gameNode z:2 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    [_parallaxNode addChild:_gameNode z:3 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    
+    
+    
 }
 
 -(CCSprite *)spriteWithColor:(ccColor4F)bgColor {

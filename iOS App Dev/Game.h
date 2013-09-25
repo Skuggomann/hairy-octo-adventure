@@ -16,7 +16,7 @@
 @interface Game : CCScene <InputLayerDelegate>
 {
     Octopus *_octo;
-    CCLayerGradient *_seaLayer;
+    CCLayerColor *_seaLayer;
     CGSize _winSize;
     NSDictionary *_configuration;
     ChipmunkSpace *_space;
@@ -26,6 +26,9 @@
     Collision *_collisionHandler;
     Boolean _swimming;
     CGFloat _swimTime;
+    
+    
+    
 }
 
 @end
