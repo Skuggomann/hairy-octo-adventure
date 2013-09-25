@@ -28,7 +28,7 @@
             
             ChipmunkBody *body = [ChipmunkBody bodyWithMass:mass andMoment:moment];
             body.pos = position;
-            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
+            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];// Make it the correct shape.
             
             shape.elasticity = 1.0f;
             
