@@ -41,7 +41,7 @@
 {
     // Sea
     //_seaLayer =[CCLayerGradient layerWithColor:ccc4(89, 67, 245, 255) fadingTo:ccc4(67, 219, 245, 255)];//TODO: make purple/blueish and opacity.
-    //[self addChild:_seaLayer];
+    //[self addChild:_seaLayer];	
     
     _parallaxNode = [CCParallaxNode node];
     [self addChild:_parallaxNode];
