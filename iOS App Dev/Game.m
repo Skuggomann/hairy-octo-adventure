@@ -146,15 +146,13 @@
     }
 
     
-<<<<<<< HEAD
 
-=======
     cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
     [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
     
     
->>>>>>> 02ae27b5fb77398110d9c47a59039dc881df121b
+
     _swimTime -= delta;
     if(_swimming && _swimTime <= 0){
         _swimTime = 0.5;
