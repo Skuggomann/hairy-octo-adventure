@@ -153,8 +153,9 @@
 		CE84E98A17F311C0002007C6 /* Octo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98917F311C0002007C6 /* Octo.png */; };
 		CE84E98C17F31314002007C6 /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98B17F31314002007C6 /* Configurations.plist */; };
 		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
-		CE87D4DA17F2FB1300026BE4 /* Cliffs v1-small.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D817F2FB1300026BE4 /* Cliffs v1-small.png */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
+		CEA37D8C17F3792C00DB14C7 /* Cliffs v3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */; };
+		CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDED63117F3762D00E019ED /* Cliffs v3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -497,8 +498,9 @@
 		CE84E98B17F31314002007C6 /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = "<group>"; };
 		CE84E98D17F31BAF002007C6 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
 		CE84E98E17F31BAF002007C6 /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collision.m; sourceTree = "<group>"; };
-		CE87D4D817F2FB1300026BE4 /* Cliffs v1-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1-small.png"; path = "Resources/Cliffs v1-small.png"; sourceTree = "<group>"; };
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
+		CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3-hd.png"; path = "Resources/Cliffs v3-hd.png"; sourceTree = "<group>"; };
+		CEDED63117F3762D00E019ED /* Cliffs v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3.png"; path = "Resources/Cliffs v3.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -588,11 +590,12 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */,
+				CEDED63117F3762D00E019ED /* Cliffs v3.png */,
 				CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */,
 				CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */,
 				CE7EA0FD17F351C0006E9A12 /* Noise.png */,
 				CE84E98917F311C0002007C6 /* Octo.png */,
-				CE87D4D817F2FB1300026BE4 /* Cliffs v1-small.png */,
 				CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */,
 				0B312F4317E85CF200D0829B /* Default.png */,
 				0B312F4517E85CF200D0829B /* Default@2x.png */,
@@ -1103,13 +1106,14 @@
 				0B312F5617E85CF200D0829B /* Icon@2x.png in Resources */,
 				0B312F5917E85CF200D0829B /* iTunesArtwork in Resources */,
 				0B3130B217E85CF400D0829B /* ChangeLog in Resources */,
-				CE87D4DA17F2FB1300026BE4 /* Cliffs v1-small.png in Resources */,
 				CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */,
 				CE84E98A17F311C0002007C6 /* Octo.png in Resources */,
 				CE84E98C17F31314002007C6 /* Configurations.plist in Resources */,
 				CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */,
 				CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */,
 				CE7EA10017F351C0006E9A12 /* Noise.png in Resources */,
+				CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */,
+				CEA37D8C17F3792C00DB14C7 /* Cliffs v3-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

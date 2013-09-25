@@ -18,7 +18,7 @@
 {
     Octopus *_octo;
     Sand *_sand;
-    CCLayerGradient *_seaLayer;
+    CCLayerColor *_seaLayer;
     CGSize _winSize;
     NSDictionary *_configuration;
     ChipmunkSpace *_space;
@@ -28,6 +28,9 @@
     Collision *_collisionHandler;
     Boolean _swimming;
     CGFloat _swimTime;
+    
+    
+    
 }
 
 @end

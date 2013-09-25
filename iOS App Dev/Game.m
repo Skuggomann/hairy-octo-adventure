@@ -29,8 +29,7 @@
         // Create physics world
         _space = [[ChipmunkSpace alloc] init];
         CGFloat gravity = [_configuration[@"gravity"] floatValue];
-        CGFloat rightForce = [_configuration[@"gravity"] floatValue];
-        _space.gravity = ccp(rightForce, -gravity);
+        _space.gravity = ccp(0.f, -gravity);
         _space.damping = 0.5;
         // Register collision handler
         _collisionHandler = [[Collision alloc] init];
@@ -45,6 +44,14 @@
         // Setup world
         [self setupGraphicsLandscape];
         
+        // Create upper boundry.
+        ChipmunkBody *body = [ChipmunkBody staticBody];        
+        body.pos = ccp(0.0f, _winSize.height);
+        ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:999999999 height:1];        
+        shape.elasticity = 1.0f;
+        
+        [_space addShape:shape];
+        
         // Add Octo
         _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"])];
         [_gameNode addChild:_octo];
@@ -56,9 +63,6 @@
         _swimming = NO;
         _swimTime = 0;
         
-
-        
-        
         
         // Your initilization code goes here
         [self scheduleUpdate];
@@ -68,21 +72,32 @@
 
 - (void)setupGraphicsLandscape
 {
-    // Sea
-    //_seaLayer =[CCLayerGradient layerWithColor:ccc4(89, 67, 245, 255) fadingTo:ccc4(67, 219, 245, 255)];//TODO: make purple/blueish and opacity.
-    //[self addChild:_seaLayer];	
+
     
     _parallaxNode = [CCParallaxNode node];
     [self addChild:_parallaxNode];
     
-    //sand
+    // Sand
     _sand = [[Sand alloc] initWithSpace:_space];
     [self genBackground];
-    
     [_parallaxNode addChild:_sand z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
+    // Mountains
+    CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v3.png"];
+    mountains.anchorPoint = ccp(0, 0);
+    [_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.1f, 1.0f) positionOffset:CGPointZero];
+    
+    // Sea
+    _seaLayer = [CCLayerColor layerWithColor:ccc4(89, 67, 245, 255) width:_winSize.width  height:_winSize.height];
+    _seaLayer.anchorPoint = CGPointZero;
+    _seaLayer.opacity = 60;
+    [_parallaxNode addChild:_seaLayer z:2 parallaxRatio:ccp(0.0f, 0.0f) positionOffset:CGPointZero];
+    
     _gameNode = [CCNode node];
-    [_parallaxNode addChild:_gameNode z:2 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    [_parallaxNode addChild:_gameNode z:3 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    
+    
+    
 }
 - (void)genBackground {
     
@@ -100,7 +115,6 @@
 
 -(CCSprite *)stripedSpriteWithColor1:(ccColor4F)c1 color2:(ccColor4F)c2 textureWidth:(float)textureWidth
                        textureHeight:(float)textureHeight stripes:(int)nStripes {
-    
     // 1: Create new CCRenderTexture
     CCRenderTexture *rt = [CCRenderTexture renderTextureWithWidth:textureWidth height:textureHeight];
     
@@ -235,15 +249,22 @@
         _accumulator -= fixedTimeStep;
     }
     
-    
+
     
     if (_octo.position.x >= (_winSize.width / 2)) //&& _octo.position.x < (_landscapeWidth - (_winSize.width / 2)))
     {
         _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 2)), 0);
         [_sand setOffsetX:(_octo.position.x)];
     }
+
+    
+
+    cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
+    Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
+    [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
     
     
+
     _swimTime -= delta;
     if(_swimming && _swimTime <= 0){
         _swimTime = 0.5;
