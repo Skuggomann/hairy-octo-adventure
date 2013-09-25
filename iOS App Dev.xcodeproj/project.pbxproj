@@ -154,6 +154,7 @@
 		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
 		CE87D4DA17F2FB1300026BE4 /* Cliffs v1-small.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D817F2FB1300026BE4 /* Cliffs v1-small.png */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
+		CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDED63117F3762D00E019ED /* Cliffs v3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -496,6 +497,7 @@
 		CE84E98E17F31BAF002007C6 /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collision.m; sourceTree = "<group>"; };
 		CE87D4D817F2FB1300026BE4 /* Cliffs v1-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1-small.png"; path = "Resources/Cliffs v1-small.png"; sourceTree = "<group>"; };
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
+		CEDED63117F3762D00E019ED /* Cliffs v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3.png"; path = "Resources/Cliffs v3.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -583,6 +585,7 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEDED63117F3762D00E019ED /* Cliffs v3.png */,
 				CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */,
 				CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */,
 				CE7EA0FD17F351C0006E9A12 /* Noise.png */,
@@ -1105,6 +1108,7 @@
 				CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */,
 				CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */,
 				CE7EA10017F351C0006E9A12 /* Noise.png in Resources */,
+				CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

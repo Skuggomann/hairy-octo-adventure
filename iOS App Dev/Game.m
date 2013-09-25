@@ -71,9 +71,8 @@
     [self addChild:_parallaxNode];
     
 
-    CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v1-small.png"];
+    CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v3.png"];
     mountains.anchorPoint = ccp(0, 0);
-    mountains.position = ccp(800,0);
     [_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.1f, 1.0f) positionOffset:CGPointZero];
     
     CCSprite *sand =[self spriteWithColor:[self randomBrightColor]];
