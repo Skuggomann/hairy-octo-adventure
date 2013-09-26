@@ -51,7 +51,7 @@
         p0 = _hillKeyPoints[_fromKeyPointI];
         for (int i=_fromKeyPointI+1; i<_toKeyPointI+1; i++) {
             p1 = _hillKeyPoints[i];
-            
+                
             // triangle strip between p0 and p1
             int hSegments = floorf((p1.x-p0.x)/kHillSegmentWidth);
             float dx = (p1.x - p0.x) / hSegments;
@@ -59,7 +59,7 @@
             float ymid = (p0.y + p1.y) / 2;
             float ampl = (p0.y - p1.y) / 2;
             pt0 = p0;
-            _borderVertices[_nBorderVertices++] = pt0;
+            //_borderVertices[_nBorderVertices++] = pt0; Had to comment this out so that the collision handling would work, this adds the base points between hills, and then the collision happens twice at the same point and the octopus gets warped to position {nan,nan}
             for (int j=1; j<hSegments+1; j++) {
                 pt1.x = p0.x + j*dx;
                 pt1.y = ymid + ampl * cosf(da*j);
@@ -148,7 +148,6 @@
     rolypoly->verts = vertz;
     //Make a new ChipmunkPolyline from a polyline, the polyline is then destroyed, that is why we had to malloc the copy of the vertices.
     ChipmunkPolyline *simpleLine = [ChipmunkPolyline fromPolyline: *rolypoly ];
-    
     _body = [ChipmunkBody staticBody];
     //make a shapes array from the line we created.
     NSArray *bodyShapes = [simpleLine asChipmunkSegmentsWithBody:_body radius:0 offset:cpvzero];

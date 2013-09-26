@@ -289,6 +289,9 @@
         _swimTime = 0.5;
         [_octo swimUp];
     }
+    
+    NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
+    
 }
 
 
