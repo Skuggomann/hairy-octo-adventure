@@ -261,7 +261,6 @@
 		CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */; };
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
 		CE7EA10317F35BC9006E9A12 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7EA10217F35BC9006E9A12 /* Sand.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CE81270317F486DB00B61DD0 /* SoundHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81270217F486DB00B61DD0 /* SoundHandler.m */; };
 		CE81270517F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */; };
 		CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96217F2EB48002007C6 /* InputLayer.m */; };
 		CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96517F2EE51002007C6 /* MenuScene.m */; };
@@ -719,8 +718,6 @@
 		CE7EA0FD17F351C0006E9A12 /* Noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Noise.png; path = Resources/Noise.png; sourceTree = "<group>"; };
 		CE7EA10117F35BC9006E9A12 /* Sand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sand.h; path = ../Sand.h; sourceTree = "<group>"; };
 		CE7EA10217F35BC9006E9A12 /* Sand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sand.m; path = ../Sand.m; sourceTree = "<group>"; };
-		CE81270117F486DB00B61DD0 /* SoundHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundHandler.h; sourceTree = "<group>"; };
-		CE81270217F486DB00B61DD0 /* SoundHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundHandler.m; sourceTree = "<group>"; };
 		CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "23 Dire, Dire Docks.mp3"; path = "Resources/23 Dire, Dire Docks.mp3"; sourceTree = "<group>"; };
 		CE84E96117F2EB48002007C6 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		CE84E96217F2EB48002007C6 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
@@ -798,8 +795,6 @@
 		0B312F4117E85CF200D0829B /* iOS App Dev */ = {
 			isa = PBXGroup;
 			children = (
-				CE81270117F486DB00B61DD0 /* SoundHandler.h */,
-				CE81270217F486DB00B61DD0 /* SoundHandler.m */,
 				CE7EA10117F35BC9006E9A12 /* Sand.h */,
 				CE7EA10217F35BC9006E9A12 /* Sand.m */,
 				0B3130D217E85CF400D0829B /* AppDelegate.h */,
@@ -1717,7 +1712,6 @@
 				CE84E98F17F31BAF002007C6 /* Collision.m in Sources */,
 				CE7EA10317F35BC9006E9A12 /* Sand.m in Sources */,
 				CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */,
-				CE81270317F486DB00B61DD0 /* SoundHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

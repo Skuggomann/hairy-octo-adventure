@@ -40,7 +40,7 @@
             ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
             
             shape.elasticity = 1.0f;
-            //shape.friction = 100.0f;
+            shape.friction = 1000.0f;
             
             /*
             NSURL *url = [[NSBundle mainBundle] URLForResource:@"Octo" withExtension:@"png"];
