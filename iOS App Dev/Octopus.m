@@ -7,6 +7,7 @@
 //
 
 #import "Octopus.h"
+#import "ChipmunkAutoGeometry.h"
 
 @implementation Octopus 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
@@ -26,16 +27,41 @@
             cpFloat mass = size.width * size.height;
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);
             
-            ChipmunkBody *body = [ChipmunkBody bodyWithMass:mass andMoment:moment];
-            body.pos = position;
-            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];// Make it the correct shape.
+            ChipmunkBody *octoBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
             
+            
+            
+            
+            
+            octoBody.pos = position;
+            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:octoBody width:size.width height:size.height];// Make it the correct shape.
             shape.elasticity = 1.0f;
+            
+            /*
+            NSURL *url = [[NSBundle mainBundle] URLForResource:@"Octo" withExtension:@"png"];
+            ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
+            
+            ChipmunkPolylineSet *contour = [sampler marchAllWithBorder:NO hard:YES];
+            ChipmunkPolyline *line = [contour lineAtIndex:0];
+            ChipmunkPolyline *simpleLine = [line simplifyCurves:1];
+            
+
+            NSArray *terrainShapes = [simpleLine asChipmunkSegmentsWithBody:octoBody radius:0 offset:cpvzero];
+            for (ChipmunkShape *shape in terrainShapes)
+            {
+                shape.elasticity = 1.0f;
+                [_space addShape:shape];
+            }
+             */
+            
+            
+            
+            
             
             //[self addChild: tenticle];
             
             // Add to space
-            [_space addBody:body];
+            [_space addBody:octoBody];
             [_space addShape:shape];
             
             
@@ -43,8 +69,8 @@
             
             
             // Add self to body and body to self
-            body.data = self;
-            self.chipmunkBody = body;
+            octoBody.data = self;
+            self.chipmunkBody = octoBody;
         }
     }
     return self;
