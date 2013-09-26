@@ -83,7 +83,7 @@
 
 - (void)swimUp
 {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"swim-below.WAV" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"swim-below.WAV" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:5.0f];
     cpVect directionalVector = cpvsub(CGPointFromString(_configuration[@"swimDirection"]), CGPointZero);
     cpVect impulseVector = cpvmult(directionalVector, self.chipmunkBody.mass * [_configuration[@"forceUp"]floatValue]);
     [self.chipmunkBody applyImpulse:impulseVector offset:cpvzero];

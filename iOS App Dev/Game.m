@@ -47,8 +47,8 @@
         
         // Create upper boundry.
         ChipmunkBody *body = [ChipmunkBody staticBody];        
-        body.pos = ccp(0.0f, _winSize.height+1);
-        ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:999999999 height:1];        
+        body.pos = ccp(0.0f, _winSize.height+51);
+        ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:999999999 height:100];
         shape.elasticity = 1.0f;
         shape.friction = 0.0f;
         

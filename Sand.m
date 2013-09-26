@@ -9,6 +9,7 @@
 //
 
 #import "Sand.h"
+#import "ChipmunkAutoGeometry.h"
 
 @implementation Sand
 
@@ -127,25 +128,34 @@
     
 }
 - (void) generateBody {
-    /*if(_body)
+    if(_body)
     {
         for (ChipmunkShape *shape in _body.shapes){
             [_space smartRemove:shape];
         }
     }
+    //Make a polyline, mallocing the pointersize.
     cpPolyline *rolypoly = (cpPolyline *)malloc(sizeof(cpPolyline));
+    //set capacity.
     rolypoly->capacity = kMaxBorderVertices;
+    //set the count of vertices currently.
     rolypoly->count = _nBorderVertices;
-    rolypoly->verts = _borderVertices;
-    
-    ChipmunkPolyline *simpleLine = [ChipmunkPolyline fromPolyline:*rolypoly];
+    //Mallocing a copy of _borderVertices.
+    CGPoint *vertz = (CGPoint *)malloc(sizeof(_borderVertices));
+    //Memcpy _borderVertices to vertz
+    memcpy(vertz, _borderVertices,sizeof(_borderVertices));
+    //Set the polyline verts as vertz
+    rolypoly->verts = vertz;
+    //Make a new ChipmunkPolyline from a polyline, the polyline is then destroyed, that is why we had to malloc the copy of the vertices.
+    ChipmunkPolyline *simpleLine = [ChipmunkPolyline fromPolyline: *rolypoly ];
     
     _body = [ChipmunkBody staticBody];
+    //make a shapes array from the line we created.
     NSArray *bodyShapes = [simpleLine asChipmunkSegmentsWithBody:_body radius:0 offset:cpvzero];
     for (ChipmunkShape *shape in bodyShapes)
     {
         [_space addShape:shape];
-    }*/
+    }
 }
 
 - (void) generateHills {
