@@ -10,6 +10,8 @@
 #import "cocos2d.h"
 #import "Game.h"
 #import "HowToScene.h"
+#import "SimpleAudioEngine.h"
+
 
 @implementation MenuScene
 
@@ -40,7 +42,8 @@
         
         
         
-        
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"23 Dire, Dire Docks.mp3"];
+
         
         
         

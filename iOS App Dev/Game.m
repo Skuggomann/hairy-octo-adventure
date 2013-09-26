@@ -71,7 +71,6 @@
         [_gameNode addChild:debug z:20];
         
         
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"23 Dire, Dire Docks.mp3"];
         
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
