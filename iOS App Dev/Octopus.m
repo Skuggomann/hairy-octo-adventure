@@ -8,6 +8,7 @@
 
 #import "Octopus.h"
 #import "ChipmunkAutoGeometry.h"
+#import "SimpleAudioEngine.h"
 
 @implementation Octopus 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
@@ -82,7 +83,7 @@
 
 - (void)swimUp
 {
-    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"swim-below.WAV" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
     cpVect directionalVector = cpvsub(CGPointFromString(_configuration[@"swimDirection"]), CGPointZero);
     cpVect impulseVector = cpvmult(directionalVector, self.chipmunkBody.mass * [_configuration[@"forceUp"]floatValue]);
     [self.chipmunkBody applyImpulse:impulseVector offset:cpvzero];

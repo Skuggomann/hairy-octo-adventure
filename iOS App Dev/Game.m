@@ -47,7 +47,7 @@
         
         // Create upper boundry.
         ChipmunkBody *body = [ChipmunkBody staticBody];        
-        body.pos = ccp(0.0f, _winSize.height);
+        body.pos = ccp(0.0f, _winSize.height+1);
         ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:999999999 height:1];        
         shape.elasticity = 1.0f;
         shape.friction = 0.0f;
@@ -72,7 +72,8 @@
         [_gameNode addChild:debug z:20];
         
         
-        
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"swim-below.WAV"];
+
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
         
@@ -264,9 +265,9 @@
     
 
     
-    if (_octo.position.x >= (_winSize.width / 2)) //&& _octo.position.x < (_landscapeWidth - (_winSize.width / 2)))
+    if (_octo.position.x >= (_winSize.width / 4)) //&& _octo.position.x < (_landscapeWidth - (_winSize.width / 2)))
     {
-        _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 2)), 0);
+        _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 4)), 0);
         [_sand setOffsetX:(_octo.position.x)];
     }
 

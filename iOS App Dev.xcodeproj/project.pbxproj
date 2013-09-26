@@ -144,6 +144,119 @@
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* Game.m */; };
 		CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAC617F46C0900363F8A /* HowToScene.m */; };
+		CE781E4717F4993D00C8A5C7 /* bird1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD617F4993D00C8A5C7 /* bird1.WAV */; };
+		CE781E4817F4993D00C8A5C7 /* bird2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD717F4993D00C8A5C7 /* bird2.WAV */; };
+		CE781E4917F4993D00C8A5C7 /* bird3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD817F4993D00C8A5C7 /* bird3.WAV */; };
+		CE781E4A17F4993D00C8A5C7 /* boing.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD917F4993D00C8A5C7 /* boing.WAV */; };
+		CE781E4B17F4993D00C8A5C7 /* boo.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DDA17F4993D00C8A5C7 /* boo.WAV */; };
+		CE781E4C17F4993D00C8A5C7 /* bowser-die.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DDB17F4993D00C8A5C7 /* bowser-die.WAV */; };
+		CE781E4D17F4993D00C8A5C7 /* bowser-fire.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DDC17F4993D00C8A5C7 /* bowser-fire.WAV */; };
+		CE781E4E17F4993D00C8A5C7 /* bowser-grab.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DDD17F4993D00C8A5C7 /* bowser-grab.WAV */; };
+		CE781E4F17F4993D00C8A5C7 /* bowser-inhale.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DDE17F4993D00C8A5C7 /* bowser-inhale.WAV */; };
+		CE781E5017F4993D00C8A5C7 /* bowser-something.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DDF17F4993D00C8A5C7 /* bowser-something.WAV */; };
+		CE781E5117F4993D00C8A5C7 /* bowser-step.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE017F4993D00C8A5C7 /* bowser-step.WAV */; };
+		CE781E5217F4993D00C8A5C7 /* boxbreak.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE117F4993D00C8A5C7 /* boxbreak.WAV */; };
+		CE781E5317F4993D00C8A5C7 /* bubble.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE217F4993D00C8A5C7 /* bubble.WAV */; };
+		CE781E5417F4993D00C8A5C7 /* cannon-fire.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE317F4993D00C8A5C7 /* cannon-fire.WAV */; };
+		CE781E5517F4993D00C8A5C7 /* cannon1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE417F4993D00C8A5C7 /* cannon1.WAV */; };
+		CE781E5617F4993D00C8A5C7 /* cannon2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE517F4993D00C8A5C7 /* cannon2.WAV */; };
+		CE781E5717F4993D00C8A5C7 /* cannon3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE617F4993D00C8A5C7 /* cannon3.WAV */; };
+		CE781E5817F4993D00C8A5C7 /* chomp.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE717F4993D00C8A5C7 /* chomp.WAV */; };
+		CE781E5917F4993D00C8A5C7 /* crank.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE817F4993D00C8A5C7 /* crank.WAV */; };
+		CE781E5A17F4993D00C8A5C7 /* crawl.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DE917F4993D00C8A5C7 /* crawl.WAV */; };
+		CE781E5B17F4993D00C8A5C7 /* cricket.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DEA17F4993D00C8A5C7 /* cricket.WAV */; };
+		CE781E5C17F4993D00C8A5C7 /* door-close.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DEB17F4993D00C8A5C7 /* door-close.WAV */; };
+		CE781E5D17F4993D00C8A5C7 /* door-metal.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DEC17F4993D00C8A5C7 /* door-metal.WAV */; };
+		CE781E5E17F4993D00C8A5C7 /* door-open.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DED17F4993D00C8A5C7 /* door-open.WAV */; };
+		CE781E5F17F4993D00C8A5C7 /* door-wood.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DEE17F4993D00C8A5C7 /* door-wood.WAV */; };
+		CE781E6017F4993D00C8A5C7 /* enter-painting.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DEF17F4993D00C8A5C7 /* enter-painting.WAV */; };
+		CE781E6117F4993D00C8A5C7 /* explosion.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF017F4993D00C8A5C7 /* explosion.WAV */; };
+		CE781E6217F4993D00C8A5C7 /* fuse-lite.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF117F4993D00C8A5C7 /* fuse-lite.WAV */; };
+		CE781E6317F4993D00C8A5C7 /* fuse-loop.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF217F4993D00C8A5C7 /* fuse-loop.WAV */; };
+		CE781E6417F4993D00C8A5C7 /* gunshot.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF317F4993D00C8A5C7 /* gunshot.WAV */; };
+		CE781E6517F4993D00C8A5C7 /* invalid.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF417F4993D00C8A5C7 /* invalid.WAV */; };
+		CE781E6617F4993D00C8A5C7 /* lakitucam.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF517F4993D00C8A5C7 /* lakitucam.WAV */; };
+		CE781E6717F4993D00C8A5C7 /* laser.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF617F4993D00C8A5C7 /* laser.WAV */; };
+		CE781E6817F4993D00C8A5C7 /* mario-boing.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF717F4993D00C8A5C7 /* mario-boing.WAV */; };
+		CE781E6917F4993D00C8A5C7 /* mario-cough.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF817F4993D00C8A5C7 /* mario-cough.WAV */; };
+		CE781E6A17F4993D00C8A5C7 /* mario-die.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DF917F4993D00C8A5C7 /* mario-die.WAV */; };
+		CE781E6B17F4993D00C8A5C7 /* mario-doh.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DFA17F4993D00C8A5C7 /* mario-doh.WAV */; };
+		CE781E6C17F4993D00C8A5C7 /* mario-dream.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DFB17F4993D00C8A5C7 /* mario-dream.WAV */; };
+		CE781E6D17F4993D00C8A5C7 /* mario-drown.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DFC17F4993D00C8A5C7 /* mario-drown.WAV */; };
+		CE781E6E17F4993D00C8A5C7 /* mario-fire.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DFD17F4993D00C8A5C7 /* mario-fire.WAV */; };
+		CE781E6F17F4993D00C8A5C7 /* mario-gameover.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DFE17F4993D00C8A5C7 /* mario-gameover.WAV */; };
+		CE781E7017F4993D00C8A5C7 /* mario-haha.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DFF17F4993D00C8A5C7 /* mario-haha.WAV */; };
+		CE781E7117F4993D00C8A5C7 /* mario-hello.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0017F4993D00C8A5C7 /* mario-hello.WAV */; };
+		CE781E7217F4993D00C8A5C7 /* mario-herewego.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0117F4993D00C8A5C7 /* mario-herewego.WAV */; };
+		CE781E7317F4993D00C8A5C7 /* mario-hoo.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0217F4993D00C8A5C7 /* mario-hoo.WAV */; };
+		CE781E7417F4993D00C8A5C7 /* mario-imtired.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0317F4993D00C8A5C7 /* mario-imtired.WAV */; };
+		CE781E7517F4993D00C8A5C7 /* mario-itsme.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0417F4993D00C8A5C7 /* mario-itsme.WAV */; };
+		CE781E7617F4993D00C8A5C7 /* mario-letsgo.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0517F4993D00C8A5C7 /* mario-letsgo.WAV */; };
+		CE781E7717F4993D00C8A5C7 /* mario-lift.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0617F4993D00C8A5C7 /* mario-lift.WAV */; };
+		CE781E7817F4993D00C8A5C7 /* mario-lowonhealth.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0717F4993D00C8A5C7 /* mario-lowonhealth.WAV */; };
+		CE781E7917F4993D00C8A5C7 /* mario-mamamia.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0817F4993D00C8A5C7 /* mario-mamamia.WAV */; };
+		CE781E7A17F4993D00C8A5C7 /* mario-okiedokie.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0917F4993D00C8A5C7 /* mario-okiedokie.WAV */; };
+		CE781E7B17F4993D00C8A5C7 /* mario-oof.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0A17F4993D00C8A5C7 /* mario-oof.WAV */; };
+		CE781E7C17F4993D00C8A5C7 /* mario-pain.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0B17F4993D00C8A5C7 /* mario-pain.WAV */; };
+		CE781E7D17F4993D00C8A5C7 /* mario-presstart.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0C17F4993D00C8A5C7 /* mario-presstart.WAV */; };
+		CE781E7E17F4993D00C8A5C7 /* mario-pullup.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0D17F4993D00C8A5C7 /* mario-pullup.WAV */; };
+		CE781E7F17F4993D00C8A5C7 /* mario-scream.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0E17F4993D00C8A5C7 /* mario-scream.WAV */; };
+		CE781E8017F4993D00C8A5C7 /* mario-snore1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E0F17F4993D00C8A5C7 /* mario-snore1.WAV */; };
+		CE781E8117F4993D00C8A5C7 /* mario-snore2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1017F4993D00C8A5C7 /* mario-snore2.WAV */; };
+		CE781E8217F4993D00C8A5C7 /* mario-solongbowser.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1117F4993D00C8A5C7 /* mario-solongbowser.WAV */; };
+		CE781E8317F4993D00C8A5C7 /* mario-theend.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1217F4993D00C8A5C7 /* mario-theend.WAV */; };
+		CE781E8417F4993D00C8A5C7 /* mario-ugh.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1317F4993D00C8A5C7 /* mario-ugh.WAV */; };
+		CE781E8517F4993D00C8A5C7 /* mario-ungh.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1417F4993D00C8A5C7 /* mario-ungh.WAV */; };
+		CE781E8617F4993D00C8A5C7 /* mario-wa.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1517F4993D00C8A5C7 /* mario-wa.WAV */; };
+		CE781E8717F4993D00C8A5C7 /* mario-waha.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1617F4993D00C8A5C7 /* mario-waha.WAV */; };
+		CE781E8817F4993D00C8A5C7 /* mario-whoa.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1717F4993D00C8A5C7 /* mario-whoa.WAV */; };
+		CE781E8917F4993D00C8A5C7 /* mario-woo.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1817F4993D00C8A5C7 /* mario-woo.WAV */; };
+		CE781E8A17F4993D00C8A5C7 /* mario-woohoo.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1917F4993D00C8A5C7 /* mario-woohoo.WAV */; };
+		CE781E8B17F4993D00C8A5C7 /* mario-ya.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1A17F4993D00C8A5C7 /* mario-ya.WAV */; };
+		CE781E8C17F4993D00C8A5C7 /* mario-yah.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1B17F4993D00C8A5C7 /* mario-yah.WAV */; };
+		CE781E8D17F4993D00C8A5C7 /* mario-yahh.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1C17F4993D00C8A5C7 /* mario-yahh.WAV */; };
+		CE781E8E17F4993D00C8A5C7 /* mario-yahoo.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1D17F4993D00C8A5C7 /* mario-yahoo.WAV */; };
+		CE781E8F17F4993D00C8A5C7 /* mario-yawn.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1E17F4993D00C8A5C7 /* mario-yawn.WAV */; };
+		CE781E9017F4993D00C8A5C7 /* mario-yippee.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E1F17F4993D00C8A5C7 /* mario-yippee.WAV */; };
+		CE781E9117F4993D00C8A5C7 /* mips-hop.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2017F4993D00C8A5C7 /* mips-hop.WAV */; };
+		CE781E9217F4993D00C8A5C7 /* monkey1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2117F4993D00C8A5C7 /* monkey1.WAV */; };
+		CE781E9317F4993D00C8A5C7 /* peach1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2217F4993D00C8A5C7 /* peach1.WAV */; };
+		CE781E9417F4993D00C8A5C7 /* peach2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2317F4993D00C8A5C7 /* peach2.WAV */; };
+		CE781E9517F4993D00C8A5C7 /* peach3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2417F4993D00C8A5C7 /* peach3.WAV */; };
+		CE781E9617F4993D00C8A5C7 /* peach4.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2517F4993D00C8A5C7 /* peach4.WAV */; };
+		CE781E9717F4993D00C8A5C7 /* peach5.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2617F4993D00C8A5C7 /* peach5.WAV */; };
+		CE781E9817F4993D00C8A5C7 /* peach6.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2717F4993D00C8A5C7 /* peach6.WAV */; };
+		CE781E9917F4993D00C8A5C7 /* peach7.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2817F4993D00C8A5C7 /* peach7.WAV */; };
+		CE781E9A17F4993D00C8A5C7 /* peach8.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2917F4993D00C8A5C7 /* peach8.WAV */; };
+		CE781E9B17F4993D00C8A5C7 /* peach9.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2A17F4993D00C8A5C7 /* peach9.WAV */; };
+		CE781E9C17F4993D00C8A5C7 /* penguin.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2B17F4993D00C8A5C7 /* penguin.WAV */; };
+		CE781E9D17F4993D00C8A5C7 /* pokeoutofsand.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2C17F4993D00C8A5C7 /* pokeoutofsand.WAV */; };
+		CE781E9E17F4993D00C8A5C7 /* slide1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2D17F4993D00C8A5C7 /* slide1.WAV */; };
+		CE781E9F17F4993D00C8A5C7 /* slide2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2E17F4993D00C8A5C7 /* slide2.WAV */; };
+		CE781EA017F4993D00C8A5C7 /* slide3.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E2F17F4993D00C8A5C7 /* slide3.WAV */; };
+		CE781EA117F4993D00C8A5C7 /* slide4.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3017F4993D00C8A5C7 /* slide4.WAV */; };
+		CE781EA217F4993D00C8A5C7 /* slide5.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3117F4993D00C8A5C7 /* slide5.WAV */; };
+		CE781EA317F4993D00C8A5C7 /* slide6.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3217F4993D00C8A5C7 /* slide6.WAV */; };
+		CE781EA417F4993D00C8A5C7 /* slide7.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3317F4993D00C8A5C7 /* slide7.WAV */; };
+		CE781EA517F4993D00C8A5C7 /* splash.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3417F4993D00C8A5C7 /* splash.WAV */; };
+		CE781EA617F4993D00C8A5C7 /* step-floor.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3517F4993D00C8A5C7 /* step-floor.WAV */; };
+		CE781EA717F4993D00C8A5C7 /* step-grass.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3617F4993D00C8A5C7 /* step-grass.WAV */; };
+		CE781EA817F4993D00C8A5C7 /* step-longgrass.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3717F4993D00C8A5C7 /* step-longgrass.WAV */; };
+		CE781EA917F4993D00C8A5C7 /* step-metalcap.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3817F4993D00C8A5C7 /* step-metalcap.WAV */; };
+		CE781EAA17F4993D00C8A5C7 /* step-wetwood.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3917F4993D00C8A5C7 /* step-wetwood.WAV */; };
+		CE781EAB17F4993D00C8A5C7 /* swim-above.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3A17F4993D00C8A5C7 /* swim-above.WAV */; };
+		CE781EAC17F4993D00C8A5C7 /* swim-below.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3B17F4993D00C8A5C7 /* swim-below.WAV */; };
+		CE781EAD17F4993D00C8A5C7 /* thwomp.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3C17F4993D00C8A5C7 /* thwomp.WAV */; };
+		CE781EAE17F4993D00C8A5C7 /* timer.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3D17F4993D00C8A5C7 /* timer.WAV */; };
+		CE781EAF17F4993D00C8A5C7 /* tinyzap.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3E17F4993D00C8A5C7 /* tinyzap.WAV */; };
+		CE781EB017F4993D00C8A5C7 /* vulturewound.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E3F17F4993D00C8A5C7 /* vulturewound.WAV */; };
+		CE781EB117F4993D00C8A5C7 /* warp1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4017F4993D00C8A5C7 /* warp1.WAV */; };
+		CE781EB217F4993D00C8A5C7 /* warp2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4117F4993D00C8A5C7 /* warp2.WAV */; };
+		CE781EB317F4993D00C8A5C7 /* water.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4217F4993D00C8A5C7 /* water.WAV */; };
+		CE781EB417F4993D00C8A5C7 /* waterfall.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4317F4993D00C8A5C7 /* waterfall.WAV */; };
+		CE781EB517F4993D00C8A5C7 /* waterfall2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4417F4993D00C8A5C7 /* waterfall2.WAV */; };
+		CE781EB617F4993D00C8A5C7 /* wind.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4517F4993D00C8A5C7 /* wind.WAV */; };
+		CE781EB717F4993D00C8A5C7 /* yoshi.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4617F4993D00C8A5C7 /* yoshi.WAV */; };
 		CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */; };
 		CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */; };
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
@@ -488,6 +601,119 @@
 		0B31313F17E8662800D0829B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		CE76DAC517F46C0900363F8A /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
 		CE76DAC617F46C0900363F8A /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
+		CE781DD617F4993D00C8A5C7 /* bird1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird1.WAV; sourceTree = "<group>"; };
+		CE781DD717F4993D00C8A5C7 /* bird2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird2.WAV; sourceTree = "<group>"; };
+		CE781DD817F4993D00C8A5C7 /* bird3.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird3.WAV; sourceTree = "<group>"; };
+		CE781DD917F4993D00C8A5C7 /* boing.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boing.WAV; sourceTree = "<group>"; };
+		CE781DDA17F4993D00C8A5C7 /* boo.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boo.WAV; sourceTree = "<group>"; };
+		CE781DDB17F4993D00C8A5C7 /* bowser-die.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bowser-die.WAV"; sourceTree = "<group>"; };
+		CE781DDC17F4993D00C8A5C7 /* bowser-fire.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bowser-fire.WAV"; sourceTree = "<group>"; };
+		CE781DDD17F4993D00C8A5C7 /* bowser-grab.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bowser-grab.WAV"; sourceTree = "<group>"; };
+		CE781DDE17F4993D00C8A5C7 /* bowser-inhale.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bowser-inhale.WAV"; sourceTree = "<group>"; };
+		CE781DDF17F4993D00C8A5C7 /* bowser-something.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bowser-something.WAV"; sourceTree = "<group>"; };
+		CE781DE017F4993D00C8A5C7 /* bowser-step.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "bowser-step.WAV"; sourceTree = "<group>"; };
+		CE781DE117F4993D00C8A5C7 /* boxbreak.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boxbreak.WAV; sourceTree = "<group>"; };
+		CE781DE217F4993D00C8A5C7 /* bubble.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bubble.WAV; sourceTree = "<group>"; };
+		CE781DE317F4993D00C8A5C7 /* cannon-fire.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "cannon-fire.WAV"; sourceTree = "<group>"; };
+		CE781DE417F4993D00C8A5C7 /* cannon1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cannon1.WAV; sourceTree = "<group>"; };
+		CE781DE517F4993D00C8A5C7 /* cannon2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cannon2.WAV; sourceTree = "<group>"; };
+		CE781DE617F4993D00C8A5C7 /* cannon3.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cannon3.WAV; sourceTree = "<group>"; };
+		CE781DE717F4993D00C8A5C7 /* chomp.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chomp.WAV; sourceTree = "<group>"; };
+		CE781DE817F4993D00C8A5C7 /* crank.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crank.WAV; sourceTree = "<group>"; };
+		CE781DE917F4993D00C8A5C7 /* crawl.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crawl.WAV; sourceTree = "<group>"; };
+		CE781DEA17F4993D00C8A5C7 /* cricket.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cricket.WAV; sourceTree = "<group>"; };
+		CE781DEB17F4993D00C8A5C7 /* door-close.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "door-close.WAV"; sourceTree = "<group>"; };
+		CE781DEC17F4993D00C8A5C7 /* door-metal.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "door-metal.WAV"; sourceTree = "<group>"; };
+		CE781DED17F4993D00C8A5C7 /* door-open.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "door-open.WAV"; sourceTree = "<group>"; };
+		CE781DEE17F4993D00C8A5C7 /* door-wood.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "door-wood.WAV"; sourceTree = "<group>"; };
+		CE781DEF17F4993D00C8A5C7 /* enter-painting.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "enter-painting.WAV"; sourceTree = "<group>"; };
+		CE781DF017F4993D00C8A5C7 /* explosion.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.WAV; sourceTree = "<group>"; };
+		CE781DF117F4993D00C8A5C7 /* fuse-lite.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fuse-lite.WAV"; sourceTree = "<group>"; };
+		CE781DF217F4993D00C8A5C7 /* fuse-loop.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fuse-loop.WAV"; sourceTree = "<group>"; };
+		CE781DF317F4993D00C8A5C7 /* gunshot.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gunshot.WAV; sourceTree = "<group>"; };
+		CE781DF417F4993D00C8A5C7 /* invalid.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = invalid.WAV; sourceTree = "<group>"; };
+		CE781DF517F4993D00C8A5C7 /* lakitucam.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lakitucam.WAV; sourceTree = "<group>"; };
+		CE781DF617F4993D00C8A5C7 /* laser.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.WAV; sourceTree = "<group>"; };
+		CE781DF717F4993D00C8A5C7 /* mario-boing.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-boing.WAV"; sourceTree = "<group>"; };
+		CE781DF817F4993D00C8A5C7 /* mario-cough.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-cough.WAV"; sourceTree = "<group>"; };
+		CE781DF917F4993D00C8A5C7 /* mario-die.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-die.WAV"; sourceTree = "<group>"; };
+		CE781DFA17F4993D00C8A5C7 /* mario-doh.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-doh.WAV"; sourceTree = "<group>"; };
+		CE781DFB17F4993D00C8A5C7 /* mario-dream.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-dream.WAV"; sourceTree = "<group>"; };
+		CE781DFC17F4993D00C8A5C7 /* mario-drown.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-drown.WAV"; sourceTree = "<group>"; };
+		CE781DFD17F4993D00C8A5C7 /* mario-fire.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-fire.WAV"; sourceTree = "<group>"; };
+		CE781DFE17F4993D00C8A5C7 /* mario-gameover.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-gameover.WAV"; sourceTree = "<group>"; };
+		CE781DFF17F4993D00C8A5C7 /* mario-haha.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-haha.WAV"; sourceTree = "<group>"; };
+		CE781E0017F4993D00C8A5C7 /* mario-hello.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-hello.WAV"; sourceTree = "<group>"; };
+		CE781E0117F4993D00C8A5C7 /* mario-herewego.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-herewego.WAV"; sourceTree = "<group>"; };
+		CE781E0217F4993D00C8A5C7 /* mario-hoo.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-hoo.WAV"; sourceTree = "<group>"; };
+		CE781E0317F4993D00C8A5C7 /* mario-imtired.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-imtired.WAV"; sourceTree = "<group>"; };
+		CE781E0417F4993D00C8A5C7 /* mario-itsme.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-itsme.WAV"; sourceTree = "<group>"; };
+		CE781E0517F4993D00C8A5C7 /* mario-letsgo.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-letsgo.WAV"; sourceTree = "<group>"; };
+		CE781E0617F4993D00C8A5C7 /* mario-lift.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-lift.WAV"; sourceTree = "<group>"; };
+		CE781E0717F4993D00C8A5C7 /* mario-lowonhealth.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-lowonhealth.WAV"; sourceTree = "<group>"; };
+		CE781E0817F4993D00C8A5C7 /* mario-mamamia.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-mamamia.WAV"; sourceTree = "<group>"; };
+		CE781E0917F4993D00C8A5C7 /* mario-okiedokie.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-okiedokie.WAV"; sourceTree = "<group>"; };
+		CE781E0A17F4993D00C8A5C7 /* mario-oof.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-oof.WAV"; sourceTree = "<group>"; };
+		CE781E0B17F4993D00C8A5C7 /* mario-pain.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-pain.WAV"; sourceTree = "<group>"; };
+		CE781E0C17F4993D00C8A5C7 /* mario-presstart.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-presstart.WAV"; sourceTree = "<group>"; };
+		CE781E0D17F4993D00C8A5C7 /* mario-pullup.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-pullup.WAV"; sourceTree = "<group>"; };
+		CE781E0E17F4993D00C8A5C7 /* mario-scream.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-scream.WAV"; sourceTree = "<group>"; };
+		CE781E0F17F4993D00C8A5C7 /* mario-snore1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-snore1.WAV"; sourceTree = "<group>"; };
+		CE781E1017F4993D00C8A5C7 /* mario-snore2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-snore2.WAV"; sourceTree = "<group>"; };
+		CE781E1117F4993D00C8A5C7 /* mario-solongbowser.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-solongbowser.WAV"; sourceTree = "<group>"; };
+		CE781E1217F4993D00C8A5C7 /* mario-theend.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-theend.WAV"; sourceTree = "<group>"; };
+		CE781E1317F4993D00C8A5C7 /* mario-ugh.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-ugh.WAV"; sourceTree = "<group>"; };
+		CE781E1417F4993D00C8A5C7 /* mario-ungh.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-ungh.WAV"; sourceTree = "<group>"; };
+		CE781E1517F4993D00C8A5C7 /* mario-wa.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-wa.WAV"; sourceTree = "<group>"; };
+		CE781E1617F4993D00C8A5C7 /* mario-waha.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-waha.WAV"; sourceTree = "<group>"; };
+		CE781E1717F4993D00C8A5C7 /* mario-whoa.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-whoa.WAV"; sourceTree = "<group>"; };
+		CE781E1817F4993D00C8A5C7 /* mario-woo.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-woo.WAV"; sourceTree = "<group>"; };
+		CE781E1917F4993D00C8A5C7 /* mario-woohoo.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-woohoo.WAV"; sourceTree = "<group>"; };
+		CE781E1A17F4993D00C8A5C7 /* mario-ya.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-ya.WAV"; sourceTree = "<group>"; };
+		CE781E1B17F4993D00C8A5C7 /* mario-yah.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-yah.WAV"; sourceTree = "<group>"; };
+		CE781E1C17F4993D00C8A5C7 /* mario-yahh.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-yahh.WAV"; sourceTree = "<group>"; };
+		CE781E1D17F4993D00C8A5C7 /* mario-yahoo.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-yahoo.WAV"; sourceTree = "<group>"; };
+		CE781E1E17F4993D00C8A5C7 /* mario-yawn.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-yawn.WAV"; sourceTree = "<group>"; };
+		CE781E1F17F4993D00C8A5C7 /* mario-yippee.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mario-yippee.WAV"; sourceTree = "<group>"; };
+		CE781E2017F4993D00C8A5C7 /* mips-hop.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mips-hop.WAV"; sourceTree = "<group>"; };
+		CE781E2117F4993D00C8A5C7 /* monkey1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey1.WAV; sourceTree = "<group>"; };
+		CE781E2217F4993D00C8A5C7 /* peach1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach1.WAV; sourceTree = "<group>"; };
+		CE781E2317F4993D00C8A5C7 /* peach2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach2.WAV; sourceTree = "<group>"; };
+		CE781E2417F4993D00C8A5C7 /* peach3.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach3.WAV; sourceTree = "<group>"; };
+		CE781E2517F4993D00C8A5C7 /* peach4.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach4.WAV; sourceTree = "<group>"; };
+		CE781E2617F4993D00C8A5C7 /* peach5.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach5.WAV; sourceTree = "<group>"; };
+		CE781E2717F4993D00C8A5C7 /* peach6.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach6.WAV; sourceTree = "<group>"; };
+		CE781E2817F4993D00C8A5C7 /* peach7.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach7.WAV; sourceTree = "<group>"; };
+		CE781E2917F4993D00C8A5C7 /* peach8.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach8.WAV; sourceTree = "<group>"; };
+		CE781E2A17F4993D00C8A5C7 /* peach9.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = peach9.WAV; sourceTree = "<group>"; };
+		CE781E2B17F4993D00C8A5C7 /* penguin.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = penguin.WAV; sourceTree = "<group>"; };
+		CE781E2C17F4993D00C8A5C7 /* pokeoutofsand.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pokeoutofsand.WAV; sourceTree = "<group>"; };
+		CE781E2D17F4993D00C8A5C7 /* slide1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide1.WAV; sourceTree = "<group>"; };
+		CE781E2E17F4993D00C8A5C7 /* slide2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide2.WAV; sourceTree = "<group>"; };
+		CE781E2F17F4993D00C8A5C7 /* slide3.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide3.WAV; sourceTree = "<group>"; };
+		CE781E3017F4993D00C8A5C7 /* slide4.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide4.WAV; sourceTree = "<group>"; };
+		CE781E3117F4993D00C8A5C7 /* slide5.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide5.WAV; sourceTree = "<group>"; };
+		CE781E3217F4993D00C8A5C7 /* slide6.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide6.WAV; sourceTree = "<group>"; };
+		CE781E3317F4993D00C8A5C7 /* slide7.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = slide7.WAV; sourceTree = "<group>"; };
+		CE781E3417F4993D00C8A5C7 /* splash.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = splash.WAV; sourceTree = "<group>"; };
+		CE781E3517F4993D00C8A5C7 /* step-floor.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-floor.WAV"; sourceTree = "<group>"; };
+		CE781E3617F4993D00C8A5C7 /* step-grass.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-grass.WAV"; sourceTree = "<group>"; };
+		CE781E3717F4993D00C8A5C7 /* step-longgrass.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-longgrass.WAV"; sourceTree = "<group>"; };
+		CE781E3817F4993D00C8A5C7 /* step-metalcap.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-metalcap.WAV"; sourceTree = "<group>"; };
+		CE781E3917F4993D00C8A5C7 /* step-wetwood.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step-wetwood.WAV"; sourceTree = "<group>"; };
+		CE781E3A17F4993D00C8A5C7 /* swim-above.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "swim-above.WAV"; sourceTree = "<group>"; };
+		CE781E3B17F4993D00C8A5C7 /* swim-below.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "swim-below.WAV"; sourceTree = "<group>"; };
+		CE781E3C17F4993D00C8A5C7 /* thwomp.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thwomp.WAV; sourceTree = "<group>"; };
+		CE781E3D17F4993D00C8A5C7 /* timer.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = timer.WAV; sourceTree = "<group>"; };
+		CE781E3E17F4993D00C8A5C7 /* tinyzap.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tinyzap.WAV; sourceTree = "<group>"; };
+		CE781E3F17F4993D00C8A5C7 /* vulturewound.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = vulturewound.WAV; sourceTree = "<group>"; };
+		CE781E4017F4993D00C8A5C7 /* warp1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = warp1.WAV; sourceTree = "<group>"; };
+		CE781E4117F4993D00C8A5C7 /* warp2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = warp2.WAV; sourceTree = "<group>"; };
+		CE781E4217F4993D00C8A5C7 /* water.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = water.WAV; sourceTree = "<group>"; };
+		CE781E4317F4993D00C8A5C7 /* waterfall.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = waterfall.WAV; sourceTree = "<group>"; };
+		CE781E4417F4993D00C8A5C7 /* waterfall2.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = waterfall2.WAV; sourceTree = "<group>"; };
+		CE781E4517F4993D00C8A5C7 /* wind.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wind.WAV; sourceTree = "<group>"; };
+		CE781E4617F4993D00C8A5C7 /* yoshi.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yoshi.WAV; sourceTree = "<group>"; };
 		CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-hd.png"; path = "Resources/Noise-hd.png"; sourceTree = "<group>"; };
 		CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-iphone5hd.png"; path = "Resources/Noise-iphone5hd.png"; sourceTree = "<group>"; };
 		CE7EA0FD17F351C0006E9A12 /* Noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Noise.png; path = Resources/Noise.png; sourceTree = "<group>"; };
@@ -602,6 +828,7 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE781DD517F4993D00C8A5C7 /* Sounds */,
 				CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */,
 				CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */,
 				CEDED63117F3762D00E019ED /* Cliffs v3.png */,
@@ -1056,6 +1283,127 @@
 			path = constraints;
 			sourceTree = "<group>";
 		};
+		CE781DD517F4993D00C8A5C7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				CE781DD617F4993D00C8A5C7 /* bird1.WAV */,
+				CE781DD717F4993D00C8A5C7 /* bird2.WAV */,
+				CE781DD817F4993D00C8A5C7 /* bird3.WAV */,
+				CE781DD917F4993D00C8A5C7 /* boing.WAV */,
+				CE781DDA17F4993D00C8A5C7 /* boo.WAV */,
+				CE781DDB17F4993D00C8A5C7 /* bowser-die.WAV */,
+				CE781DDC17F4993D00C8A5C7 /* bowser-fire.WAV */,
+				CE781DDD17F4993D00C8A5C7 /* bowser-grab.WAV */,
+				CE781DDE17F4993D00C8A5C7 /* bowser-inhale.WAV */,
+				CE781DDF17F4993D00C8A5C7 /* bowser-something.WAV */,
+				CE781DE017F4993D00C8A5C7 /* bowser-step.WAV */,
+				CE781DE117F4993D00C8A5C7 /* boxbreak.WAV */,
+				CE781DE217F4993D00C8A5C7 /* bubble.WAV */,
+				CE781DE317F4993D00C8A5C7 /* cannon-fire.WAV */,
+				CE781DE417F4993D00C8A5C7 /* cannon1.WAV */,
+				CE781DE517F4993D00C8A5C7 /* cannon2.WAV */,
+				CE781DE617F4993D00C8A5C7 /* cannon3.WAV */,
+				CE781DE717F4993D00C8A5C7 /* chomp.WAV */,
+				CE781DE817F4993D00C8A5C7 /* crank.WAV */,
+				CE781DE917F4993D00C8A5C7 /* crawl.WAV */,
+				CE781DEA17F4993D00C8A5C7 /* cricket.WAV */,
+				CE781DEB17F4993D00C8A5C7 /* door-close.WAV */,
+				CE781DEC17F4993D00C8A5C7 /* door-metal.WAV */,
+				CE781DED17F4993D00C8A5C7 /* door-open.WAV */,
+				CE781DEE17F4993D00C8A5C7 /* door-wood.WAV */,
+				CE781DEF17F4993D00C8A5C7 /* enter-painting.WAV */,
+				CE781DF017F4993D00C8A5C7 /* explosion.WAV */,
+				CE781DF117F4993D00C8A5C7 /* fuse-lite.WAV */,
+				CE781DF217F4993D00C8A5C7 /* fuse-loop.WAV */,
+				CE781DF317F4993D00C8A5C7 /* gunshot.WAV */,
+				CE781DF417F4993D00C8A5C7 /* invalid.WAV */,
+				CE781DF517F4993D00C8A5C7 /* lakitucam.WAV */,
+				CE781DF617F4993D00C8A5C7 /* laser.WAV */,
+				CE781DF717F4993D00C8A5C7 /* mario-boing.WAV */,
+				CE781DF817F4993D00C8A5C7 /* mario-cough.WAV */,
+				CE781DF917F4993D00C8A5C7 /* mario-die.WAV */,
+				CE781DFA17F4993D00C8A5C7 /* mario-doh.WAV */,
+				CE781DFB17F4993D00C8A5C7 /* mario-dream.WAV */,
+				CE781DFC17F4993D00C8A5C7 /* mario-drown.WAV */,
+				CE781DFD17F4993D00C8A5C7 /* mario-fire.WAV */,
+				CE781DFE17F4993D00C8A5C7 /* mario-gameover.WAV */,
+				CE781DFF17F4993D00C8A5C7 /* mario-haha.WAV */,
+				CE781E0017F4993D00C8A5C7 /* mario-hello.WAV */,
+				CE781E0117F4993D00C8A5C7 /* mario-herewego.WAV */,
+				CE781E0217F4993D00C8A5C7 /* mario-hoo.WAV */,
+				CE781E0317F4993D00C8A5C7 /* mario-imtired.WAV */,
+				CE781E0417F4993D00C8A5C7 /* mario-itsme.WAV */,
+				CE781E0517F4993D00C8A5C7 /* mario-letsgo.WAV */,
+				CE781E0617F4993D00C8A5C7 /* mario-lift.WAV */,
+				CE781E0717F4993D00C8A5C7 /* mario-lowonhealth.WAV */,
+				CE781E0817F4993D00C8A5C7 /* mario-mamamia.WAV */,
+				CE781E0917F4993D00C8A5C7 /* mario-okiedokie.WAV */,
+				CE781E0A17F4993D00C8A5C7 /* mario-oof.WAV */,
+				CE781E0B17F4993D00C8A5C7 /* mario-pain.WAV */,
+				CE781E0C17F4993D00C8A5C7 /* mario-presstart.WAV */,
+				CE781E0D17F4993D00C8A5C7 /* mario-pullup.WAV */,
+				CE781E0E17F4993D00C8A5C7 /* mario-scream.WAV */,
+				CE781E0F17F4993D00C8A5C7 /* mario-snore1.WAV */,
+				CE781E1017F4993D00C8A5C7 /* mario-snore2.WAV */,
+				CE781E1117F4993D00C8A5C7 /* mario-solongbowser.WAV */,
+				CE781E1217F4993D00C8A5C7 /* mario-theend.WAV */,
+				CE781E1317F4993D00C8A5C7 /* mario-ugh.WAV */,
+				CE781E1417F4993D00C8A5C7 /* mario-ungh.WAV */,
+				CE781E1517F4993D00C8A5C7 /* mario-wa.WAV */,
+				CE781E1617F4993D00C8A5C7 /* mario-waha.WAV */,
+				CE781E1717F4993D00C8A5C7 /* mario-whoa.WAV */,
+				CE781E1817F4993D00C8A5C7 /* mario-woo.WAV */,
+				CE781E1917F4993D00C8A5C7 /* mario-woohoo.WAV */,
+				CE781E1A17F4993D00C8A5C7 /* mario-ya.WAV */,
+				CE781E1B17F4993D00C8A5C7 /* mario-yah.WAV */,
+				CE781E1C17F4993D00C8A5C7 /* mario-yahh.WAV */,
+				CE781E1D17F4993D00C8A5C7 /* mario-yahoo.WAV */,
+				CE781E1E17F4993D00C8A5C7 /* mario-yawn.WAV */,
+				CE781E1F17F4993D00C8A5C7 /* mario-yippee.WAV */,
+				CE781E2017F4993D00C8A5C7 /* mips-hop.WAV */,
+				CE781E2117F4993D00C8A5C7 /* monkey1.WAV */,
+				CE781E2217F4993D00C8A5C7 /* peach1.WAV */,
+				CE781E2317F4993D00C8A5C7 /* peach2.WAV */,
+				CE781E2417F4993D00C8A5C7 /* peach3.WAV */,
+				CE781E2517F4993D00C8A5C7 /* peach4.WAV */,
+				CE781E2617F4993D00C8A5C7 /* peach5.WAV */,
+				CE781E2717F4993D00C8A5C7 /* peach6.WAV */,
+				CE781E2817F4993D00C8A5C7 /* peach7.WAV */,
+				CE781E2917F4993D00C8A5C7 /* peach8.WAV */,
+				CE781E2A17F4993D00C8A5C7 /* peach9.WAV */,
+				CE781E2B17F4993D00C8A5C7 /* penguin.WAV */,
+				CE781E2C17F4993D00C8A5C7 /* pokeoutofsand.WAV */,
+				CE781E2D17F4993D00C8A5C7 /* slide1.WAV */,
+				CE781E2E17F4993D00C8A5C7 /* slide2.WAV */,
+				CE781E2F17F4993D00C8A5C7 /* slide3.WAV */,
+				CE781E3017F4993D00C8A5C7 /* slide4.WAV */,
+				CE781E3117F4993D00C8A5C7 /* slide5.WAV */,
+				CE781E3217F4993D00C8A5C7 /* slide6.WAV */,
+				CE781E3317F4993D00C8A5C7 /* slide7.WAV */,
+				CE781E3417F4993D00C8A5C7 /* splash.WAV */,
+				CE781E3517F4993D00C8A5C7 /* step-floor.WAV */,
+				CE781E3617F4993D00C8A5C7 /* step-grass.WAV */,
+				CE781E3717F4993D00C8A5C7 /* step-longgrass.WAV */,
+				CE781E3817F4993D00C8A5C7 /* step-metalcap.WAV */,
+				CE781E3917F4993D00C8A5C7 /* step-wetwood.WAV */,
+				CE781E3A17F4993D00C8A5C7 /* swim-above.WAV */,
+				CE781E3B17F4993D00C8A5C7 /* swim-below.WAV */,
+				CE781E3C17F4993D00C8A5C7 /* thwomp.WAV */,
+				CE781E3D17F4993D00C8A5C7 /* timer.WAV */,
+				CE781E3E17F4993D00C8A5C7 /* tinyzap.WAV */,
+				CE781E3F17F4993D00C8A5C7 /* vulturewound.WAV */,
+				CE781E4017F4993D00C8A5C7 /* warp1.WAV */,
+				CE781E4117F4993D00C8A5C7 /* warp2.WAV */,
+				CE781E4217F4993D00C8A5C7 /* water.WAV */,
+				CE781E4317F4993D00C8A5C7 /* waterfall.WAV */,
+				CE781E4417F4993D00C8A5C7 /* waterfall2.WAV */,
+				CE781E4517F4993D00C8A5C7 /* wind.WAV */,
+				CE781E4617F4993D00C8A5C7 /* yoshi.WAV */,
+			);
+			name = Sounds;
+			path = Resources/Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1128,6 +1476,119 @@
 				CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */,
 				CEA37D8C17F3792C00DB14C7 /* Cliffs v3-hd.png in Resources */,
 				CE81270517F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 in Resources */,
+				CE781E4717F4993D00C8A5C7 /* bird1.WAV in Resources */,
+				CE781E4817F4993D00C8A5C7 /* bird2.WAV in Resources */,
+				CE781E4917F4993D00C8A5C7 /* bird3.WAV in Resources */,
+				CE781E4A17F4993D00C8A5C7 /* boing.WAV in Resources */,
+				CE781E4B17F4993D00C8A5C7 /* boo.WAV in Resources */,
+				CE781E4C17F4993D00C8A5C7 /* bowser-die.WAV in Resources */,
+				CE781E4D17F4993D00C8A5C7 /* bowser-fire.WAV in Resources */,
+				CE781E4E17F4993D00C8A5C7 /* bowser-grab.WAV in Resources */,
+				CE781E4F17F4993D00C8A5C7 /* bowser-inhale.WAV in Resources */,
+				CE781E5017F4993D00C8A5C7 /* bowser-something.WAV in Resources */,
+				CE781E5117F4993D00C8A5C7 /* bowser-step.WAV in Resources */,
+				CE781E5217F4993D00C8A5C7 /* boxbreak.WAV in Resources */,
+				CE781E5317F4993D00C8A5C7 /* bubble.WAV in Resources */,
+				CE781E5417F4993D00C8A5C7 /* cannon-fire.WAV in Resources */,
+				CE781E5517F4993D00C8A5C7 /* cannon1.WAV in Resources */,
+				CE781E5617F4993D00C8A5C7 /* cannon2.WAV in Resources */,
+				CE781E5717F4993D00C8A5C7 /* cannon3.WAV in Resources */,
+				CE781E5817F4993D00C8A5C7 /* chomp.WAV in Resources */,
+				CE781E5917F4993D00C8A5C7 /* crank.WAV in Resources */,
+				CE781E5A17F4993D00C8A5C7 /* crawl.WAV in Resources */,
+				CE781E5B17F4993D00C8A5C7 /* cricket.WAV in Resources */,
+				CE781E5C17F4993D00C8A5C7 /* door-close.WAV in Resources */,
+				CE781E5D17F4993D00C8A5C7 /* door-metal.WAV in Resources */,
+				CE781E5E17F4993D00C8A5C7 /* door-open.WAV in Resources */,
+				CE781E5F17F4993D00C8A5C7 /* door-wood.WAV in Resources */,
+				CE781E6017F4993D00C8A5C7 /* enter-painting.WAV in Resources */,
+				CE781E6117F4993D00C8A5C7 /* explosion.WAV in Resources */,
+				CE781E6217F4993D00C8A5C7 /* fuse-lite.WAV in Resources */,
+				CE781E6317F4993D00C8A5C7 /* fuse-loop.WAV in Resources */,
+				CE781E6417F4993D00C8A5C7 /* gunshot.WAV in Resources */,
+				CE781E6517F4993D00C8A5C7 /* invalid.WAV in Resources */,
+				CE781E6617F4993D00C8A5C7 /* lakitucam.WAV in Resources */,
+				CE781E6717F4993D00C8A5C7 /* laser.WAV in Resources */,
+				CE781E6817F4993D00C8A5C7 /* mario-boing.WAV in Resources */,
+				CE781E6917F4993D00C8A5C7 /* mario-cough.WAV in Resources */,
+				CE781E6A17F4993D00C8A5C7 /* mario-die.WAV in Resources */,
+				CE781E6B17F4993D00C8A5C7 /* mario-doh.WAV in Resources */,
+				CE781E6C17F4993D00C8A5C7 /* mario-dream.WAV in Resources */,
+				CE781E6D17F4993D00C8A5C7 /* mario-drown.WAV in Resources */,
+				CE781E6E17F4993D00C8A5C7 /* mario-fire.WAV in Resources */,
+				CE781E6F17F4993D00C8A5C7 /* mario-gameover.WAV in Resources */,
+				CE781E7017F4993D00C8A5C7 /* mario-haha.WAV in Resources */,
+				CE781E7117F4993D00C8A5C7 /* mario-hello.WAV in Resources */,
+				CE781E7217F4993D00C8A5C7 /* mario-herewego.WAV in Resources */,
+				CE781E7317F4993D00C8A5C7 /* mario-hoo.WAV in Resources */,
+				CE781E7417F4993D00C8A5C7 /* mario-imtired.WAV in Resources */,
+				CE781E7517F4993D00C8A5C7 /* mario-itsme.WAV in Resources */,
+				CE781E7617F4993D00C8A5C7 /* mario-letsgo.WAV in Resources */,
+				CE781E7717F4993D00C8A5C7 /* mario-lift.WAV in Resources */,
+				CE781E7817F4993D00C8A5C7 /* mario-lowonhealth.WAV in Resources */,
+				CE781E7917F4993D00C8A5C7 /* mario-mamamia.WAV in Resources */,
+				CE781E7A17F4993D00C8A5C7 /* mario-okiedokie.WAV in Resources */,
+				CE781E7B17F4993D00C8A5C7 /* mario-oof.WAV in Resources */,
+				CE781E7C17F4993D00C8A5C7 /* mario-pain.WAV in Resources */,
+				CE781E7D17F4993D00C8A5C7 /* mario-presstart.WAV in Resources */,
+				CE781E7E17F4993D00C8A5C7 /* mario-pullup.WAV in Resources */,
+				CE781E7F17F4993D00C8A5C7 /* mario-scream.WAV in Resources */,
+				CE781E8017F4993D00C8A5C7 /* mario-snore1.WAV in Resources */,
+				CE781E8117F4993D00C8A5C7 /* mario-snore2.WAV in Resources */,
+				CE781E8217F4993D00C8A5C7 /* mario-solongbowser.WAV in Resources */,
+				CE781E8317F4993D00C8A5C7 /* mario-theend.WAV in Resources */,
+				CE781E8417F4993D00C8A5C7 /* mario-ugh.WAV in Resources */,
+				CE781E8517F4993D00C8A5C7 /* mario-ungh.WAV in Resources */,
+				CE781E8617F4993D00C8A5C7 /* mario-wa.WAV in Resources */,
+				CE781E8717F4993D00C8A5C7 /* mario-waha.WAV in Resources */,
+				CE781E8817F4993D00C8A5C7 /* mario-whoa.WAV in Resources */,
+				CE781E8917F4993D00C8A5C7 /* mario-woo.WAV in Resources */,
+				CE781E8A17F4993D00C8A5C7 /* mario-woohoo.WAV in Resources */,
+				CE781E8B17F4993D00C8A5C7 /* mario-ya.WAV in Resources */,
+				CE781E8C17F4993D00C8A5C7 /* mario-yah.WAV in Resources */,
+				CE781E8D17F4993D00C8A5C7 /* mario-yahh.WAV in Resources */,
+				CE781E8E17F4993D00C8A5C7 /* mario-yahoo.WAV in Resources */,
+				CE781E8F17F4993D00C8A5C7 /* mario-yawn.WAV in Resources */,
+				CE781E9017F4993D00C8A5C7 /* mario-yippee.WAV in Resources */,
+				CE781E9117F4993D00C8A5C7 /* mips-hop.WAV in Resources */,
+				CE781E9217F4993D00C8A5C7 /* monkey1.WAV in Resources */,
+				CE781E9317F4993D00C8A5C7 /* peach1.WAV in Resources */,
+				CE781E9417F4993D00C8A5C7 /* peach2.WAV in Resources */,
+				CE781E9517F4993D00C8A5C7 /* peach3.WAV in Resources */,
+				CE781E9617F4993D00C8A5C7 /* peach4.WAV in Resources */,
+				CE781E9717F4993D00C8A5C7 /* peach5.WAV in Resources */,
+				CE781E9817F4993D00C8A5C7 /* peach6.WAV in Resources */,
+				CE781E9917F4993D00C8A5C7 /* peach7.WAV in Resources */,
+				CE781E9A17F4993D00C8A5C7 /* peach8.WAV in Resources */,
+				CE781E9B17F4993D00C8A5C7 /* peach9.WAV in Resources */,
+				CE781E9C17F4993D00C8A5C7 /* penguin.WAV in Resources */,
+				CE781E9D17F4993D00C8A5C7 /* pokeoutofsand.WAV in Resources */,
+				CE781E9E17F4993D00C8A5C7 /* slide1.WAV in Resources */,
+				CE781E9F17F4993D00C8A5C7 /* slide2.WAV in Resources */,
+				CE781EA017F4993D00C8A5C7 /* slide3.WAV in Resources */,
+				CE781EA117F4993D00C8A5C7 /* slide4.WAV in Resources */,
+				CE781EA217F4993D00C8A5C7 /* slide5.WAV in Resources */,
+				CE781EA317F4993D00C8A5C7 /* slide6.WAV in Resources */,
+				CE781EA417F4993D00C8A5C7 /* slide7.WAV in Resources */,
+				CE781EA517F4993D00C8A5C7 /* splash.WAV in Resources */,
+				CE781EA617F4993D00C8A5C7 /* step-floor.WAV in Resources */,
+				CE781EA717F4993D00C8A5C7 /* step-grass.WAV in Resources */,
+				CE781EA817F4993D00C8A5C7 /* step-longgrass.WAV in Resources */,
+				CE781EA917F4993D00C8A5C7 /* step-metalcap.WAV in Resources */,
+				CE781EAA17F4993D00C8A5C7 /* step-wetwood.WAV in Resources */,
+				CE781EAB17F4993D00C8A5C7 /* swim-above.WAV in Resources */,
+				CE781EAC17F4993D00C8A5C7 /* swim-below.WAV in Resources */,
+				CE781EAD17F4993D00C8A5C7 /* thwomp.WAV in Resources */,
+				CE781EAE17F4993D00C8A5C7 /* timer.WAV in Resources */,
+				CE781EAF17F4993D00C8A5C7 /* tinyzap.WAV in Resources */,
+				CE781EB017F4993D00C8A5C7 /* vulturewound.WAV in Resources */,
+				CE781EB117F4993D00C8A5C7 /* warp1.WAV in Resources */,
+				CE781EB217F4993D00C8A5C7 /* warp2.WAV in Resources */,
+				CE781EB317F4993D00C8A5C7 /* water.WAV in Resources */,
+				CE781EB417F4993D00C8A5C7 /* waterfall.WAV in Resources */,
+				CE781EB517F4993D00C8A5C7 /* waterfall2.WAV in Resources */,
+				CE781EB617F4993D00C8A5C7 /* wind.WAV in Resources */,
+				CE781EB717F4993D00C8A5C7 /* yoshi.WAV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
