@@ -40,16 +40,16 @@
                                   preSolve:nil
                                  postSolve:nil
                                   separate:nil];
-
+        //_space.iterations = 15;
         
         // Setup world
         [self setupGraphicsLandscape];
         
         // Create upper boundry.
-        ChipmunkBody *body = [ChipmunkBody staticBody];        
+        ChipmunkBody *body = [ChipmunkBody staticBody]; 
         body.pos = ccp(0.0f, _winSize.height+51);
         ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:999999999 height:100];
-        shape.elasticity = 1.0f;
+        shape.elasticity = 0.5f;
         shape.friction = 0.0f;
         
         [_space addShape:shape];
@@ -282,7 +282,7 @@
     
 
     _swimTime -= delta;
-    if(_swimming && _swimTime <= 0){
+    if(_swimming && _swimTime <= 0 && _octo.position.y < _winSize.height-40){
         _swimTime = 0.5;
         [_octo swimUp];
     }

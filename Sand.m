@@ -154,6 +154,7 @@
     NSArray *bodyShapes = [simpleLine asChipmunkSegmentsWithBody:_body radius:0 offset:cpvzero];
     for (ChipmunkShape *shape in bodyShapes)
     {
+        shape.friction = 5000.0f;
         [_space addShape:shape];
     }
 }
