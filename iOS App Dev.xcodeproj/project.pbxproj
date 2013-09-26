@@ -260,7 +260,8 @@
 		CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */; };
 		CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */; };
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
-		CE7EA10317F35BC9006E9A12 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7EA10217F35BC9006E9A12 /* Sand.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CE7EA10317F35BC9006E9A12 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7EA10217F35BC9006E9A12 /* Sand.m */; };
+		CE81270317F486DB00B61DD0 /* SoundHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81270217F486DB00B61DD0 /* SoundHandler.m */; };
 		CE81270517F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */; };
 		CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96217F2EB48002007C6 /* InputLayer.m */; };
 		CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96517F2EE51002007C6 /* MenuScene.m */; };

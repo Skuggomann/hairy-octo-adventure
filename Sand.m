@@ -20,7 +20,6 @@
         _winSize = [CCDirector sharedDirector].winSize;
         self.shaderProgram = [[CCShaderCache sharedShaderCache] programForKey:kCCShader_PositionTexture];
         [self generateHills];
-        [self generateBody];
         [self resetHillVertices];
     }
     return self;
@@ -128,18 +127,18 @@
     
 }
 - (void) generateBody {
-    if(_body)
+    /*if(_body)
     {
         for (ChipmunkShape *shape in _body.shapes){
             [_space smartRemove:shape];
         }
     }
-    struct cpPolyline rolypoly;
-    rolypoly.capacity = kMaxBorderVertices;
-    rolypoly.count = _nBorderVertices;
-    rolypoly.verts = _borderVertices;
+    cpPolyline *rolypoly = (cpPolyline *)malloc(sizeof(cpPolyline));
+    rolypoly->capacity = kMaxBorderVertices;
+    rolypoly->count = _nBorderVertices;
+    rolypoly->verts = _borderVertices;
     
-    ChipmunkPolyline *simpleLine = [ChipmunkPolyline fromPolyline:rolypoly];
+    ChipmunkPolyline *simpleLine = [ChipmunkPolyline fromPolyline:*rolypoly];
     
     _body = [ChipmunkBody staticBody];
     NSArray *bodyShapes = [simpleLine asChipmunkSegmentsWithBody:_body radius:0 offset:cpvzero];
@@ -147,7 +146,7 @@
     {
         shape.friction = 5000.0f;
         [_space addShape:shape];
-    }
+    }*/
 }
 
 - (void) generateHills {
@@ -191,9 +190,9 @@
     [self resetHillVertices];
 }
 
-- (void)dealloc {
+/*- (void)dealloc {
     [_stripes release];
     _stripes = NULL;
     [super dealloc];
-}
+}*/
 @end
