@@ -9,6 +9,7 @@
 #import "MenuScene.h"
 #import "cocos2d.h"
 #import "Game.h"
+#import "HowToScene.h"
 
 @implementation MenuScene
 
@@ -17,15 +18,34 @@
     self = [super init];
     if (self != nil)
     {
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"START" fontName:@"Arial" fontSize:48];
-        CCMenuItemLabel *button = [CCMenuItemLabel itemWithLabel:label block:^(id sender)
+        // Creating a start button:
+        CCLabelTTF *startLabel = [CCLabelTTF labelWithString:@"START" fontName:@"Arial" fontSize:48];
+        CCMenuItemLabel *startButton = [CCMenuItemLabel itemWithLabel:startLabel block:^(id sender)
                                    {
                                        Game *gameScene = [[Game alloc] init];
                                        [[CCDirector sharedDirector] pushScene:gameScene];
                                    }];
-        button.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height/2); // Position the button in the middle.
+        startButton.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height - 100); // Position the button in the middle.
         
-        CCMenu *menu = [CCMenu menuWithItems:button, nil];
+        
+        // Creating a start button:
+        CCLabelTTF *howToLabel = [CCLabelTTF labelWithString:@"How To Play" fontName:@"Arial" fontSize:30];
+        CCMenuItemLabel *howToButton = [CCMenuItemLabel itemWithLabel:howToLabel block:^(id sender)
+                                        {
+                                            HowToScene *howToScene = [[HowToScene alloc] init];
+                                            [[CCDirector sharedDirector] pushScene:howToScene];
+                                        }];
+        howToButton.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height - 200); // Position the button in the middle.
+        
+        
+        
+        
+        
+        
+        
+        
+        // Create the menu
+        CCMenu *menu = [CCMenu menuWithItems :startButton, howToButton, nil];
         menu.position = CGPointZero;
         [self addChild:menu];
     }

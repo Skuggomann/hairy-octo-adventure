@@ -143,6 +143,7 @@
 		0B3130E117E85D0D00D0829B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3130E017E85D0D00D0829B /* ImageIO.framework */; };
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* Game.m */; };
+		CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAC617F46C0900363F8A /* HowToScene.m */; };
 		CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */; };
 		CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */; };
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
@@ -483,6 +484,8 @@
 		0B31313C17E85ECE00D0829B /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
 		0B31313E17E8662800D0829B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0B31313F17E8662800D0829B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		CE76DAC517F46C0900363F8A /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
+		CE76DAC617F46C0900363F8A /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
 		CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-hd.png"; path = "Resources/Noise-hd.png"; sourceTree = "<group>"; };
 		CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-iphone5hd.png"; path = "Resources/Noise-iphone5hd.png"; sourceTree = "<group>"; };
 		CE7EA0FD17F351C0006E9A12 /* Noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Noise.png; path = Resources/Noise.png; sourceTree = "<group>"; };
@@ -576,6 +579,8 @@
 				0B3130D917E85CF400D0829B /* IntroLayer.m */,
 				CE84E96417F2EE51002007C6 /* MenuScene.h */,
 				CE84E96517F2EE51002007C6 /* MenuScene.m */,
+				CE76DAC517F46C0900363F8A /* HowToScene.h */,
+				CE76DAC617F46C0900363F8A /* HowToScene.m */,
 				CE84E96717F2F091002007C6 /* Octopus.h */,
 				CE84E96817F2F091002007C6 /* Octopus.m */,
 				CE84E98D17F31BAF002007C6 /* Collision.h */,
@@ -1241,6 +1246,7 @@
 				CE84E96917F2F091002007C6 /* Octopus.m in Sources */,
 				CE84E98F17F31BAF002007C6 /* Collision.m in Sources */,
 				CE7EA10317F35BC9006E9A12 /* Sand.m in Sources */,
+				CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
