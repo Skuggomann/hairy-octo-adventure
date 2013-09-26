@@ -30,12 +30,16 @@
             ChipmunkBody *octoBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
             
             
-            
+            //cpBodySetMoment(octoBody.body, INFINITY);
+            //octoBody.angVelLimit = 0.0f;
             
             
             octoBody.pos = position;
-            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:octoBody width:size.width height:size.height];// Make it the correct shape.
+            //ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:octoBody width:size.width height:size.height];// Make it the correct shape. 
+            ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
+            
             shape.elasticity = 1.0f;
+            //shape.friction = 100.0f;
             
             /*
             NSURL *url = [[NSBundle mainBundle] URLForResource:@"Octo" withExtension:@"png"];
