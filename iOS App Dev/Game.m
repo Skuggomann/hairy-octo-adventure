@@ -97,9 +97,12 @@
     [_parallaxNode addChild:_sand z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     // Mountains
-    //CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v3.png"];
-    //mountains.anchorPoint = ccp(0, 0);
-    //[_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.1f, 1.0f) positionOffset:CGPointZero];
+    CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v3.png"];
+    mountains.anchorPoint = ccp(0, 0.25f);
+    mountains.position = ccp(0.0f, 0.0f);
+    mountains.scale = 2.0f;
+    
+    [_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.1f, 1.0f) positionOffset:CGPointZero];
     
     // Sea
     _seaLayer = [CCLayerColor layerWithColor:ccc4(89, 67, 245, 255) width:_winSize.width  height:_winSize.height];
