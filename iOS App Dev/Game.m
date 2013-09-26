@@ -97,9 +97,9 @@
     [_parallaxNode addChild:_sand z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     // Mountains
-    CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v3.png"];
-    mountains.anchorPoint = ccp(0, 0);
-    [_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.1f, 1.0f) positionOffset:CGPointZero];
+    //CCSprite *mountains = [CCSprite spriteWithFile:@"Cliffs v3.png"];
+    //mountains.anchorPoint = ccp(0, 0);
+    //[_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.1f, 1.0f) positionOffset:CGPointZero];
     
     // Sea
     _seaLayer = [CCLayerColor layerWithColor:ccc4(89, 67, 245, 255) width:_winSize.width  height:_winSize.height];
@@ -116,8 +116,10 @@
 - (void)genBackground {
     
     
-    ccColor4F color3 = [self randomBrightColor];
-    ccColor4F color4 = [self randomBrightColor];
+    //ccColor4F color3 = [self randomBrightColor];//ccc4f(240, 233, 180, 1.0f);
+    ccColor4F color3 = ccc4FFromccc4B(ccc4(210, 200, 150, 255));
+    //ccColor4F color4 = [self randomBrightColor];//ccc4f(50, 250, 50, 1.0f);
+    ccColor4F color4 = ccc4FFromccc4B(ccc4(201, 188, 145, 255));
     CCSprite *stripes = [self stripedSpriteWithColor1:color3 color2:color4
                                          textureWidth:512 textureHeight:512
                                               stripes:4];
@@ -185,7 +187,7 @@
     glVertexAttribPointer(kCCVertexAttrib_Position, 2, GL_FLOAT, GL_FALSE, 0, vertices);
     glVertexAttribPointer(kCCVertexAttrib_Color, 4, GL_FLOAT, GL_TRUE, 0, colors);
     glDrawArrays(GL_TRIANGLES, 0, (GLsizei)nVertices);
-    float gradientAlpha = 0.7;
+    float gradientAlpha = 0.4;
     
     nVertices = 0;
     
