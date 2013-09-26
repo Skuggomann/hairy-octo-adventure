@@ -20,20 +20,18 @@
 }
 
 
-- (bool)collisionBegan:(cpArbiter *)arbiter space:(ChipmunkSpace*)space {
-    cpBody *firstBody;
-    cpBody *secondBody;
-    cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
+- (bool)collisionBegan:(cpArbiter *)arbiter space:(ChipmunkSpace*)space
+{
     
-    ChipmunkBody *firstChipmunkBody = firstBody->data;
-    ChipmunkBody *secondChipmunkBody = secondBody->data;
+    
+    
     
     NSLog(@"Collision happened");
     
     
     /*
-    if ((firstChipmunkBody == _tank.chipmunkBody && secondChipmunkBody == _goal.chipmunkBody) ||
-        (firstChipmunkBody == _goal.chipmunkBody && secondChipmunkBody == _tank.chipmunkBody)){
+    if ([self collisionBetween:arbiter FirstBody:_tank.chipmunkBody SecondBody:_goal.chipmunkBody]	)
+    {
         NSLog(@"TANK HIT GOAL :D:D:D xoxoxo");
         
         // Play sfx
@@ -54,6 +52,28 @@
     */
     
     return YES;
+}
+
+
+- (bool)collisionBetween:(cpArbiter *)arbiter FirstBody:(ChipmunkBody*)bodyOne SecondBody: (ChipmunkBody*)bodyTwo
+{
+    cpBody *firstBody;
+    cpBody *secondBody;
+    cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
+    
+    ChipmunkBody *firstChipmunkBody = firstBody->data;
+    ChipmunkBody *secondChipmunkBody = secondBody->data;
+
+    if ((firstChipmunkBody == bodyOne && secondChipmunkBody == bodyTwo) ||
+        (firstChipmunkBody == bodyTwo && secondChipmunkBody == bodyOne))
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+
 }
 
 
