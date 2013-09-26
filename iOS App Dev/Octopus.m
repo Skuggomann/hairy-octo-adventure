@@ -32,13 +32,15 @@
             
             shape.elasticity = 1.0f;
             
-            
-            
             //[self addChild: tenticle];
             
             // Add to space
             [_space addBody:body];
             [_space addShape:shape];
+            
+            
+            
+            
             
             // Add self to body and body to self
             body.data = self;

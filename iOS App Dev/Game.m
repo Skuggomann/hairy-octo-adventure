@@ -64,6 +64,13 @@
         _swimTime = 0;
         
         
+        // Setup a Chipmunk debug thingy:
+        CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
+        debug.visible = YES;
+        [_gameNode addChild:debug z:20];
+        
+        
+        
         // Your initilization code goes here
         [self scheduleUpdate];
     }
