@@ -11,6 +11,7 @@
 #import "Game.h"
 #import "Octopus.h"
 #import "Sand.h"
+#import "SimpleAudioEngine.h"
 
 @implementation Game
 
@@ -68,6 +69,11 @@
         CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
         debug.visible = YES;
         [_gameNode addChild:debug z:20];
+        
+        
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"23 Dire, Dire Docks.mp3"];
+        
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
         
         
