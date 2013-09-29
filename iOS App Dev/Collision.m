@@ -8,6 +8,8 @@
 
 #import "Collision.h"
 #import "Game.h"
+#import "Portal.h"
+#import "Octopus.h"
 
 
 @implementation Collision
@@ -17,6 +19,8 @@
     self = [super init];
     if (self) {
         _Game = game;
+        // Load configuration file
+        _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
     }
     return self;
 }
@@ -52,6 +56,16 @@
         [_splashParticles resetSystem];
     }
     */
+    if([self collisionBetween:arbiter FirstBody:_Game->_portal.chipmunkBody SecondBody:_Game->_octo.chipmunkBody]){
+        //[space smartRemove:_Game->_portal.chipmunkBody];
+        //[_Game->_portal removeFromParentAndCleanup:YES];
+        /*for (ChipmunkShape *shape in _Game->_portal.chipmunkBody.shapes){
+            [space smartRemove:shape];
+        }
+        [_Game->_portal removeFromParentAndCleanup:YES];*/
+        cpVect impulseVector = cpvmult(cpv(1, 0.1) , _Game->_octo.chipmunkBody.mass * [_configuration[@"speedBoost"]floatValue]);
+        [_Game->_octo.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+    }
     
     return YES;
 }

@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "ChipmunkAutoGeometry.h"
 #define kMaxHillKeyPoints 1000
-#define kHillSegmentWidth 5
+#define kHillSegmentWidth 2
 #define kMaxHillVertices 4000
 #define kMaxBorderVertices 800
 

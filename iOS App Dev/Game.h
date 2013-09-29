@@ -14,11 +14,13 @@
 
 @class Sand;
 @class Octopus;
+@class Portal;
 @interface Game : CCScene <InputLayerDelegate>
 {
     @public
     Octopus *_octo;
     Sand *_sand;
+    Portal *_portal;
     CCLayerColor *_seaLayer;
     CGSize _winSize;
     NSDictionary *_configuration;

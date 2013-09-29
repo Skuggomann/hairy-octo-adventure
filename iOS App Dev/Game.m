@@ -12,6 +12,7 @@
 #import "Octopus.h"
 #import "OctopusFood.h"
 #import "Sand.h"
+#import "Portal.h"
 #import "SimpleAudioEngine.h"
 
 @implementation Game
@@ -76,6 +77,9 @@
             [self addChild:_scoreText];
         }
         
+        _portal = [[Portal alloc] initWithSpace:_space position:ccp(300,200)];//CGPointFromString(_configuration[@"goalPosition"])];
+        [_gameNode addChild:_portal];
+        
         // Create an input layer
         InputLayer *inputLayer = [[InputLayer alloc] init];
         inputLayer.delegate = self;
@@ -86,7 +90,7 @@
         
         // Setup a Chipmunk debug thingy:
         CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debug.visible = NO;
+        debug.visible = YES;
         [_gameNode addChild:debug z:20];
         
         
@@ -313,7 +317,19 @@
     
     _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
     _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
-
+    
+    if(_portal.position.x < _octo.position.x-_winSize.width/4+30)
+    {
+        for (ChipmunkShape *shape in _portal.chipmunkBody.shapes){
+            [_space smartRemove:shape];
+        }
+        [_portal removeFromParentAndCleanup:YES];
+        NSLog(@"removed portal");
+        _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,200)];//CGPointFromString(_configuration[@"goalPosition"])];
+        [_gameNode addChild:_portal];
+        NSLog(@"added portal");
+        
+    }
     
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
