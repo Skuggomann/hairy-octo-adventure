@@ -13,7 +13,7 @@
 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position
 {
-    self = [super initWithFile:@"Portal.png"];
+    self = [super initWithFile:@"Speedarrow.png"];
     if (self) {
         CGSize size = self.textureRect.size;
         
