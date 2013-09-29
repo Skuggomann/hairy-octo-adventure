@@ -272,6 +272,7 @@
 		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
 		CE8B230317F8651100403213 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230217F8651100403213 /* Sand.m */; };
+		CE8B230617F87FAD00403213 /* Portal.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230517F87FAD00403213 /* Portal.m */; };
 		CEA37D8C17F3792C00DB14C7 /* Cliffs v3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */; };
 		CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDED63117F3762D00E019ED /* Cliffs v3.png */; };
 /* End PBXBuildFile section */
@@ -737,6 +738,8 @@
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
 		CE8B230117F8651100403213 /* Sand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sand.h; sourceTree = "<group>"; };
 		CE8B230217F8651100403213 /* Sand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sand.m; sourceTree = "<group>"; };
+		CE8B230417F87FAD00403213 /* Portal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portal.h; sourceTree = "<group>"; };
+		CE8B230517F87FAD00403213 /* Portal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Portal.m; sourceTree = "<group>"; };
 		CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3-hd.png"; path = "Resources/Cliffs v3-hd.png"; sourceTree = "<group>"; };
 		CEDED63117F3762D00E019ED /* Cliffs v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3.png"; path = "Resources/Cliffs v3.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -802,6 +805,8 @@
 		0B312F4117E85CF200D0829B /* iOS App Dev */ = {
 			isa = PBXGroup;
 			children = (
+				CE8B230417F87FAD00403213 /* Portal.h */,
+				CE8B230517F87FAD00403213 /* Portal.m */,
 				CE8B230117F8651100403213 /* Sand.h */,
 				CE8B230217F8651100403213 /* Sand.m */,
 				0B3130D217E85CF400D0829B /* AppDelegate.h */,
@@ -1726,6 +1731,7 @@
 				CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */,
 				CE8B230317F8651100403213 /* Sand.m in Sources */,
 				CE78B7AF17F85A120011FB88 /* OctopusFood.m in Sources */,
+				CE8B230617F87FAD00403213 /* Portal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
