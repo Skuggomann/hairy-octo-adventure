@@ -59,7 +59,7 @@
         
         
         // Add Octo
-        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:40];
+        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:3	];
         [_gameNode addChild:_octo];
         
         _score = 0;
