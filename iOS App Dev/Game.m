@@ -359,7 +359,7 @@
         
         if(lastInk != nil)
         {
-            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + 300,200)];
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*_winSize.height/4 +_winSize.height/3)];
             [_colletables addChild:inkTest];
         }
         else
