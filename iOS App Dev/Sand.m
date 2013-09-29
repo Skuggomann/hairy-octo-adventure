@@ -22,7 +22,7 @@
         // Load configuration file
         _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
         self.shaderProgram = [[CCShaderCache sharedShaderCache] programForKey:kCCShader_PositionTexture];
-        [self generateHills];
+        [self generateHills:0.0f];
         [self resetHillVertices];
     }
     return self;
@@ -51,9 +51,13 @@
         _nBorderVertices = 0;
         CGPoint p0, p1, pt0, pt1;
         p0 = _hillKeyPoints[_fromKeyPointI];
-        for (int i=_fromKeyPointI+1; i<_toKeyPointI+1; i++) {
+        for (int i=_fromKeyPointI+1; i<=_toKeyPointI; i++) {
             p1 = _hillKeyPoints[i];
-                
+            
+            /*if(p1.x-p0.x >300){
+                p0.x = p1.x-140;
+                p0.y = p1.y;
+            }*/
             // triangle strip between p0 and p1
             int hSegments = floorf((p1.x-p0.x)/kHillSegmentWidth);
             float dx = (p1.x - p0.x) / hSegments;
@@ -160,35 +164,40 @@
     }
 }
 
-- (void) generateHills {
+- (void) generateHills:(float)startX {
     
     float minDX = [_configuration[@"sandMinDX"]floatValue];
     float minDY = [_configuration[@"sandMinDY"]floatValue];
     int rangeDX = [_configuration[@"sandRangeDX"]intValue];
     int rangeDY = [_configuration[@"sandRangeDY"]intValue];
-    
-    float x = -minDX;
+    _fromKeyPointI = 0;
+    _toKeyPointI = 0;
+    float x = startX;
     float y = _winSize.height/4;
     
     float dy, ny;
     float sign = 1; // +1 - going up, -1 - going  down
-    float paddingTop = 20;
-    float paddingBottom = 20;
+    float paddingTop = _winSize.height/4;
+    float paddingBottom = _winSize.height/20;
     
     for (int i=0; i<kMaxHillKeyPoints; i++) {
         _hillKeyPoints[i] = CGPointMake(x, y);
         if (i == 0) {
-            x = 0;
+            x = startX;
             y = _winSize.height/4;
         } else {
             x += rand()%rangeDX+minDX;
-            while(true) {
+            //while(true) {
                 dy = rand()%rangeDY+minDY;
                 ny = y + dy*sign;
-                if(ny < _winSize.height-paddingTop && ny > paddingBottom) {
+                if(ny<paddingBottom)
+                    ny = paddingBottom;
+                if(ny>paddingTop)
+                    ny = paddingTop;
+                /*if(ny < _winSize.height-paddingTop && ny > paddingBottom) {
                     break;
                 }
-            }
+            }*/
             y = ny;
         }
         sign *= -1;
@@ -199,6 +208,10 @@
     _offsetX = newOffsetX;
     //self.position = CGPointMake(-_offsetX*self.scale, 0);
     [self resetHillVertices];
+    if(_fromKeyPointI>900||_toKeyPointI>900)
+    {
+        [self generateHills:_offsetX];
+    }
 }
 
 /*- (void)dealloc {

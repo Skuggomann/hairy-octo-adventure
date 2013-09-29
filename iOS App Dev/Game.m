@@ -99,7 +99,7 @@
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
-        
+        //self.scale =0.5;
         
         // Your initilization code goes here
         [self scheduleUpdate];
@@ -149,7 +149,7 @@
     CCSprite *stripes = [self stripedSpriteWithColor1:color3 color2:color4
                                          textureWidth:512
                                         textureHeight:512
-                                              stripes:4];
+                                              stripes:20];
     ccTexParams tp2 = {GL_LINEAR, GL_LINEAR, GL_REPEAT,GL_CLAMP_TO_EDGE};
     [stripes.texture setTexParameters:&tp2];
     _sand.stripes = stripes;

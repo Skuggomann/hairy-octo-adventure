@@ -5,7 +5,7 @@
 	<key>speedBoost</key>
 	<string>1000.0f</string>
 	<key>sandMinDX</key>
-	<string>140.0f</string>
+	<string>200.0f</string>
 	<key>sandMinDY</key>
 	<string>40.0f</string>
 	<key>sandRangeDX</key>
