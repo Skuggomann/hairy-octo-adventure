@@ -258,10 +258,11 @@
 		CE781EB617F4993D00C8A5C7 /* wind.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4517F4993D00C8A5C7 /* wind.WAV */; };
 		CE781EB717F4993D00C8A5C7 /* yoshi.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781E4617F4993D00C8A5C7 /* yoshi.WAV */; };
 		CE78B7AF17F85A120011FB88 /* OctopusFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CE78B7AE17F85A120011FB88 /* OctopusFood.m */; };
+		CE78B7B217F87BC60011FB88 /* ink-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE78B7B017F87BC60011FB88 /* ink-hd.png */; };
+		CE78B7B317F87BC60011FB88 /* ink.png in Resources */ = {isa = PBXBuildFile; fileRef = CE78B7B117F87BC60011FB88 /* ink.png */; };
 		CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */; };
 		CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */; };
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
-		CE7EA10317F35BC9006E9A12 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7EA10217F35BC9006E9A12 /* Sand.m */; };
 		CE81270517F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */; };
 		CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96217F2EB48002007C6 /* InputLayer.m */; };
 		CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96517F2EE51002007C6 /* MenuScene.m */; };
@@ -717,6 +718,8 @@
 		CE781E4617F4993D00C8A5C7 /* yoshi.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yoshi.WAV; sourceTree = "<group>"; };
 		CE78B7AD17F85A120011FB88 /* OctopusFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OctopusFood.h; sourceTree = "<group>"; };
 		CE78B7AE17F85A120011FB88 /* OctopusFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OctopusFood.m; sourceTree = "<group>"; };
+		CE78B7B017F87BC60011FB88 /* ink-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ink-hd.png"; path = "Resources/ink-hd.png"; sourceTree = "<group>"; };
+		CE78B7B117F87BC60011FB88 /* ink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ink.png; path = Resources/ink.png; sourceTree = "<group>"; };
 		CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-hd.png"; path = "Resources/Noise-hd.png"; sourceTree = "<group>"; };
 		CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-iphone5hd.png"; path = "Resources/Noise-iphone5hd.png"; sourceTree = "<group>"; };
 		CE7EA0FD17F351C0006E9A12 /* Noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Noise.png; path = Resources/Noise.png; sourceTree = "<group>"; };
@@ -830,6 +833,8 @@
 			isa = PBXGroup;
 			children = (
 				CE781DD517F4993D00C8A5C7 /* Sounds */,
+				CE78B7B017F87BC60011FB88 /* ink-hd.png */,
+				CE78B7B117F87BC60011FB88 /* ink.png */,
 				CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */,
 				CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */,
 				CEDED63117F3762D00E019ED /* Cliffs v3.png */,
@@ -1590,6 +1595,8 @@
 				CE781EB517F4993D00C8A5C7 /* waterfall2.WAV in Resources */,
 				CE781EB617F4993D00C8A5C7 /* wind.WAV in Resources */,
 				CE781EB717F4993D00C8A5C7 /* yoshi.WAV in Resources */,
+				CE78B7B217F87BC60011FB88 /* ink-hd.png in Resources */,
+				CE78B7B317F87BC60011FB88 /* ink.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

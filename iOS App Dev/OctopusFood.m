@@ -15,7 +15,7 @@
 {
     // The Octopus main diet is crabs. They also eat mollusks, crayfish, scallops, snails, turtles, shrimp and fish.
     
-    self = [super initWithFile:@"OctoFood.png"];
+    self = [super initWithFile:@"ink.png"];
     if (self)
     {
         _space = space;
@@ -44,8 +44,6 @@
             // Add self to body and body to self
             foodBody.data = self;
             self.chipmunkBody = foodBody;
-            
- 
             
         }
     }
