@@ -60,7 +60,7 @@
              */
             
             
-            
+            _lives = 3;
             
             
             //[self addChild: tenticle];

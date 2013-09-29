@@ -29,6 +29,9 @@
     Collision *_collisionHandler;
     Boolean _swimming;
     CGFloat _swimTime;
+    int _score;
+    CCLabelTTF *_lifeText;
+    CCLabelTTF *_scoreText;
     
     
     

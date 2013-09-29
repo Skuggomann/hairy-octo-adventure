@@ -17,5 +17,6 @@
 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 - (void)swimUp;
+@property int lives;
 
 @end

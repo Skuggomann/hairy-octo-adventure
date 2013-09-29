@@ -55,9 +55,26 @@
         
         [_space addShape:shape];
         
+        
+        
         // Add Octo
         _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"])];
         [_gameNode addChild:_octo];
+        
+        _score = 0;
+        
+        
+        
+        if (_lifeText == NULL){
+            _lifeText = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Lives:%d", _octo.lives]	 fontName:@"Arial" fontSize:18];
+            _lifeText.position = ccp(50,20);
+            [self addChild:_lifeText];
+        }
+        if (_scoreText == NULL){
+            _scoreText = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score:%d", _score]	 fontName:@"Arial" fontSize:18];
+            _scoreText.position = ccp(200,20);
+            [self addChild:_scoreText];
+        }
         
         // Create an input layer
         InputLayer *inputLayer = [[InputLayer alloc] init];
@@ -292,6 +309,12 @@
         [_octo swimUp];
     }
     
+    _score = _octo.position.x;
+    
+    _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
+    _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
+
+    
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
 }
@@ -299,7 +322,7 @@
 
 - (void)touchBegan
 {
-    NSLog(@"touch!");
+    //NSLog(@"touch!");
     
     _swimming = YES;
 }
