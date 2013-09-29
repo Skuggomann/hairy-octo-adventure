@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Game.h"
 
 @interface Octopus : CCPhysicsSprite
 {
@@ -15,8 +16,10 @@
     NSDictionary *_configuration;
 }
 
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
+- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position lives:(int)lives;
 - (void)swimUp;
+- (void)shrink:(Game*)game;
+- (void)grow;
 @property int lives;
 
 @end
