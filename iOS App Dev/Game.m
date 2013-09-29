@@ -59,12 +59,13 @@
         
         
         // Add Octo
-        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:40];
+        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:3	];
         [_gameNode addChild:_octo];
         
+
         _score = 0;
         _extraScore = 0;
-        
+        _collectablesCollected = 0;
         
         
         if (_lifeText == NULL){
@@ -80,6 +81,17 @@
         
         _portal = [[Portal alloc] initWithSpace:_space position:ccp(300,200)];//CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_portal];
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         // Create an input layer
         InputLayer *inputLayer = [[InputLayer alloc] init];
@@ -99,8 +111,7 @@
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
-        //self.scale =0.5;
-        
+
         // Your initilization code goes here
         [self scheduleUpdate];
     }
@@ -333,6 +344,27 @@
     }
     
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
+    
+    
+    
+    
+    
+    
+    
+    // Add some ink bottles.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 

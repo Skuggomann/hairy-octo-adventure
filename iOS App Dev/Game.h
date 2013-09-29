@@ -31,12 +31,15 @@
     Collision *_collisionHandler;
     Boolean _swimming;
     CGFloat _swimTime;
+    
+    
+    int _collectablesCollected;
     int _score;
     int _extraScore;
     CCLabelTTF *_lifeText;
     CCLabelTTF *_scoreText;
     
-    
+   
     
 }
 
