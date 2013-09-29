@@ -14,11 +14,13 @@
 
 @class Sand;
 @class Octopus;
+@class Portal;
 @interface Game : CCScene <InputLayerDelegate>
 {
     @public
     Octopus *_octo;
     Sand *_sand;
+    Portal *_portal;
     CCLayerColor *_seaLayer;
     CGSize _winSize;
     NSDictionary *_configuration;
@@ -29,9 +31,15 @@
     Collision *_collisionHandler;
     Boolean _swimming;
     CGFloat _swimTime;
-    int score;
-    int collectablesCollected;
     
+    
+    int _collectablesCollected;
+    int _score;
+    int _extraScore;
+    CCLabelTTF *_lifeText;
+    CCLabelTTF *_scoreText;
+    
+   
     
 }
 

@@ -14,6 +14,7 @@
 @interface Collision : NSObject
 {
     Game *_Game;
+    NSDictionary *_configuration;
 }
 
 - (id)initWithGame:(Game *)game;

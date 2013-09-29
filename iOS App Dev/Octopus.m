@@ -9,9 +9,10 @@
 #import "Octopus.h"
 #import "ChipmunkAutoGeometry.h"
 #import "SimpleAudioEngine.h"
+#import "ccTypes.h"
 
 @implementation Octopus 
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
+- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position lives:(int)lives;
 {
     self = [super initWithFile:@"Octo.png"];
     if (self)
@@ -24,7 +25,10 @@
         
         if (_space != nil)
         {
+            self.scale = 0.7+lives*.1;
             CGSize size = self.textureRect.size;
+            size.height = size.height*(0.7+lives*.1);
+            size.width = size.width*(0.7+lives*.1);
             cpFloat mass = size.width * size.height;
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);
             
@@ -60,7 +64,7 @@
              */
             
             
-            
+            _lives = lives;
             
             
             //[self addChild: tenticle];
@@ -87,6 +91,99 @@
     cpVect directionalVector = cpvsub(CGPointFromString(_configuration[@"swimDirection"]), CGPointZero);
     cpVect impulseVector = cpvmult(directionalVector, self.chipmunkBody.mass * [_configuration[@"forceUp"]floatValue]);
     [self.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+}
+
+-(ccColor3B)randomColor
+{
+    float r = arc4random() % 255;
+    float g = arc4random() % 255;
+    float b = arc4random() % 255;
+    return ccc3(r,g,b);
+}
+
+- (void)shrink:(Game*)game
+{
+    _lives--;
+    if(_lives<=0){
+            CCLabelTTF *dead = [CCLabelTTF labelWithString:@"YOU ARE DEAD"	 fontName:@"Arial" fontSize:30];
+            dead.position = ccp(CCRANDOM_0_1()*game->_winSize.width,CCRANDOM_0_1()*game->_winSize.height);
+            dead.rotationX = CCRANDOM_0_1()*360;
+            dead.rotationY = CCRANDOM_0_1()*360;
+            dead.color = [self randomColor];
+            [game addChild:dead];
+        //lose game
+    }
+    else{
+        self.scale = 0.7+_lives*.1;
+        CGSize size = self.textureRect.size;
+        size.height = size.height*(0.7+_lives	*.1);
+        size.width = size.width*(0.7+_lives*.1);
+        cpFloat mass = size.width * size.height;
+        cpFloat moment = cpMomentForBox(mass, size.width, size.height);
+    
+        ChipmunkBody *octoBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
+    
+    
+        octoBody.pos = self.position;
+        ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
+    
+        shape.elasticity = 1.0f;
+        shape.friction = 1000.0f;
+    
+    
+        [_space removeBody:self.chipmunkBody];
+        for (ChipmunkShape * s in self.chipmunkBody.shapes){
+            [_space removeShape:s];
+        }
+        [_space addBody:octoBody];
+        [_space addShape:shape];
+    
+    
+    
+    
+        // Add self to body and body to self
+        octoBody.data = self;
+        self.chipmunkBody = octoBody;
+    }
+}
+
+-(void) grow
+{
+    if(_lives>7)
+        ;//8 is the maximum number of extra lives
+    else{
+        _lives++;
+        self.scale = 0.7+_lives*.1;
+        CGSize size = self.textureRect.size;
+        size.height = size.height*(0.7+_lives*.1);
+        size.width = size.width*(0.7+_lives*.1);
+        cpFloat mass = size.width * size.height;
+        cpFloat moment = cpMomentForBox(mass, size.width, size.height);
+        
+        ChipmunkBody *octoBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
+        
+        
+        octoBody.pos = self.position;
+        ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
+        
+        shape.elasticity = 1.0f;
+        shape.friction = 1000.0f;
+        
+        
+        [_space removeBody:self.chipmunkBody];
+        for (ChipmunkShape * s in self.chipmunkBody.shapes){
+            [_space removeShape:s];
+        }
+        [_space addBody:octoBody];
+        [_space addShape:shape];
+        
+        
+        
+        
+        // Add self to body and body to self
+        octoBody.data = self;
+        self.chipmunkBody = octoBody;
+    }
 }
 
 @end

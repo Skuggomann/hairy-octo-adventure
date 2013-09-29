@@ -12,6 +12,7 @@
 #import "Octopus.h"
 #import "OctopusFood.h"
 #import "Sand.h"
+#import "Portal.h"
 #import "SimpleAudioEngine.h"
 
 @implementation Game
@@ -55,9 +56,37 @@
         
         [_space addShape:shape];
         
+        
+        
         // Add Octo
-        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"])];
+        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:40];
         [_gameNode addChild:_octo];
+        
+
+        _score = 0;
+        _extraScore = 0;
+        _collectablesCollected = 0;
+        
+        
+        if (_lifeText == NULL){
+            _lifeText = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Lives:%d", _octo.lives]	 fontName:@"Arial" fontSize:18];
+            _lifeText.position = ccp(50,20);
+            [self addChild:_lifeText];
+        }
+        if (_scoreText == NULL){
+            _scoreText = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score:%d", _score+_extraScore]	 fontName:@"Arial" fontSize:18];
+            _scoreText.position = ccp(200,20);
+            [self addChild:_scoreText];
+        }
+        
+        _portal = [[Portal alloc] initWithSpace:_space position:ccp(300,200)];//CGPointFromString(_configuration[@"goalPosition"])];
+        [_gameNode addChild:_portal];
+
+        
+        
+        
+        
+        
         
         
         
@@ -74,7 +103,7 @@
         
         // Setup a Chipmunk debug thingy:
         CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debug.visible = NO;
+        debug.visible = YES;
         [_gameNode addChild:debug z:20];
         
         
@@ -83,8 +112,8 @@
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
         
-        score = 0;
-        collectablesCollected = 0;
+
+        
         
         
         // Your initilization code goes here
@@ -300,14 +329,52 @@
         [_octo swimUp];
     }
     
+    _score = _octo.position.x+_extraScore;
+    
+    _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
+    _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
+    
+    if(_portal.position.x < _octo.position.x-_winSize.width/4+30)
+    {
+        for (ChipmunkShape *shape in _portal.chipmunkBody.shapes){
+            [_space smartRemove:shape];
+        }
+        [_portal removeFromParentAndCleanup:YES];
+        NSLog(@"removed portal");
+        _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,200)];//CGPointFromString(_configuration[@"goalPosition"])];
+        [_gameNode addChild:_portal];
+        NSLog(@"added portal");
+        
+    }
+    
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
+    
+    
+    
+    
+    
+    
+    
+    // Add some ink bottles.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
 
 
 - (void)touchBegan
 {
-    NSLog(@"touch!");
+    //NSLog(@"touch!");
     
     _swimming = YES;
 }

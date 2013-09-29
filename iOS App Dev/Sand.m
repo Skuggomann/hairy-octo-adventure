@@ -19,6 +19,8 @@
     {
         _space = space;
         _winSize = [CCDirector sharedDirector].winSize;
+        // Load configuration file
+        _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
         self.shaderProgram = [[CCShaderCache sharedShaderCache] programForKey:kCCShader_PositionTexture];
         [self generateHills];
         [self resetHillVertices];
@@ -160,10 +162,10 @@
 
 - (void) generateHills {
     
-    float minDX = 140;
-    float minDY = 40;
-    int rangeDX = 80;
-    int rangeDY = 40;
+    float minDX = [_configuration[@"sandMinDX"]floatValue];
+    float minDY = [_configuration[@"sandMinDY"]floatValue];
+    int rangeDX = [_configuration[@"sandRangeDX"]intValue];
+    int rangeDY = [_configuration[@"sandRangeDY"]intValue];
     
     float x = -minDX;
     float y = _winSize.height/4;
