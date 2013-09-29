@@ -16,6 +16,7 @@
 @class Octopus;
 @interface Game : CCScene <InputLayerDelegate>
 {
+    @public
     Octopus *_octo;
     Sand *_sand;
     CCLayerColor *_seaLayer;

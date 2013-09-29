@@ -34,7 +34,7 @@
         _space.gravity = ccp(0.f, -gravity);
         _space.damping = 0.5;
         // Register collision handler
-        _collisionHandler = [[Collision alloc] init];
+        _collisionHandler = [[Collision alloc] initWithGame:self];
         
         [_space setDefaultCollisionHandler:_collisionHandler
                                      begin:@selector(collisionBegan:space:)

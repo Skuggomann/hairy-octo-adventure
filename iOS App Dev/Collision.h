@@ -10,8 +10,12 @@
 #import "ChipmunkAutoGeometry.h"
 
 
-
+@class Game;
 @interface Collision : NSObject
+{
+    Game *_Game;
+}
 
+- (id)initWithGame:(Game *)game;
 
 @end

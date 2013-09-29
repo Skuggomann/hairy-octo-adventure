@@ -7,14 +7,16 @@
 //
 
 #import "Collision.h"
+#import "Game.h"
+
 
 @implementation Collision
 
-- (id)init
+- (id)initWithGame:(Game *)game;
 {
     self = [super init];
     if (self) {
-        
+        _Game = game;
     }
     return self;
 }
@@ -24,7 +26,7 @@
 {
     
     
-    
+    //_Game->_octo;
     
     NSLog(@"Collision happened");
     
