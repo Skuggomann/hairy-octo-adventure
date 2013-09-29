@@ -59,6 +59,11 @@
         _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"])];
         [_gameNode addChild:_octo];
         
+        
+        
+        
+        
+        
         // Create an input layer
         InputLayer *inputLayer = [[InputLayer alloc] init];
         inputLayer.delegate = self;
@@ -77,6 +82,9 @@
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
+        
+        score = 0;
+        collectablesCollected = 0;
         
         
         // Your initilization code goes here

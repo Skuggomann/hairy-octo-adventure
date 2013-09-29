@@ -8,6 +8,8 @@
 
 #import "Collision.h"
 #import "Game.h"
+#import "Octopus.h"
+#import "OctopusFood.h"
 
 
 @implementation Collision
@@ -53,6 +55,44 @@
     }
     */
     
+    /*
+    if ([self collisionBetween:arbiter FirstBody:_Game->_octo.chipmunkBody SecondBody:_Game->]	)
+    {
+        
+    }
+    */
+    
+    
+    // Chekk if you are coliding with a collectable object that gives points! :)
+    cpBody *firstBody;
+    cpBody *secondBody;
+    cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
+    
+    ChipmunkBody *firstChipmunkBody = firstBody->data;
+    ChipmunkBody *secondChipmunkBody = secondBody->data;
+    
+    if ([firstChipmunkBody.data isKindOfClass:[OctopusFood class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]] )
+    {
+        if ([firstChipmunkBody.data isKindOfClass:[Octopus class]] && [secondChipmunkBody.data isKindOfClass:[OctopusFood class]] ) {
+            
+            for (ChipmunkShape *shape in firstChipmunkBody.shapes)
+            {
+                [space smartRemove:shape];
+            }
+            [firstChipmunkBody.data removeFromParentAndCleanup:YES];
+
+            //TODO: Give the player some points.
+            ++_Game->collectablesCollected;
+            _Game->score += 0.1 * _Game->_octo.position.x * _Game->collectablesCollected;
+            
+            
+            NSLog(@"Octo got ink!");
+        }
+    }
+    
+   
+    
+        
     return YES;
 }
 

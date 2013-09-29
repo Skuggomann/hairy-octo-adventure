@@ -29,7 +29,8 @@
     Collision *_collisionHandler;
     Boolean _swimming;
     CGFloat _swimTime;
-    
+    int score;
+    int collectablesCollected;
     
     
 }
