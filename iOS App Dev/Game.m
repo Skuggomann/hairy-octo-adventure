@@ -124,7 +124,8 @@
     //ccColor4F color4 = [self randomBrightColor];//ccc4f(50, 250, 50, 1.0f);
     ccColor4F color4 = ccc4FFromccc4B(ccc4(201, 188, 145, 255));
     CCSprite *stripes = [self stripedSpriteWithColor1:color3 color2:color4
-                                         textureWidth:512 textureHeight:512
+                                         textureWidth:512
+                                        textureHeight:512
                                               stripes:4];
     ccTexParams tp2 = {GL_LINEAR, GL_LINEAR, GL_REPEAT,GL_CLAMP_TO_EDGE};
     [stripes.texture setTexParameters:&tp2];
@@ -290,7 +291,7 @@
         [_octo swimUp];
     }
     
-    NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
+    //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
 }
 
