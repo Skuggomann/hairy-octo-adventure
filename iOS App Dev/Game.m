@@ -83,11 +83,9 @@
         [_gameNode addChild:_portal];
 
         
-        
-        
-        
-        
-        
+        // Add collectables container (Ink goes in here).
+        _colletables = [CCNode node];
+        [_gameNode addChild:_colletables];
         
         
         
@@ -355,12 +353,47 @@
     // Add some ink bottles.
     
     
-    
-    
-    
-    
-    
-    
+    if (_colletables.children.count < 10)
+    {
+        OctopusFood *lastInk = _colletables.children.lastObject;
+        
+        if(lastInk != nil)
+        {
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + 300,200)];
+            [_colletables addChild:inkTest];
+        }
+        else
+        {
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(400,200)];
+            [_colletables addChild:inkTest];
+        }
+        
+        
+        
+    }
+    else
+    {
+        // chekk if the oldest collectable is still on screen.        
+        OctopusFood *firstInk = [_colletables.children objectAtIndex:0];
+        
+        
+        CGPoint position = [_colletables convertToWorldSpace:firstInk.position];
+        //NSLog(@"touch: %@", NSStringFromCGPoint(position));
+        //NSLog(@"tank: %@", NSStringFromCGPoint(firstInk.position));
+        
+        if(position.x < 0)
+        {
+            
+            for (ChipmunkShape *shape in firstInk.chipmunkBody.shapes)
+            {
+                [_space smartRemove:shape];
+            }
+            [firstInk removeFromParentAndCleanup:YES];
+        
+        }
+        
+        
+    }
     
     
     

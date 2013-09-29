@@ -31,6 +31,7 @@
     Collision *_collisionHandler;
     Boolean _swimming;
     CGFloat _swimTime;
+    CCNode *_colletables;
     
     
     int _collectablesCollected;
