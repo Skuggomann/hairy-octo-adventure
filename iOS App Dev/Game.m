@@ -10,6 +10,7 @@
 
 #import "Game.h"
 #import "Octopus.h"
+#import "OctopusFood.h"
 #import "Sand.h"
 #import "SimpleAudioEngine.h"
 
