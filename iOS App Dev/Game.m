@@ -330,14 +330,15 @@
     _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
     _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
     
-    if(_portal.position.x < _octo.position.x-_winSize.width/4+30)
+    if(_portal.position.x < _octo.position.x-(_winSize.width/4+_portal.textureRect.size.width))
     {
         for (ChipmunkShape *shape in _portal.chipmunkBody.shapes){
             [_space smartRemove:shape];
         }
         [_portal removeFromParentAndCleanup:YES];
         NSLog(@"removed portal");
-        _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,200)];//CGPointFromString(_configuration[@"goalPosition"])];
+        float portaly= CCRANDOM_0_1()*_winSize.height/4 +_winSize.height/3;
+        _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,portaly)];//CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_portal];
         NSLog(@"added portal");
         
