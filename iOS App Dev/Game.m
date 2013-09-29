@@ -58,10 +58,11 @@
         
         
         // Add Octo
-        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"])];
+        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:40];
         [_gameNode addChild:_octo];
         
         _score = 0;
+        _extraScore = 0;
         
         
         
@@ -71,7 +72,7 @@
             [self addChild:_lifeText];
         }
         if (_scoreText == NULL){
-            _scoreText = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score:%d", _score]	 fontName:@"Arial" fontSize:18];
+            _scoreText = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score:%d", _score+_extraScore]	 fontName:@"Arial" fontSize:18];
             _scoreText.position = ccp(200,20);
             [self addChild:_scoreText];
         }
@@ -309,14 +310,13 @@
         [_octo swimUp];
     }
     
-    _score = _octo.position.x;
+    _score = _octo.position.x+_extraScore	;
     
     _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
     _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
 
-    
+
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
-    
 }
 
 
