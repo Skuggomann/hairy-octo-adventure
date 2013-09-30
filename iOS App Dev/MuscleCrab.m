@@ -72,5 +72,10 @@
 - (void) hitOcto;
 {
     NSLog(@"SnipSnip");
+    [super hitOcto];
+}
+-(void) update:(ccTime)delta;
+{
+    [super update:delta];
 }
 @end

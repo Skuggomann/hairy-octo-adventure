@@ -35,7 +35,7 @@
     
     //_Game->_octo;
     
-    NSLog(@"Collision happened");
+    //NSLog(@"Collision happened");
     
     
     /*
@@ -137,15 +137,58 @@
         {
             enemyChipmunkBody = secondChipmunkBody;
         }
-        [enemyChipmunkBody.data hitOcto];
+        NSLog(@"%s",[enemyChipmunkBody.data isLethal]? "true" : "false");
+        if([enemyChipmunkBody.data isLethal])
+        {
+            [enemyChipmunkBody.data hitOcto];
+            
+        }
+        
+        //[space addPostStepCallback:self selector:@selector(sleep:) key:enemyChipmunkBody];
+        //cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)SleepEnemy, enemyChipmunkBody.body, NULL);
+        //cpBodySleep(enemyChipmunkBody.body);
         [_Game->_octo shrink:_Game];
+        return YES;
     }
+    
    
     
         
     return YES;
 }
-
+/*
+- (bool)collisionEnded:(cpArbiter *)arbiter space:(ChipmunkSpace*)space
+{
+    cpBody *firstBody;
+    cpBody *secondBody;
+    cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
+    
+    ChipmunkBody *firstChipmunkBody = firstBody->data;
+    ChipmunkBody *secondChipmunkBody = secondBody->data;
+    //Enemy hit
+    if  (
+         ([firstChipmunkBody.data isKindOfClass:[Enemy class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]])
+         ||
+         ([firstChipmunkBody.data isKindOfClass:[Octopus class]] && [secondChipmunkBody.data isKindOfClass:[Enemy class]])
+         )
+    {
+        ChipmunkBody *enemyChipmunkBody;
+        if([firstChipmunkBody.data isKindOfClass:[Enemy class]])
+        {
+            enemyChipmunkBody = firstChipmunkBody;
+        }
+        else
+        {
+            enemyChipmunkBody = secondChipmunkBody;
+        }
+        [enemyChipmunkBody sleep];
+    }
+    return YES;
+}
+- (void) sleep:(ChipmunkBody*) body
+{
+    //[body sleep];
+}*/
 
 - (bool)collisionBetween:(cpArbiter *)arbiter FirstBody:(ChipmunkBody*)bodyOne SecondBody: (ChipmunkBody*)bodyTwo
 {

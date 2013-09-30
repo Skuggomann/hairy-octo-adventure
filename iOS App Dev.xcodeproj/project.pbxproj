@@ -143,6 +143,7 @@
 		0B3130E117E85D0D00D0829B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3130E017E85D0D00D0829B /* ImageIO.framework */; };
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* Game.m */; };
+		CE0F314517F9EA8600066469 /* Octo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314417F9EA8600066469 /* Octo-hd.png */; };
 		CE5BA44517F9CA1D0043DDEC /* Tentacle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */; };
 		CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAC617F46C0900363F8A /* HowToScene.m */; };
 		CE781E4717F4993D00C8A5C7 /* bird1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD617F4993D00C8A5C7 /* bird1.WAV */; };
@@ -264,6 +265,7 @@
 		CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */; };
 		CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */; };
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
+		CE7FCBEC17F9C6C500FC92AB /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */; };
 		CE81270517F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */; };
 		CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96217F2EB48002007C6 /* InputLayer.m */; };
 		CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96517F2EE51002007C6 /* MenuScene.m */; };
@@ -272,6 +274,7 @@
 		CE84E98C17F31314002007C6 /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98B17F31314002007C6 /* Configurations.plist */; };
 		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
+		CE8ACAB317FA021700D06213 /* JellyFish.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8ACAB217FA021700D06213 /* JellyFish.m */; };
 		CE8B230317F8651100403213 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230217F8651100403213 /* Sand.m */; };
 		CE8B230617F87FAD00403213 /* Portal.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230517F87FAD00403213 /* Portal.m */; };
 		CE906BE017F8BDCA0007EBAA /* OctopusTentacle.m in Sources */ = {isa = PBXBuildFile; fileRef = CE906BDF17F8BDCA0007EBAA /* OctopusTentacle.m */; };
@@ -282,6 +285,7 @@
 		CEA9813A17F8E06D00A29847 /* GoFast.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813917F8E06D00A29847 /* GoFast.plist */; };
 		CEA9813C17F8FAC600A29847 /* InkSpurt.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813B17F8FAC600A29847 /* InkSpurt.plist */; };
 		CEA9813E17F9000A00A29847 /* inkTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813D17F9000A00A29847 /* inkTexture.png */; };
+		CED3D3FB17F9DEAE007FC560 /* GameOverBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */; };
 		CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDED63117F3762D00E019ED /* Cliffs v3.png */; };
 		CEFDB4F617F9039400DA40AE /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB4F517F9039300DA40AE /* Enemy.m */; };
 		CEFDB4F917F9061800DA40AE /* MuscleCrab.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFDB4F817F9061800DA40AE /* MuscleCrab.m */; };
@@ -614,6 +618,7 @@
 		0B31313C17E85ECE00D0829B /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
 		0B31313E17E8662800D0829B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0B31313F17E8662800D0829B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		CE0F314417F9EA8600066469 /* Octo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Octo-hd.png"; path = "Resources/Octo-hd.png"; sourceTree = "<group>"; };
 		CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tentacle-hd.png"; path = "Resources/Tentacle-hd.png"; sourceTree = "<group>"; };
 		CE76DAC517F46C0900363F8A /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
 		CE76DAC617F46C0900363F8A /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
@@ -737,6 +742,8 @@
 		CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-hd.png"; path = "Resources/Noise-hd.png"; sourceTree = "<group>"; };
 		CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-iphone5hd.png"; path = "Resources/Noise-iphone5hd.png"; sourceTree = "<group>"; };
 		CE7EA0FD17F351C0006E9A12 /* Noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Noise.png; path = Resources/Noise.png; sourceTree = "<group>"; };
+		CE7FCBEA17F9C6C500FC92AB /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "23 Dire, Dire Docks.mp3"; path = "Resources/23 Dire, Dire Docks.mp3"; sourceTree = "<group>"; };
 		CE84E96117F2EB48002007C6 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		CE84E96217F2EB48002007C6 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
@@ -749,6 +756,8 @@
 		CE84E98D17F31BAF002007C6 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
 		CE84E98E17F31BAF002007C6 /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collision.m; sourceTree = "<group>"; };
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
+		CE8ACAB117FA021700D06213 /* JellyFish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JellyFish.h; sourceTree = "<group>"; };
+		CE8ACAB217FA021700D06213 /* JellyFish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JellyFish.m; sourceTree = "<group>"; };
 		CE8B230117F8651100403213 /* Sand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sand.h; sourceTree = "<group>"; };
 		CE8B230217F8651100403213 /* Sand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sand.m; sourceTree = "<group>"; };
 		CE8B230417F87FAD00403213 /* Portal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portal.h; sourceTree = "<group>"; };
@@ -762,6 +771,7 @@
 		CEA9813917F8E06D00A29847 /* GoFast.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoFast.plist; sourceTree = "<group>"; };
 		CEA9813B17F8FAC600A29847 /* InkSpurt.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InkSpurt.plist; sourceTree = "<group>"; };
 		CEA9813D17F9000A00A29847 /* inkTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inkTexture.png; path = Resources/inkTexture.png; sourceTree = "<group>"; };
+		CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GameOverBackground.png; path = Resources/GameOverBackground.png; sourceTree = "<group>"; };
 		CEDED63117F3762D00E019ED /* Cliffs v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3.png"; path = "Resources/Cliffs v3.png"; sourceTree = "<group>"; };
 		CEFDB4F417F9039300DA40AE /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		CEFDB4F517F9039300DA40AE /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
@@ -848,6 +858,10 @@
 				0B3130D917E85CF400D0829B /* IntroLayer.m */,
 				CE84E96417F2EE51002007C6 /* MenuScene.h */,
 				CE84E96517F2EE51002007C6 /* MenuScene.m */,
+				CE76DAC517F46C0900363F8A /* HowToScene.h */,
+				CE76DAC617F46C0900363F8A /* HowToScene.m */,
+				CE7FCBEA17F9C6C500FC92AB /* GameOverScene.h */,
+				CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */,
 				CEFDB4F717F9061700DA40AE /* MuscleCrab.h */,
 				CEFDB4F817F9061800DA40AE /* MuscleCrab.m */,
 				CE84E96717F2F091002007C6 /* Octopus.h */,
@@ -863,6 +877,8 @@
 				0B312F4217E85CF200D0829B /* Resources */,
 				0B312F5A17E85CF200D0829B /* libs */,
 				0B3130CE17E85CF400D0829B /* Supporting Files */,
+				CE8ACAB117FA021700D06213 /* JellyFish.h */,
+				CE8ACAB217FA021700D06213 /* JellyFish.m */,
 			);
 			path = "iOS App Dev";
 			sourceTree = "<group>";
@@ -870,6 +886,8 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE781DD517F4993D00C8A5C7 /* Sounds */,
+				CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */,
 				CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */,
 				CE906BE317F8E0360007EBAA /* Tentacle.png */,
 				CEFDB4FC17F9092E00DA40AE /* MuscleCrab.png */,
@@ -879,7 +897,6 @@
 				CEA9813917F8E06D00A29847 /* GoFast.plist */,
 				CEA9813517F8873700A29847 /* Speedarrow-hd.png */,
 				CEA9813617F8873700A29847 /* Speedarrow.png */,
-				CE781DD517F4993D00C8A5C7 /* Sounds */,
 				CE78B7B017F87BC60011FB88 /* ink-hd.png */,
 				CE78B7B117F87BC60011FB88 /* ink.png */,
 				CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */,
@@ -889,6 +906,7 @@
 				CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */,
 				CE7EA0FD17F351C0006E9A12 /* Noise.png */,
 				CE84E98917F311C0002007C6 /* Octo.png */,
+				CE0F314417F9EA8600066469 /* Octo-hd.png */,
 				CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */,
 				0B312F4317E85CF200D0829B /* Default.png */,
 				0B312F4517E85CF200D0829B /* Default@2x.png */,
@@ -1646,6 +1664,7 @@
 				CE78B7B317F87BC60011FB88 /* ink.png in Resources */,
 				CEA9813717F8873700A29847 /* Speedarrow-hd.png in Resources */,
 				CEA9813817F8873800A29847 /* Speedarrow.png in Resources */,
+				CED3D3FB17F9DEAE007FC560 /* GameOverBackground.png in Resources */,
 				CE906BE417F8E0360007EBAA /* Tentacle.png in Resources */,
 				CEA9813A17F8E06D00A29847 /* GoFast.plist in Resources */,
 				CEA9813C17F8FAC600A29847 /* InkSpurt.plist in Resources */,
@@ -1653,6 +1672,7 @@
 				CEFDB4FB17F9092200DA40AE /* MuscleCrab-hd.png in Resources */,
 				CEFDB4FD17F9092E00DA40AE /* MuscleCrab.png in Resources */,
 				CE5BA44517F9CA1D0043DDEC /* Tentacle-hd.png in Resources */,
+				CE0F314517F9EA8600066469 /* Octo-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1783,9 +1803,11 @@
 				CE8B230317F8651100403213 /* Sand.m in Sources */,
 				CE78B7AF17F85A120011FB88 /* OctopusFood.m in Sources */,
 				CE8B230617F87FAD00403213 /* Portal.m in Sources */,
+				CE7FCBEC17F9C6C500FC92AB /* GameOverScene.m in Sources */,
 				CE906BE017F8BDCA0007EBAA /* OctopusTentacle.m in Sources */,
 				CEFDB4F617F9039400DA40AE /* Enemy.m in Sources */,
 				CEFDB4F917F9061800DA40AE /* MuscleCrab.m in Sources */,
+				CE8ACAB317FA021700D06213 /* JellyFish.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,7 @@
         startButton.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height - 100); // Position the button in the middle.
         
         
-        // Creating a start button:
+        // Creating a "How to play" button:
         CCLabelTTF *howToLabel = [CCLabelTTF labelWithString:@"How To Play" fontName:@"Arial" fontSize:30];
         CCMenuItemLabel *howToButton = [CCMenuItemLabel itemWithLabel:howToLabel block:^(id sender)
                                         {

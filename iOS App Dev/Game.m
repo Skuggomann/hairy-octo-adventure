@@ -12,10 +12,13 @@
 #import "Octopus.h"
 #import "OctopusFood.h"
 #import "MuscleCrab.h"
+#import "JellyFish.h"
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
+#import "GameOverScene.h"
 #import "OctopusTentacle.h"
+
 
 @implementation Game
 
@@ -69,6 +72,10 @@
         // Add Crab
         _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
         [_gameNode addChild:_crab z:8];
+        
+        // Add JellyFish
+        _jelly = [[JellyFish alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
+        [_gameNode addChild:_jelly z:8];
 
         _score = 0;
         _extraScore = 0;
@@ -298,6 +305,7 @@
 // Update logic goes here
 - (void)update:(ccTime)delta
 {
+    [_octo update:delta];
     // Run the physics engine.
     CGFloat fixedTimeStep = 1.0f / 240.0f;
     _accumulator += delta;
@@ -321,7 +329,7 @@
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
     [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
     cpVect crabWalk = cpvsub(CGPointFromString(_configuration[@"crabWalk"]), CGPointZero);
-    crabWalk = cpvmult(crabWalk, _octo.chipmunkBody.mass*delta);
+    crabWalk = cpvmult(crabWalk, _crab.chipmunkBody.mass*delta);
     [_crab.chipmunkBody applyImpulse:(crabWalk) offset:cpvzero];
     
 
@@ -355,14 +363,14 @@
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
     
-    if(_crab.position.x < _octo.position.x-_winSize.width)
+    if(_crab.position.x < _octo.position.x-(_winSize.width+(CCRANDOM_0_1()*_winSize.width)))
     {
         for (ChipmunkShape *shape in _crab.chipmunkBody.shapes){
             [_space smartRemove:shape];
         }
         [_crab removeFromParentAndCleanup:YES];
         NSLog(@"removed crab");
-        float craby= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_crab.boundingBox.size.height)+_winSize.height/3;
+        float craby= _winSize.height/3;//CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_crab.boundingBox.size.height)+_winSize.height/3;
         _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),craby)];
         [_gameNode addChild:_crab];
         NSLog(@"added crab");
@@ -419,11 +427,28 @@
         
     }
     
-    
-    
-    
+    if(_octo.lives <= 0)
+    {
+        [self gameOver];
+    }
     
 }
+
+
+- (void)gameOver
+{
+    //NSLog(@"You lost!");    
+    
+    GameOverScene *gameOverScene = [[GameOverScene alloc] initWithScore:(_score + _extraScore)];
+    //NSLog(@"gameOverScene suxsessfully initialysed.");
+    
+    [[CCDirector sharedDirector] replaceScene:gameOverScene];
+    
+}
+
+
+
+
 
 
 - (void)touchBegan

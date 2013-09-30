@@ -16,11 +16,13 @@
 @class Octopus;
 @class Portal;
 @class MuscleCrab;
+@class JellyFish;
 @interface Game : CCScene <InputLayerDelegate>
 {
     @public
     Octopus *_octo;
     MuscleCrab *_crab;
+    JellyFish *_jelly;
     Sand *_sand;
     Portal *_portal;
     CCLayerColor *_seaLayer;
