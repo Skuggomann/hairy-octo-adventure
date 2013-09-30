@@ -344,6 +344,7 @@
     _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
     _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
     
+    //Adding portal(speed boost)
     if(_portal.position.x < _octo.position.x-(_winSize.width/4+_portal.textureRect.size.width))
     {
         for (ChipmunkShape *shape in _portal.chipmunkBody.shapes){
@@ -362,7 +363,7 @@
     
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
-    
+    //adding crab
     if(_crab.position.x < _octo.position.x-(_winSize.width+(CCRANDOM_0_1()*_winSize.width)))
     {
         for (ChipmunkShape *shape in _crab.chipmunkBody.shapes){
@@ -379,6 +380,22 @@
         
     }
     
+    //adding jellyfish
+    if(_jelly.position.x < _octo.position.x-(_winSize.width+(CCRANDOM_0_1()*_winSize.width)))
+    {
+        for (ChipmunkShape *shape in _jelly.chipmunkBody.shapes){
+            [_space smartRemove:shape];
+        }
+        [_jelly removeFromParentAndCleanup:YES];
+        NSLog(@"removed jellyfish");
+        float jellyy= _winSize.height-44.0f;//CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_crab.boundingBox.size.height)+_winSize.height/3;
+        _jelly = [[JellyFish alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),jellyy)];
+        [_gameNode addChild:_jelly];
+        NSLog(@"added jellyfish");
+        // Play particle effect
+        //[_splashParticles resetSystem];
+        
+    }
     
     
     

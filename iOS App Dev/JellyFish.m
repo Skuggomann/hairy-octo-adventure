@@ -7,12 +7,11 @@
 //
 
 #import "JellyFish.h"
-#import "ChipmunkAutoGeometry.h"
 
 @implementation JellyFish
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 {
-    self = [super initWithSpace:space position:position sprite:@"MuscleCrab.png"];
+    self = [super initWithSpace:space position:position sprite:@"JellyFish.png"];
     if(self)
     {
         if (_space != nil)
@@ -21,7 +20,8 @@
             CGSize size = self.textureRect.size;
             ChipmunkBody *jellyBody = [ChipmunkBody staticBody];
             jellyBody.pos = position;
-            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:jellyBody width:size.width height:size.height/2];
+            //jellyBody.pos = ccp(position.x,position.y+size.height/2);
+            ChipmunkShape *shape = [ChipmunkPolyShape  boxWithBody:jellyBody width:size.width height:size.height];
         
             shape.sensor = YES;
             

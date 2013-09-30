@@ -275,6 +275,8 @@
 		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
 		CE8ACAB317FA021700D06213 /* JellyFish.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8ACAB217FA021700D06213 /* JellyFish.m */; };
+		CE8ACBE817FA06D600D06213 /* JellyFish-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8ACBE617FA06D500D06213 /* JellyFish-hd.png */; };
+		CE8ACBE917FA06D600D06213 /* JellyFish.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8ACBE717FA06D500D06213 /* JellyFish.png */; };
 		CE8B230317F8651100403213 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230217F8651100403213 /* Sand.m */; };
 		CE8B230617F87FAD00403213 /* Portal.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230517F87FAD00403213 /* Portal.m */; };
 		CE906BE017F8BDCA0007EBAA /* OctopusTentacle.m in Sources */ = {isa = PBXBuildFile; fileRef = CE906BDF17F8BDCA0007EBAA /* OctopusTentacle.m */; };
@@ -758,6 +760,8 @@
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
 		CE8ACAB117FA021700D06213 /* JellyFish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JellyFish.h; sourceTree = "<group>"; };
 		CE8ACAB217FA021700D06213 /* JellyFish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JellyFish.m; sourceTree = "<group>"; };
+		CE8ACBE617FA06D500D06213 /* JellyFish-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "JellyFish-hd.png"; path = "Resources/JellyFish-hd.png"; sourceTree = "<group>"; };
+		CE8ACBE717FA06D500D06213 /* JellyFish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = JellyFish.png; path = Resources/JellyFish.png; sourceTree = "<group>"; };
 		CE8B230117F8651100403213 /* Sand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sand.h; sourceTree = "<group>"; };
 		CE8B230217F8651100403213 /* Sand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sand.m; sourceTree = "<group>"; };
 		CE8B230417F87FAD00403213 /* Portal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portal.h; sourceTree = "<group>"; };
@@ -886,6 +890,8 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE8ACBE617FA06D500D06213 /* JellyFish-hd.png */,
+				CE8ACBE717FA06D500D06213 /* JellyFish.png */,
 				CE781DD517F4993D00C8A5C7 /* Sounds */,
 				CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */,
 				CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */,
@@ -1673,6 +1679,8 @@
 				CEFDB4FD17F9092E00DA40AE /* MuscleCrab.png in Resources */,
 				CE5BA44517F9CA1D0043DDEC /* Tentacle-hd.png in Resources */,
 				CE0F314517F9EA8600066469 /* Octo-hd.png in Resources */,
+				CE8ACBE817FA06D600D06213 /* JellyFish-hd.png in Resources */,
+				CE8ACBE917FA06D600D06213 /* JellyFish.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
