@@ -14,6 +14,7 @@
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
+#import "GameOverScene.h"
 
 @implementation Game
 
@@ -395,11 +396,28 @@
         
     }
     
-    
-    
-    
+    if(_octo.lives <= 0)
+    {
+        [self gameOver];
+    }
     
 }
+
+
+- (void)gameOver
+{
+    //NSLog(@"You lost!");    
+    
+    GameOverScene *gameOverScene = [[GameOverScene alloc] initWithScore:(_score + _extraScore)];
+    //NSLog(@"gameOverScene suxsessfully initialysed.");
+    
+    [[CCDirector sharedDirector] replaceScene:gameOverScene];
+    
+}
+
+
+
+
 
 
 - (void)touchBegan

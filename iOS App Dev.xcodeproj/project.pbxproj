@@ -263,6 +263,7 @@
 		CE7EA0FE17F351C0006E9A12 /* Noise-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */; };
 		CE7EA0FF17F351C0006E9A12 /* Noise-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */; };
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
+		CE7FCBEC17F9C6C500FC92AB /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */; };
 		CE81270517F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */; };
 		CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96217F2EB48002007C6 /* InputLayer.m */; };
 		CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96517F2EE51002007C6 /* MenuScene.m */; };
@@ -276,6 +277,7 @@
 		CEA37D8C17F3792C00DB14C7 /* Cliffs v3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */; };
 		CEA9813717F8873700A29847 /* Speedarrow-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813517F8873700A29847 /* Speedarrow-hd.png */; };
 		CEA9813817F8873800A29847 /* Speedarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813617F8873700A29847 /* Speedarrow.png */; };
+		CED3D3FB17F9DEAE007FC560 /* GameOverBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */; };
 		CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDED63117F3762D00E019ED /* Cliffs v3.png */; };
 /* End PBXBuildFile section */
 
@@ -726,6 +728,8 @@
 		CE7EA0FB17F351C0006E9A12 /* Noise-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-hd.png"; path = "Resources/Noise-hd.png"; sourceTree = "<group>"; };
 		CE7EA0FC17F351C0006E9A12 /* Noise-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Noise-iphone5hd.png"; path = "Resources/Noise-iphone5hd.png"; sourceTree = "<group>"; };
 		CE7EA0FD17F351C0006E9A12 /* Noise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Noise.png; path = Resources/Noise.png; sourceTree = "<group>"; };
+		CE7FCBEA17F9C6C500FC92AB /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "23 Dire, Dire Docks.mp3"; path = "Resources/23 Dire, Dire Docks.mp3"; sourceTree = "<group>"; };
 		CE84E96117F2EB48002007C6 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		CE84E96217F2EB48002007C6 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
@@ -745,6 +749,7 @@
 		CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3-hd.png"; path = "Resources/Cliffs v3-hd.png"; sourceTree = "<group>"; };
 		CEA9813517F8873700A29847 /* Speedarrow-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Speedarrow-hd.png"; path = "Resources/Speedarrow-hd.png"; sourceTree = "<group>"; };
 		CEA9813617F8873700A29847 /* Speedarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Speedarrow.png; path = Resources/Speedarrow.png; sourceTree = "<group>"; };
+		CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GameOverBackground.png; path = Resources/GameOverBackground.png; sourceTree = "<group>"; };
 		CEDED63117F3762D00E019ED /* Cliffs v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3.png"; path = "Resources/Cliffs v3.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -825,6 +830,8 @@
 				CE84E96517F2EE51002007C6 /* MenuScene.m */,
 				CE76DAC517F46C0900363F8A /* HowToScene.h */,
 				CE76DAC617F46C0900363F8A /* HowToScene.m */,
+				CE7FCBEA17F9C6C500FC92AB /* GameOverScene.h */,
+				CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */,
 				CE84E96717F2F091002007C6 /* Octopus.h */,
 				CE84E96817F2F091002007C6 /* Octopus.m */,
 				CE78B7AD17F85A120011FB88 /* OctopusFood.h */,
@@ -841,9 +848,10 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE781DD517F4993D00C8A5C7 /* Sounds */,
+				CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */,
 				CEA9813517F8873700A29847 /* Speedarrow-hd.png */,
 				CEA9813617F8873700A29847 /* Speedarrow.png */,
-				CE781DD517F4993D00C8A5C7 /* Sounds */,
 				CE78B7B017F87BC60011FB88 /* ink-hd.png */,
 				CE78B7B117F87BC60011FB88 /* ink.png */,
 				CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */,
@@ -1610,6 +1618,7 @@
 				CE78B7B317F87BC60011FB88 /* ink.png in Resources */,
 				CEA9813717F8873700A29847 /* Speedarrow-hd.png in Resources */,
 				CEA9813817F8873800A29847 /* Speedarrow.png in Resources */,
+				CED3D3FB17F9DEAE007FC560 /* GameOverBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1740,6 +1749,7 @@
 				CE8B230317F8651100403213 /* Sand.m in Sources */,
 				CE78B7AF17F85A120011FB88 /* OctopusFood.m in Sources */,
 				CE8B230617F87FAD00403213 /* Portal.m in Sources */,
+				CE7FCBEC17F9C6C500FC92AB /* GameOverScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
