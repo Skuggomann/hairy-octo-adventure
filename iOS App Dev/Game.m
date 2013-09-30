@@ -116,7 +116,6 @@
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
-
         // Your initilization code goes here
         [self scheduleUpdate];
     }
@@ -344,7 +343,7 @@
         }
         [_portal removeFromParentAndCleanup:YES];
         NSLog(@"removed portal");
-        float portaly= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3)+_winSize.height/3;
+        float portaly= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_portal.boundingBox.size.height)+_winSize.height/3;
         _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,portaly)];//CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_portal];
         NSLog(@"added portal");
@@ -356,7 +355,21 @@
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
     
-    
+    if(_crab.position.x < _octo.position.x-_winSize.width)
+    {
+        for (ChipmunkShape *shape in _crab.chipmunkBody.shapes){
+            [_space smartRemove:shape];
+        }
+        [_crab removeFromParentAndCleanup:YES];
+        NSLog(@"removed crab");
+        float craby= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_crab.boundingBox.size.height)+_winSize.height/3;
+        _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),craby)];
+        [_gameNode addChild:_crab];
+        NSLog(@"added crab");
+        // Play particle effect
+        //[_splashParticles resetSystem];
+        
+    }
     
     
     
@@ -370,7 +383,7 @@
         
         if(lastInk != nil)
         {
-            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*(_winSize.height-_winSize.height/3)+_winSize.height/3)];
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-lastInk.boundingBox.size.height)+_winSize.height/3)];
             [_colletables addChild:inkTest];
         }
         else

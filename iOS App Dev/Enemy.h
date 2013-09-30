@@ -16,4 +16,5 @@
 }
 
 -(id)initWithSpace:(ChipmunkSpace*)space position:(CGPoint)position sprite:(NSString*)sprite;
+-(void)hitOcto;
 @end

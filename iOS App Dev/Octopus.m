@@ -86,7 +86,8 @@
             [_goFast stopSystem];
             [parent addChild:_goFast];
             // Setup particle system for inkspurt
-            _inkSpurt = [CCParticleGalaxy node];//[CCParticleSystemQuad particleWithFile:@"InkSpurt.plist"];
+            //_inkSpurt = [CCParticleGalaxy node];
+            _inkSpurt = [CCParticleSystemQuad particleWithFile:@"InkSpurt.plist"];
             _inkSpurt.position = position;
             [_inkSpurt stopSystem];
             [parent addChild:_inkSpurt];

@@ -19,7 +19,7 @@
         {
             /*
             CGSize size = self.textureRect.size;;
-            cpFloat mass = size.width * size.height;
+            cpFloat mass = [_configuration[@"crabMass"]floatValue];
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);
             
             ChipmunkBody *crabBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
@@ -68,5 +68,9 @@
         }
     }
     return self;
+}
+- (void) hitOcto;
+{
+    NSLog(@"SnipSnip");
 }
 @end
