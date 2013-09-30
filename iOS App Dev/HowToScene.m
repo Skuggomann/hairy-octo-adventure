@@ -22,7 +22,7 @@
                                         {
                                             [[CCDirector sharedDirector] popScene];
                                         }];
-        backButton.position = ccp(50, 100); // Position the button.
+        backButton.position = ccp(50, [CCDirector sharedDirector].winSize.height - 50); // Position the button.
         
         
         // Creating a start button:

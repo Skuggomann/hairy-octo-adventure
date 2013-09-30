@@ -36,12 +36,12 @@
         
         
         // Creating a back button:
-        CCLabelTTF *backLabel = [CCLabelTTF labelWithString:@"Main Menu" fontName:@"Arial" fontSize:28];
+        CCLabelTTF *backLabel = [CCLabelTTF labelWithString:@"Main\nMenu" fontName:@"Arial" fontSize:28];
         CCMenuItemLabel *backButton = [CCMenuItemLabel itemWithLabel:backLabel block:^(id sender)
                                        {
                                            [[CCDirector sharedDirector] popScene];
                                        }];
-        backButton.position = ccp(100, 50); // Position the button.
+        backButton.position = ccp(50, [CCDirector sharedDirector].winSize.height - 50); // Position the button.
         
         
         
