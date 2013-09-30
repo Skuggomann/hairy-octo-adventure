@@ -108,7 +108,7 @@
         
         // Setup a Chipmunk debug thingy:
         CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debug.visible = YES;
+        debug.visible = NO;
         [_gameNode addChild:debug z:20];
         
         

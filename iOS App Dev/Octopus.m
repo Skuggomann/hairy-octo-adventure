@@ -78,7 +78,7 @@
             [_space addShape:shape];
             
             CGPoint tPos = position;
-            tPos.y-=32;
+            tPos.y-=size.height/1.2;
 
             // Setup particle system for speedboost
             _goFast = [CCParticleSystemQuad particleWithFile:@"GoFast.plist"];
@@ -102,12 +102,13 @@
             anch1.y = 0;
             cpVect anch2;
             anch2.x = 0;
-            anch2.y = 32;
+
             
             _tentacles = [NSMutableArray array];
             for (int i = 0; i<lives; i++){
                 OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
                 [_GameNode addChild:tent];
+                anch2.y = tent.textureRect.size.height/2;
                 cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1));
                 [_tentacles addObject:tent];
             }

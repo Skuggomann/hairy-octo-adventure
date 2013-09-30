@@ -143,6 +143,7 @@
 		0B3130E117E85D0D00D0829B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3130E017E85D0D00D0829B /* ImageIO.framework */; };
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* Game.m */; };
+		CE5BA44517F9CA1D0043DDEC /* Tentacle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */; };
 		CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAC617F46C0900363F8A /* HowToScene.m */; };
 		CE781E4717F4993D00C8A5C7 /* bird1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD617F4993D00C8A5C7 /* bird1.WAV */; };
 		CE781E4817F4993D00C8A5C7 /* bird2.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD717F4993D00C8A5C7 /* bird2.WAV */; };
@@ -613,6 +614,7 @@
 		0B31313C17E85ECE00D0829B /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
 		0B31313E17E8662800D0829B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0B31313F17E8662800D0829B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tentacle-hd.png"; path = "Resources/Tentacle-hd.png"; sourceTree = "<group>"; };
 		CE76DAC517F46C0900363F8A /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
 		CE76DAC617F46C0900363F8A /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
 		CE781DD617F4993D00C8A5C7 /* bird1.WAV */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird1.WAV; sourceTree = "<group>"; };
@@ -868,6 +870,7 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */,
 				CE906BE317F8E0360007EBAA /* Tentacle.png */,
 				CEFDB4FC17F9092E00DA40AE /* MuscleCrab.png */,
 				CEFDB4FA17F9092200DA40AE /* MuscleCrab-hd.png */,
@@ -1649,6 +1652,7 @@
 				CEA9813E17F9000A00A29847 /* inkTexture.png in Resources */,
 				CEFDB4FB17F9092200DA40AE /* MuscleCrab-hd.png in Resources */,
 				CEFDB4FD17F9092E00DA40AE /* MuscleCrab.png in Resources */,
+				CE5BA44517F9CA1D0043DDEC /* Tentacle-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
