@@ -67,6 +67,7 @@
         [_Game->_portal removeFromParentAndCleanup:YES];*/
         cpVect impulseVector = cpvmult(cpv(1, 0.1) , _Game->_octo.chipmunkBody.mass * [_configuration[@"speedBoost"]floatValue]);
         [_Game->_octo.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+        [_Game->_octo goingFast];
     }
     
     /*

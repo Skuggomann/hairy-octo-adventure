@@ -59,7 +59,7 @@
         
         
         // Add Octo
-        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:3	];
+        _octo = [[Octopus alloc] initWithSpaceAndParentNode:_space position:CGPointFromString(_configuration[@"startPosition"]) parent:_gameNode lives:3	];
         [_gameNode addChild:_octo];
         
 
@@ -339,6 +339,8 @@
         _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,portaly)];//CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_portal];
         NSLog(@"added portal");
+        // Play particle effect
+        //[_splashParticles resetSystem];
         
     }
     

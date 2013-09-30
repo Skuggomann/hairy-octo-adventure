@@ -13,13 +13,15 @@
 @interface Octopus : CCPhysicsSprite
 {
     ChipmunkSpace *_space;
+    CCParticleSystemQuad *_splashParticles;
     NSDictionary *_configuration;
 }
 
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position lives:(int)lives;
+- (id)initWithSpaceAndParentNode:(ChipmunkSpace *)space position:(CGPoint)position parent:(CCNode*)parent lives:(int)lives;
 - (void)swimUp;
 - (void)shrink:(Game*)game;
 - (void)grow;
+- (void)goingFast;
 @property int lives;
 
 @end

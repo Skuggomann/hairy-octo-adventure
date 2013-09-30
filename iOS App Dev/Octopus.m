@@ -12,7 +12,7 @@
 #import "ccTypes.h"
 
 @implementation Octopus 
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position lives:(int)lives;
+- (id)initWithSpaceAndParentNode:(ChipmunkSpace *)space position:(CGPoint)position parent:(CCNode*)parent lives:(int)lives;
 {
     self = [super initWithFile:@"Octo.png"];
     if (self)
@@ -74,7 +74,13 @@
             [_space addShape:shape];
             
             
-            
+            // Setup particle system
+            _splashParticles = [CCParticleSystemQuad particleWithFile:@"GoFast.plist"];
+            _splashParticles.position = position;
+            [_splashParticles stopSystem];
+            [parent addChild:_splashParticles];
+            _splashParticles.angleVar = 0.0f;
+            //_splashParticles
             
             
             // Add self to body and body to self
@@ -184,6 +190,14 @@
         octoBody.data = self;
         self.chipmunkBody = octoBody;
     }
+}
+-(void) goingFast
+{
+    // Play particle effect
+    _splashParticles.position = self.position;
+    NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
+    NSLog(@"splash: %@", NSStringFromCGPoint(_splashParticles.position));
+    [_splashParticles resetSystem];
 }
 
 @end

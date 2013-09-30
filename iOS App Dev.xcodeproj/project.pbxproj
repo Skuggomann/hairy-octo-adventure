@@ -276,6 +276,7 @@
 		CEA37D8C17F3792C00DB14C7 /* Cliffs v3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */; };
 		CEA9813717F8873700A29847 /* Speedarrow-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813517F8873700A29847 /* Speedarrow-hd.png */; };
 		CEA9813817F8873800A29847 /* Speedarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813617F8873700A29847 /* Speedarrow.png */; };
+		CEA9813A17F8E06D00A29847 /* GoFast.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813917F8E06D00A29847 /* GoFast.plist */; };
 		CEDED63217F3762D00E019ED /* Cliffs v3.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDED63117F3762D00E019ED /* Cliffs v3.png */; };
 /* End PBXBuildFile section */
 
@@ -745,6 +746,7 @@
 		CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3-hd.png"; path = "Resources/Cliffs v3-hd.png"; sourceTree = "<group>"; };
 		CEA9813517F8873700A29847 /* Speedarrow-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Speedarrow-hd.png"; path = "Resources/Speedarrow-hd.png"; sourceTree = "<group>"; };
 		CEA9813617F8873700A29847 /* Speedarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Speedarrow.png; path = Resources/Speedarrow.png; sourceTree = "<group>"; };
+		CEA9813917F8E06D00A29847 /* GoFast.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoFast.plist; sourceTree = "<group>"; };
 		CEDED63117F3762D00E019ED /* Cliffs v3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3.png"; path = "Resources/Cliffs v3.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -841,6 +843,7 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEA9813917F8E06D00A29847 /* GoFast.plist */,
 				CEA9813517F8873700A29847 /* Speedarrow-hd.png */,
 				CEA9813617F8873700A29847 /* Speedarrow.png */,
 				CE781DD517F4993D00C8A5C7 /* Sounds */,
@@ -1610,6 +1613,7 @@
 				CE78B7B317F87BC60011FB88 /* ink.png in Resources */,
 				CEA9813717F8873700A29847 /* Speedarrow-hd.png in Resources */,
 				CEA9813817F8873800A29847 /* Speedarrow.png in Resources */,
+				CEA9813A17F8E06D00A29847 /* GoFast.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
