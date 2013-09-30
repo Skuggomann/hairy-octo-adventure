@@ -274,6 +274,7 @@
 		CE84E98C17F31314002007C6 /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98B17F31314002007C6 /* Configurations.plist */; };
 		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
+		CE8ACAB317FA021700D06213 /* JellyFish.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8ACAB217FA021700D06213 /* JellyFish.m */; };
 		CE8B230317F8651100403213 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230217F8651100403213 /* Sand.m */; };
 		CE8B230617F87FAD00403213 /* Portal.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230517F87FAD00403213 /* Portal.m */; };
 		CE906BE017F8BDCA0007EBAA /* OctopusTentacle.m in Sources */ = {isa = PBXBuildFile; fileRef = CE906BDF17F8BDCA0007EBAA /* OctopusTentacle.m */; };
@@ -755,6 +756,8 @@
 		CE84E98D17F31BAF002007C6 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
 		CE84E98E17F31BAF002007C6 /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collision.m; sourceTree = "<group>"; };
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
+		CE8ACAB117FA021700D06213 /* JellyFish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JellyFish.h; sourceTree = "<group>"; };
+		CE8ACAB217FA021700D06213 /* JellyFish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JellyFish.m; sourceTree = "<group>"; };
 		CE8B230117F8651100403213 /* Sand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sand.h; sourceTree = "<group>"; };
 		CE8B230217F8651100403213 /* Sand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sand.m; sourceTree = "<group>"; };
 		CE8B230417F87FAD00403213 /* Portal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portal.h; sourceTree = "<group>"; };
@@ -874,6 +877,8 @@
 				0B312F4217E85CF200D0829B /* Resources */,
 				0B312F5A17E85CF200D0829B /* libs */,
 				0B3130CE17E85CF400D0829B /* Supporting Files */,
+				CE8ACAB117FA021700D06213 /* JellyFish.h */,
+				CE8ACAB217FA021700D06213 /* JellyFish.m */,
 			);
 			path = "iOS App Dev";
 			sourceTree = "<group>";
@@ -1802,6 +1807,7 @@
 				CE906BE017F8BDCA0007EBAA /* OctopusTentacle.m in Sources */,
 				CEFDB4F617F9039400DA40AE /* Enemy.m in Sources */,
 				CEFDB4F917F9061800DA40AE /* MuscleCrab.m in Sources */,
+				CE8ACAB317FA021700D06213 /* JellyFish.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

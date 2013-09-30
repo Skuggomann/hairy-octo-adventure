@@ -12,6 +12,7 @@
 #import "Octopus.h"
 #import "OctopusFood.h"
 #import "MuscleCrab.h"
+#import "JellyFish.h"
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
@@ -71,6 +72,10 @@
         // Add Crab
         _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
         [_gameNode addChild:_crab z:8];
+        
+        // Add JellyFish
+        _jelly = [[JellyFish alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
+        [_gameNode addChild:_jelly z:8];
 
         _score = 0;
         _extraScore = 0;
