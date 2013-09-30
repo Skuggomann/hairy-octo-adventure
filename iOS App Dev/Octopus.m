@@ -93,6 +93,10 @@
             _inkSpurt.position = position;
             [_inkSpurt stopSystem];
             [parent addChild:_inkSpurt];
+            _blood = [CCParticleSystemQuad particleWithFile:@"blood.plist"];
+            _blood.position = position;
+            [_blood stopSystem];
+            [parent addChild:_blood];
             
             
             // Add self to body and body to self
@@ -161,6 +165,10 @@
         //lose game
     }
     else{
+        _blood.position = self.position;
+        NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
+        NSLog(@"blood: %@", NSStringFromCGPoint(_blood.position));
+        [_blood resetSystem];
         /*self.scale = 0.7+_lives*.1;
         CGSize size = self.textureRect.size;
         size.height = size.height*(0.7+_lives	*.1);

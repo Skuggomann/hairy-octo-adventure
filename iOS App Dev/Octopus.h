@@ -20,6 +20,7 @@
     float _immunity;
     CCParticleSystemQuad *_goFast;
     CCParticleSystemQuad *_inkSpurt;
+    CCParticleSystemQuad *_blood;
     NSDictionary *_configuration;
     cpConstraint *_constraints[8];
     int constraintIndex;
