@@ -15,7 +15,7 @@
 
 
 @implementation Octopus 
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position lives:(int)lives;
+- (id)initWithSpaceAndParentNode:(ChipmunkSpace *)space position:(CGPoint)position parent:(CCNode*)parent lives:(int)lives;
 {
     self = [super initWithFile:@"Octo.png"];
     if (self)
@@ -78,8 +78,18 @@
             
             CGPoint tPos = position;
             tPos.y-=32;
-            
 
+            // Setup particle system for speedboost
+            _goFast = [CCParticleSystemQuad particleWithFile:@"GoFast.plist"];
+            _goFast.position = position;
+            [_goFast stopSystem];
+            [parent addChild:_goFast];
+            // Setup particle system for inkspurt
+            _inkSpurt = [CCParticleGalaxy node];//[CCParticleSystemQuad particleWithFile:@"InkSpurt.plist"];
+            _inkSpurt.position = position;
+            [_inkSpurt stopSystem];
+            [parent addChild:_inkSpurt];
+            
             
             // Add self to body and body to self
             octoBody.data = self;
@@ -203,6 +213,22 @@
         octoBody.data = self;
         self.chipmunkBody = octoBody;
     }
+}
+-(void) goingFast
+{
+    // Play particle effect
+    _goFast.position = self.position;
+    NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
+    NSLog(@"splash: %@", NSStringFromCGPoint(_goFast.position));
+    [_goFast resetSystem];
+}
+-(void) inkSpurt
+{
+    // Play particle effect
+    _inkSpurt.position = self.position;
+    NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
+    NSLog(@"splash: %@", NSStringFromCGPoint(_inkSpurt.position));
+    [_inkSpurt resetSystem];
 }
 
 @end

@@ -27,8 +27,8 @@
 
             foodBody.pos = position;
             
-            //ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:octoBody width:size.width height:size.height];
-            ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:foodBody radius:size.width/2 offset:cpvzero];
+            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:foodBody width:size.width height:size.height];
+            //ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:foodBody radius:size.width/2 offset:cpvzero];
             shape.sensor = YES;
             
                        

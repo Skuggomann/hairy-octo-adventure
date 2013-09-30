@@ -11,6 +11,7 @@
 #import "Game.h"
 #import "Octopus.h"
 #import "OctopusFood.h"
+#import "MuscleCrab.h"
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
@@ -60,9 +61,10 @@
         
         
         // Add Octo
-        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:3	];
+        _octo = [[Octopus alloc] initWithSpaceAndParentNode:_space position:CGPointFromString(_configuration[@"startPosition"]) parent:_gameNode lives:3	];
         [_gameNode addChild:_octo z:10];
         
+        //Add Tentacles
         cpVect anch1;
         anch1.x = 0;
         anch1.y = 0;
@@ -79,7 +81,10 @@
         cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, _octo.CPBody, anch2, anch1));
         }
         
-        
+
+        // Add Crab
+        _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
+        [_gameNode addChild:_crab z:8];
 
         _score = 0;
         _extraScore = 0;
@@ -101,11 +106,9 @@
         [_gameNode addChild:_portal];
 
         
-        
-        
-        
-        
-        
+        // Add collectables container (Ink goes in here).
+        _colletables = [CCNode node];
+        [_gameNode addChild:_colletables];
         
         
         
@@ -121,7 +124,7 @@
         
         // Setup a Chipmunk debug thingy:
         CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debug.visible = NO;
+        debug.visible = YES;
         [_gameNode addChild:debug z:20];
         
         
@@ -129,11 +132,7 @@
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
-        
 
-        
-        
-        
         // Your initilization code goes here
         [self scheduleUpdate];
     }
@@ -182,7 +181,7 @@
     CCSprite *stripes = [self stripedSpriteWithColor1:color3 color2:color4
                                          textureWidth:512
                                         textureHeight:512
-                                              stripes:4];
+                                              stripes:20];
     ccTexParams tp2 = {GL_LINEAR, GL_LINEAR, GL_REPEAT,GL_CLAMP_TO_EDGE};
     [stripes.texture setTexParameters:&tp2];
     _sand.stripes = stripes;
@@ -338,7 +337,7 @@
     cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
     [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
-    
+    [_crab.chipmunkBody applyImpulse:(Rightforce) offset:cpvzero];
     
 
     _swimTime -= delta;
@@ -352,16 +351,19 @@
     _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
     _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
     
-    if(_portal.position.x < _octo.position.x-_winSize.width/4+30)
+    if(_portal.position.x < _octo.position.x-(_winSize.width/4+_portal.textureRect.size.width))
     {
         for (ChipmunkShape *shape in _portal.chipmunkBody.shapes){
             [_space smartRemove:shape];
         }
         [_portal removeFromParentAndCleanup:YES];
         NSLog(@"removed portal");
-        _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,200)];//CGPointFromString(_configuration[@"goalPosition"])];
+        float portaly= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3)+_winSize.height/3;
+        _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,portaly)];//CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_portal];
         NSLog(@"added portal");
+        // Play particle effect
+        //[_splashParticles resetSystem];
         
     }
     
@@ -376,12 +378,47 @@
     // Add some ink bottles.
     
     
-    
-    
-    
-    
-    
-    
+    if (_colletables.children.count < 10)
+    {
+        OctopusFood *lastInk = _colletables.children.lastObject;
+        
+        if(lastInk != nil)
+        {
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*(_winSize.height-_winSize.height/3)+_winSize.height/3)];
+            [_colletables addChild:inkTest];
+        }
+        else
+        {
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(400,200)];
+            [_colletables addChild:inkTest];
+        }
+        
+        
+        
+    }
+    else
+    {
+        // chekk if the oldest collectable is still on screen.        
+        OctopusFood *firstInk = [_colletables.children objectAtIndex:0];
+        
+        
+        CGPoint position = [_colletables convertToWorldSpace:firstInk.position];
+        //NSLog(@"touch: %@", NSStringFromCGPoint(position));
+        //NSLog(@"tank: %@", NSStringFromCGPoint(firstInk.position));
+        
+        if(position.x < 0)
+        {
+            
+            for (ChipmunkShape *shape in firstInk.chipmunkBody.shapes)
+            {
+                [_space smartRemove:shape];
+            }
+            [firstInk removeFromParentAndCleanup:YES];
+        
+        }
+        
+        
+    }
     
     
     

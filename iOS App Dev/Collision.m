@@ -67,6 +67,7 @@
         [_Game->_portal removeFromParentAndCleanup:YES];*/
         cpVect impulseVector = cpvmult(cpv(1, 0.1) , _Game->_octo.chipmunkBody.mass * [_configuration[@"speedBoost"]floatValue]);
         [_Game->_octo.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+        [_Game->_octo goingFast];
     }
     
     /*
@@ -85,23 +86,37 @@
     ChipmunkBody *firstChipmunkBody = firstBody->data;
     ChipmunkBody *secondChipmunkBody = secondBody->data;
     
-    if ([firstChipmunkBody.data isKindOfClass:[OctopusFood class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]] )
+    if  (
+         ([firstChipmunkBody.data isKindOfClass:[OctopusFood class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]])
+         ||
+         ([firstChipmunkBody.data isKindOfClass:[Octopus class]] && [secondChipmunkBody.data isKindOfClass:[OctopusFood class]])
+        )
     {
-        if ([firstChipmunkBody.data isKindOfClass:[Octopus class]] && [secondChipmunkBody.data isKindOfClass:[OctopusFood class]] ) {
-            
-            for (ChipmunkShape *shape in firstChipmunkBody.shapes)
-            {
-                [space smartRemove:shape];
-            }
-            [firstChipmunkBody.data removeFromParentAndCleanup:YES];
-
-            //TODO: Give the player some points.
-            ++_Game->_collectablesCollected;
-            _Game->_score += 0.1 * _Game->_octo.position.x * _Game->_collectablesCollected;
-            
-            
-            NSLog(@"Octo got ink!");
+        ChipmunkBody *deleteChipmunkBody;
+        if([firstChipmunkBody.data isKindOfClass:[OctopusFood class]])
+        {
+            deleteChipmunkBody = firstChipmunkBody;
         }
+        else
+        {
+            deleteChipmunkBody = secondChipmunkBody;
+        }
+        
+        
+        for (ChipmunkShape *shape in deleteChipmunkBody.shapes)
+        {
+            [space smartRemove:shape];
+        }
+        [deleteChipmunkBody.data removeFromParentAndCleanup:YES];
+
+        //TODO: Give the player some points.
+        ++_Game->_collectablesCollected;
+        _Game->_extraScore += (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected);
+        [_Game->_octo inkSpurt];
+        
+        
+            
+        //NSLog(@"Octo got ink! %d", (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected));
     }
     
    
