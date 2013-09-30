@@ -25,12 +25,18 @@
         backButton.position = ccp(50, [CCDirector sharedDirector].winSize.height - 50); // Position the button.
         
         
-        // Creating a start button:
-        CCLabelTTF *howToText= [CCLabelTTF labelWithString:@"Press the screen to make Octo swim up." fontName:@"Arial" fontSize:18];
-        howToText.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height - 50); // Position the button in the middle.
-        [self addChild:howToText];
         
         
+        
+        // Add a background:
+        CCSprite *background = [CCSprite spriteWithFile:@"HowToBackground.png"];
+        background.anchorPoint = ccp(0, 0);
+        background.position = ccp(0.0f, 0.0f);
+        
+        [self addChild:background];
+        
+        
+
         
         
         
