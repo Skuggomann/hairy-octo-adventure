@@ -24,7 +24,7 @@
         if (_space != nil)
         {
             CGSize size = self.textureRect.size;
-            cpFloat mass = 100;
+            cpFloat mass = 10;
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);
             
             ChipmunkBody *tentacleBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];

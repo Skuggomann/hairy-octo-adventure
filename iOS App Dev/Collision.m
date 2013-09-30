@@ -118,6 +118,7 @@
         
             
         //NSLog(@"Octo got ink! %d", (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected));
+        return YES;
     }
     
     //Enemy hit
@@ -137,7 +138,7 @@
             enemyChipmunkBody = secondChipmunkBody;
         }
         [enemyChipmunkBody.data hitOcto];
-        [_Game->_octo shrink:_Game];
+        //[_Game->_octo shrink:_Game];
     }
    
     
