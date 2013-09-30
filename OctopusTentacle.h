@@ -15,5 +15,5 @@
     ChipmunkSpace *_space;
     NSDictionary *_configuration;
 }
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
+- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position post:(bool)post;
 @end

@@ -13,7 +13,7 @@
 
 
 @implementation OctopusTentacle
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position{
+- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position post:(bool)post{
     self = [super initWithFile: @"Tentacle.png"];
     if(self){
         _space = space;
@@ -46,8 +46,12 @@
             
             //shape.sensor = YES;
             
-            [_space addBody:tentacleBody];
-            [_space addShape:shape];
+            if(post)
+                cpSpaceAddPostStepCallback(_space.space, (cpPostStepFunc)postStepAddTentacle, tentacleBody.body, shape.shape);
+            else{
+                [_space addBody:tentacleBody];
+                [_space addShape:shape];
+            }
             tentacleBody.data = self;
             self.chipmunkBody = tentacleBody;
         }
@@ -57,9 +61,14 @@
 
 
 static void
-postStepAddTentacle(cpSpace *space, cpConstraint *constraint, void *unused)
+postStepAddTentacle(cpSpace *space, cpBody *body, cpShape *shape)
 {
-    cpSpaceRemoveConstraint(space,constraint);
+    
+    [[ChipmunkSpace spaceFromCPSpace:space] addBody:[ChipmunkBody bodyFromCPBody:body]];
+    [[ChipmunkSpace spaceFromCPSpace:space] addShape:[ChipmunkShape shapeFromCPShape:shape]];
+    
+    //cpSpaceAddBody(space, body);
+    //cpSpaceAddShape(space, shape);
 }
 
 @end

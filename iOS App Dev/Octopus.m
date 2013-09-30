@@ -110,7 +110,7 @@
             constraintIndex = 0;
 
             for (int i = 0; i<lives; i++){
-                OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+                OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos post:NO];
                 [_GameNode addChild:tent];
                 anch2.y = tent.textureRect.size.height/2;
                 cpConstraint *derp = cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1);
@@ -255,11 +255,14 @@
         cpVect anch2;
         anch2.x = 0;
         
-        OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+        OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos post:YES];
         [_GameNode addChild:tent];
         anch2.y = tent.textureRect.size.height/2;
         cpConstraint *derp = cpPinJointNew(tent.CPBody, self.chipmunkBody.body, anch2, anch1);
-        cpSpaceAddConstraint(_space.space, derp);
+        //cpSpaceAddConstraint(_space.space,derp);
+
+        
+        cpSpaceAddPostStepCallback(_space.space, (cpPostStepFunc)postStepAdd, derp, NULL);
         
         _constraints[constraintIndex++] = derp;
         if (constraintIndex>=8)
@@ -294,7 +297,7 @@ postStepRemove(cpSpace *space, cpConstraint *constraint, void *unused)
 static void
 postStepAdd(cpSpace *space, cpConstraint *constraint, void *unused)
 {
-    cpSpaceRemoveConstraint(space,constraint);
+    cpSpaceAddConstraint(space,constraint);
 }
 
 
