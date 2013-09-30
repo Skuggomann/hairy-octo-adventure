@@ -12,9 +12,11 @@
 @interface Enemy : CCPhysicsSprite
 {
     ChipmunkSpace *_space;
+    float _lethal;
     NSDictionary *_configuration;
 }
 
 -(id)initWithSpace:(ChipmunkSpace*)space position:(CGPoint)position sprite:(NSString*)sprite;
 -(void)hitOcto;
+-(BOOL)isLethal;
 @end

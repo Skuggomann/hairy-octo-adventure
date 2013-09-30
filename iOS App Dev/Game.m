@@ -300,6 +300,7 @@
 // Update logic goes here
 - (void)update:(ccTime)delta
 {
+    [_octo update:delta];
     // Run the physics engine.
     CGFloat fixedTimeStep = 1.0f / 240.0f;
     _accumulator += delta;
@@ -357,14 +358,14 @@
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
     
-    if(_crab.position.x < _octo.position.x-_winSize.width)
+    if(_crab.position.x < _octo.position.x-(_winSize.width+(CCRANDOM_0_1()*_winSize.width)))
     {
         for (ChipmunkShape *shape in _crab.chipmunkBody.shapes){
             [_space smartRemove:shape];
         }
         [_crab removeFromParentAndCleanup:YES];
         NSLog(@"removed crab");
-        float craby= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_crab.boundingBox.size.height)+_winSize.height/3;
+        float craby= _winSize.height/3;//CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_crab.boundingBox.size.height)+_winSize.height/3;
         _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),craby)];
         [_gameNode addChild:_crab];
         NSLog(@"added crab");

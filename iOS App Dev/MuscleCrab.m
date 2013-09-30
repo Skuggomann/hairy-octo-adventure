@@ -50,7 +50,7 @@
             NSURL *url = [[NSBundle mainBundle] URLForResource:@"MuscleCrab" withExtension:@"png"];
             ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
             
-            [sampler setBorderValue:0.0];
+            [sampler setBorderValue:0.8];
             
             ChipmunkPolylineSet *lines = [sampler marchAllWithBorder:TRUE hard:FALSE];
             ChipmunkPolyline *line = [lines lineAtIndex:0];
@@ -72,5 +72,10 @@
 - (void) hitOcto;
 {
     NSLog(@"SnipSnip");
+    [super hitOcto];
+}
+-(void) update:(ccTime)delta;
+{
+    [super update:delta];
 }
 @end

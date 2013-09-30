@@ -14,6 +14,7 @@
     self = [super initWithFile:sprite];
     if(self)
     {
+        _lethal = 0.0f;
         _space = space;
         // Load configuration file
         _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
@@ -22,6 +23,17 @@
 }
 -(void) hitOcto;
 {
-    
+    _lethal = 2.0f;
+}
+-(BOOL) isLethal;
+{
+    if(_lethal<=0.0f)
+        return true;
+    else
+        return false;
+}
+-(void) update:(ccTime)delta
+{
+    _lethal=_lethal-delta;
 }
 @end
