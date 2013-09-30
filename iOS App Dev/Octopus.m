@@ -108,6 +108,7 @@
             _tentacles = [NSMutableArray array];
             constraintDeleteIndex = 0;
             constraintIndex = 0;
+            tentacleDeleteIndex = 0;
 
             for (int i = 0; i<lives; i++){
                 OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos post:NO];
@@ -193,8 +194,12 @@
 
         
         //cpSpaceRemoveConstraint(cpConstraintGetSpace(_constraints[constraintDeleteIndex]),_constraints[constraintDeleteIndex++]);
-        if(_constraints[constraintDeleteIndex]!=NULL)
+        if(_constraints[constraintDeleteIndex]!=NULL){
+            //OctopusTentacle *tent = [_tentacles firstObjectCommonWithArray:_tentacles];
+            OctopusTentacle *tent = _tentacles[tentacleDeleteIndex++];
+            tent.isDead = YES;
             cpSpaceAddPostStepCallback(_space.space, (cpPostStepFunc)postStepRemove, _constraints[constraintDeleteIndex], NULL);
+        }
         _constraints[constraintDeleteIndex++] = NULL;
         if (constraintDeleteIndex >= 8)
             constraintDeleteIndex = 0;

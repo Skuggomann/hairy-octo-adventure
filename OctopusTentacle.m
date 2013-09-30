@@ -23,6 +23,7 @@
         
         if (_space != nil)
         {
+            _isDead = NO;
             CGSize size = self.textureRect.size;
             cpFloat mass = 10;
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);

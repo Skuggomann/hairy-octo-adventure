@@ -115,7 +115,7 @@
         
         // Setup a Chipmunk debug thingy:
         CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debug.visible = YES;
+        debug.visible = NO;
         [_gameNode addChild:debug z:20];
         
         
@@ -443,6 +443,19 @@
         
         
     }
+    
+    for(OctopusTentacle *tent in self->_octo.tentacles){
+        if(tent.isDead){
+            if(tent.position.x<_octo.position.x-_winSize.width/4){
+                for (ChipmunkShape *shape in tent.chipmunkBody.shapes)
+                {
+                    [_space smartRemove:shape];
+                }
+                [tent.chipmunkBody.data removeFromParentAndCleanup:YES];
+            }
+        }
+    }
+
     
     if(_octo.lives <= 0)
     {

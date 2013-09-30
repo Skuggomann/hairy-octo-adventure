@@ -16,4 +16,6 @@
     NSDictionary *_configuration;
 }
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position post:(bool)post;
+
+@property bool isDead;
 @end

@@ -23,6 +23,7 @@
     cpConstraint *_constraints[8];
     int constraintIndex;
     int constraintDeleteIndex;
+    int tentacleDeleteIndex;
 }
 
 - (id)initWithSpaceAndParentNode:(ChipmunkSpace *)space position:(CGPoint)position parent:(CCNode*)parent lives:(int)lives;
