@@ -11,10 +11,13 @@
 #import "Game.h"
 #import "Octopus.h"
 #import "OctopusFood.h"
+#import "MuscleCrab.h"
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
 #import "GameOverScene.h"
+#import "OctopusTentacle.h"
+
 
 @implementation Game
 
@@ -60,9 +63,14 @@
         
         
         // Add Octo
-        _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:3	];
-        [_gameNode addChild:_octo];
+        _octo = [[Octopus alloc] initWithSpaceAndParentNode:_space position:CGPointFromString(_configuration[@"startPosition"]) parent:_gameNode lives:3	];
+        [_gameNode addChild:_octo z:10];
         
+                
+
+        // Add Crab
+        _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
+        [_gameNode addChild:_crab z:8];
 
         _score = 0;
         _extraScore = 0;
@@ -110,7 +118,6 @@
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
-
         // Your initilization code goes here
         [self scheduleUpdate];
     }
@@ -315,7 +322,9 @@
     cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
     [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
-    
+    cpVect crabWalk = cpvsub(CGPointFromString(_configuration[@"crabWalk"]), CGPointZero);
+    crabWalk = cpvmult(crabWalk, _crab.chipmunkBody.mass*delta);
+    [_crab.chipmunkBody applyImpulse:(crabWalk) offset:cpvzero];
     
 
     _swimTime -= delta;
@@ -336,17 +345,33 @@
         }
         [_portal removeFromParentAndCleanup:YES];
         NSLog(@"removed portal");
-        float portaly= CCRANDOM_0_1()*_winSize.height/4 +_winSize.height/3;
+        float portaly= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_portal.boundingBox.size.height)+_winSize.height/3;
         _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,portaly)];//CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_portal];
         NSLog(@"added portal");
+        // Play particle effect
+        //[_splashParticles resetSystem];
         
     }
     
     //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
     
-    
+    if(_crab.position.x < _octo.position.x-_winSize.width)
+    {
+        for (ChipmunkShape *shape in _crab.chipmunkBody.shapes){
+            [_space smartRemove:shape];
+        }
+        [_crab removeFromParentAndCleanup:YES];
+        NSLog(@"removed crab");
+        float craby= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-_crab.boundingBox.size.height)+_winSize.height/3;
+        _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),craby)];
+        [_gameNode addChild:_crab];
+        NSLog(@"added crab");
+        // Play particle effect
+        //[_splashParticles resetSystem];
+        
+    }
     
     
     
@@ -360,7 +385,7 @@
         
         if(lastInk != nil)
         {
-            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*_winSize.height/4 +_winSize.height/3)];
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-lastInk.boundingBox.size.height)+_winSize.height/3)];
             [_colletables addChild:inkTest];
         }
         else

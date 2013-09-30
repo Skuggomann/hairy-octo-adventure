@@ -10,14 +10,18 @@
 #import "ChipmunkAutoGeometry.h"
 #import "SimpleAudioEngine.h"
 #import "ccTypes.h"
+#import "OctopusTentacle.h"
+#define PhysicsIdentifier(key) ((__bridge id)(void *)(@selector(key)))
+
 
 @implementation Octopus 
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position lives:(int)lives;
+- (id)initWithSpaceAndParentNode:(ChipmunkSpace *)space position:(CGPoint)position parent:(CCNode*)parent lives:(int)lives;
 {
     self = [super initWithFile:@"Octo.png"];
     if (self)
     {
         _space = space;
+        _GameNode = parent;
         
         // Load configuration file
         _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
@@ -43,9 +47,9 @@
             //ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:octoBody width:size.width height:size.height];// Make it the correct shape. 
             ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
             
-            shape.elasticity = 1.0f;
+            shape.elasticity = 1.0f;	
             shape.friction = 1000.0f;
-            
+            shape.group = PhysicsIdentifier(OCTO);
             /*
             NSURL *url = [[NSBundle mainBundle] URLForResource:@"Octo" withExtension:@"png"];
             ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
@@ -73,13 +77,43 @@
             [_space addBody:octoBody];
             [_space addShape:shape];
             
-            
-            
+            CGPoint tPos = position;
+            tPos.y-=size.height/1.2;
+
+            // Setup particle system for speedboost
+            _goFast = [CCParticleSystemQuad particleWithFile:@"GoFast.plist"];
+            _goFast.position = position;
+            [_goFast stopSystem];
+            [parent addChild:_goFast];
+            // Setup particle system for inkspurt
+            //_inkSpurt = [CCParticleGalaxy node];
+            _inkSpurt = [CCParticleSystemQuad particleWithFile:@"InkSpurt.plist"];
+            _inkSpurt.position = position;
+            [_inkSpurt stopSystem];
+            [parent addChild:_inkSpurt];
             
             
             // Add self to body and body to self
             octoBody.data = self;
             self.chipmunkBody = octoBody;
+            
+            cpVect anch1;
+            anch1.x = 0;
+            anch1.y = 0;
+            cpVect anch2;
+            anch2.x = 0;
+
+            
+            _tentacles = [NSMutableArray array];
+            for (int i = 0; i<lives; i++){
+                OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+                [_GameNode addChild:tent];
+                anch2.y = tent.textureRect.size.height/2;
+                cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1));
+                [_tentacles addObject:tent];
+            }
+            
+        
         }
     }
     return self;
@@ -184,6 +218,22 @@
         octoBody.data = self;
         self.chipmunkBody = octoBody;
     }
+}
+-(void) goingFast
+{
+    // Play particle effect
+    _goFast.position = self.position;
+    NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
+    NSLog(@"splash: %@", NSStringFromCGPoint(_goFast.position));
+    [_goFast resetSystem];
+}
+-(void) inkSpurt
+{
+    // Play particle effect
+    _inkSpurt.position = self.position;
+    NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
+    NSLog(@"splash: %@", NSStringFromCGPoint(_inkSpurt.position));
+    [_inkSpurt resetSystem];
 }
 
 @end

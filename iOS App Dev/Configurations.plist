@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>crabMass</key>
+	<string>800.0f</string>
 	<key>speedBoost</key>
 	<string>1000.0f</string>
 	<key>sandMinDX</key>
@@ -20,6 +22,8 @@
 	<string>180.0f</string>
 	<key>rightForce</key>
 	<string>{80,0}</string>
+	<key>crabWalk</key>
+	<string>{-80,0}</string>
 	<key>gravity</key>
 	<string>100.0f</string>
 </dict>

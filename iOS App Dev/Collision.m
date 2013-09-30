@@ -11,6 +11,7 @@
 #import "OctopusFood.h"
 #import "Portal.h"
 #import "Octopus.h"
+#import "Enemy.h"
 
 
 
@@ -67,6 +68,7 @@
         [_Game->_portal removeFromParentAndCleanup:YES];*/
         cpVect impulseVector = cpvmult(cpv(1, 0.1) , _Game->_octo.chipmunkBody.mass * [_configuration[@"speedBoost"]floatValue]);
         [_Game->_octo.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+        [_Game->_octo goingFast];
     }
     
     /*
@@ -111,13 +113,33 @@
         //TODO: Give the player some points.
         ++_Game->_collectablesCollected;
         _Game->_extraScore += (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected);
-        
+        [_Game->_octo inkSpurt];
         
         
             
         //NSLog(@"Octo got ink! %d", (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected));
+        return YES;
     }
     
+    //Enemy hit
+    if  (
+         ([firstChipmunkBody.data isKindOfClass:[Enemy class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]])
+         ||
+         ([firstChipmunkBody.data isKindOfClass:[Octopus class]] && [secondChipmunkBody.data isKindOfClass:[Enemy class]])
+         )
+    {
+        ChipmunkBody *enemyChipmunkBody;
+        if([firstChipmunkBody.data isKindOfClass:[Enemy class]])
+        {
+            enemyChipmunkBody = firstChipmunkBody;
+        }
+        else
+        {
+            enemyChipmunkBody = secondChipmunkBody;
+        }
+        [enemyChipmunkBody.data hitOcto];
+        //[_Game->_octo shrink:_Game];
+    }
    
     
         
