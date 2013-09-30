@@ -112,7 +112,7 @@
         //TODO: Give the player some points.
         ++_Game->_collectablesCollected;
         _Game->_extraScore += (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected);
-        
+        [_Game->_octo inkSpurt];
         
         
             

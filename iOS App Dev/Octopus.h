@@ -13,7 +13,8 @@
 @interface Octopus : CCPhysicsSprite
 {
     ChipmunkSpace *_space;
-    CCParticleSystemQuad *_splashParticles;
+    CCParticleSystemQuad *_goFast;
+    CCParticleSystemQuad *_inkSpurt;
     NSDictionary *_configuration;
 }
 
@@ -22,6 +23,7 @@
 - (void)shrink:(Game*)game;
 - (void)grow;
 - (void)goingFast;
+- (void)inkSpurt;
 @property int lives;
 
 @end

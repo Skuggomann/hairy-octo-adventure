@@ -11,6 +11,7 @@
 #import "Game.h"
 #import "Octopus.h"
 #import "OctopusFood.h"
+#import "MuscleCrab.h"
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
@@ -61,7 +62,9 @@
         // Add Octo
         _octo = [[Octopus alloc] initWithSpaceAndParentNode:_space position:CGPointFromString(_configuration[@"startPosition"]) parent:_gameNode lives:3	];
         [_gameNode addChild:_octo];
-        
+        // Add Crab
+        _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
+        [_gameNode addChild:_crab];
 
         _score = 0;
         _extraScore = 0;
@@ -314,7 +317,7 @@
     cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
     [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
-    
+    [_crab.chipmunkBody applyImpulse:(Rightforce) offset:cpvzero];
     
 
     _swimTime -= delta;
@@ -335,7 +338,7 @@
         }
         [_portal removeFromParentAndCleanup:YES];
         NSLog(@"removed portal");
-        float portaly= CCRANDOM_0_1()*_winSize.height/4 +_winSize.height/3;
+        float portaly= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3)+_winSize.height/3;
         _portal = [[Portal alloc] initWithSpace:_space position:ccp(_octo.position.x+1000,portaly)];//CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_portal];
         NSLog(@"added portal");
@@ -361,7 +364,7 @@
         
         if(lastInk != nil)
         {
-            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*_winSize.height/4 +_winSize.height/3)];
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*(_winSize.height-_winSize.height/3)+_winSize.height/3)];
             [_colletables addChild:inkTest];
         }
         else

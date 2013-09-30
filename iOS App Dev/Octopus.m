@@ -74,13 +74,16 @@
             [_space addShape:shape];
             
             
-            // Setup particle system
-            _splashParticles = [CCParticleSystemQuad particleWithFile:@"GoFast.plist"];
-            _splashParticles.position = position;
-            [_splashParticles stopSystem];
-            [parent addChild:_splashParticles];
-            _splashParticles.angleVar = 0.0f;
-            //_splashParticles
+            // Setup particle system for speedboost
+            _goFast = [CCParticleSystemQuad particleWithFile:@"GoFast.plist"];
+            _goFast.position = position;
+            [_goFast stopSystem];
+            [parent addChild:_goFast];
+            // Setup particle system for inkspurt
+            _inkSpurt = [CCParticleGalaxy node];//[CCParticleSystemQuad particleWithFile:@"InkSpurt.plist"];
+            _inkSpurt.position = position;
+            [_inkSpurt stopSystem];
+            [parent addChild:_inkSpurt];
             
             
             // Add self to body and body to self
@@ -194,10 +197,18 @@
 -(void) goingFast
 {
     // Play particle effect
-    _splashParticles.position = self.position;
+    _goFast.position = self.position;
     NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
-    NSLog(@"splash: %@", NSStringFromCGPoint(_splashParticles.position));
-    [_splashParticles resetSystem];
+    NSLog(@"splash: %@", NSStringFromCGPoint(_goFast.position));
+    [_goFast resetSystem];
+}
+-(void) inkSpurt
+{
+    // Play particle effect
+    _inkSpurt.position = self.position;
+    NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
+    NSLog(@"splash: %@", NSStringFromCGPoint(_inkSpurt.position));
+    [_inkSpurt resetSystem];
 }
 
 @end
