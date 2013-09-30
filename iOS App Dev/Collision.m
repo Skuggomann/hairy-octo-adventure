@@ -69,6 +69,7 @@
         cpVect impulseVector = cpvmult(cpv(1, 0.1) , _Game->_octo.chipmunkBody.mass * [_configuration[@"speedBoost"]floatValue]);
         [_Game->_octo.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
         [_Game->_octo goingFast];
+        return YES;
     }
     
     /*
@@ -83,10 +84,37 @@
     cpBody *firstBody;
     cpBody *secondBody;
     cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
+
+        
     
     ChipmunkBody *firstChipmunkBody = firstBody->data;
     ChipmunkBody *secondChipmunkBody = secondBody->data;
     
+    /*if(firstChipmunkBody. == NULL||secondChipmunkBody->data == NULL){
+        NSLog(@"SPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\n");
+        return YES;
+    }
+    if (
+        (
+         firstChipmunkBody.body->a == 0 &&
+         firstChipmunkBody.body->w == 0 &&
+         firstChipmunkBody.body->t == 0 &&
+         firstChipmunkBody.body->m_inv == 0 &&
+         firstChipmunkBody.body->i_inv == 0 &&
+         firstChipmunkBody.body->w_bias_private == 0
+         )
+        ||
+        (
+         secondChipmunkBody.body->a == 0 &&
+         secondChipmunkBody.body->w == 0 &&
+         secondChipmunkBody.body->t == 0 &&
+         secondChipmunkBody.body->m_inv == 0 &&
+         secondChipmunkBody.body->i_inv == 0 &&
+         secondChipmunkBody.body->w_bias_private == 0)) {
+            NSLog(@"SPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\n");
+            return YES;
+        }
+     */
     if  (
          ([firstChipmunkBody.data isKindOfClass:[OctopusFood class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]])
          ||
@@ -141,13 +169,13 @@
         if([enemyChipmunkBody.data isLethal])
         {
             [enemyChipmunkBody.data hitOcto];
+            [_Game->_octo shrink:_Game];
             
         }
         
         //[space addPostStepCallback:self selector:@selector(sleep:) key:enemyChipmunkBody];
         //cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)SleepEnemy, enemyChipmunkBody.body, NULL);
         //cpBodySleep(enemyChipmunkBody.body);
-        [_Game->_octo shrink:_Game];
         return YES;
     }
     

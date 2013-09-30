@@ -70,6 +70,7 @@
             
             
             _lives = lives;
+            _immunity = 2.0f;
             
             
             //[self addChild: tenticle];
@@ -147,6 +148,9 @@
 
 - (void)shrink:(Game*)game
 {
+    if(_immunity>=0.0f){
+        return;
+    }
     if(--_lives<=0){
             CCLabelTTF *dead = [CCLabelTTF labelWithString:@"YOU ARE DEAD"	 fontName:@"Arial" fontSize:30];
             dead.position = ccp(CCRANDOM_0_1()*game->_winSize.width,CCRANDOM_0_1()*game->_winSize.height);
@@ -282,7 +286,8 @@
     // Play particle effect
     _goFast.position = self.position;
     NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
-    NSLog(@"splash: %@", NSStringFromCGPoint(_goFast.position));
+    NSLog(@"goingFast: %@", NSStringFromCGPoint(_goFast.position));
+    _immunity = 2.0f;
     [_goFast resetSystem];
 }
 -(void) inkSpurt
@@ -290,7 +295,7 @@
     // Play particle effect
     _inkSpurt.position = self.position;
     NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
-    NSLog(@"splash: %@", NSStringFromCGPoint(_inkSpurt.position));
+    NSLog(@"ink: %@", NSStringFromCGPoint(_inkSpurt.position));
     [_inkSpurt resetSystem];
 }
 
@@ -303,6 +308,10 @@ static void
 postStepAdd(cpSpace *space, cpConstraint *constraint, void *unused)
 {
     cpSpaceAddConstraint(space,constraint);
+}
+-(void) update:(ccTime)delta
+{
+    _immunity=_immunity-delta;
 }
 
 

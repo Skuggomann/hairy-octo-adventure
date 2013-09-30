@@ -306,6 +306,8 @@
 - (void)update:(ccTime)delta
 {
     [_octo update:delta];
+    [_crab update:delta];
+    [_jelly update:delta];
     // Run the physics engine.
     CGFloat fixedTimeStep = 1.0f / 240.0f;
     _accumulator += delta;

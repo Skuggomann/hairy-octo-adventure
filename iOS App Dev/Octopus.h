@@ -17,6 +17,7 @@
 {
     ChipmunkSpace *_space;
     CCNode *_GameNode;
+    float _immunity;
     CCParticleSystemQuad *_goFast;
     CCParticleSystemQuad *_inkSpurt;
     NSDictionary *_configuration;
