@@ -15,6 +15,7 @@
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
+#import "OctopusTentacle.h"
 
 @implementation Game
 
@@ -61,10 +62,29 @@
         
         // Add Octo
         _octo = [[Octopus alloc] initWithSpaceAndParentNode:_space position:CGPointFromString(_configuration[@"startPosition"]) parent:_gameNode lives:3	];
-        [_gameNode addChild:_octo];
+        [_gameNode addChild:_octo z:10];
+        
+        //Add Tentacles
+        cpVect anch1;
+        anch1.x = 0;
+        anch1.y = 0;
+        cpVect anch2;
+        anch2.x = 0;
+        anch2.y = 32;
+        
+        CGPoint tPos = _octo.position;
+        tPos.y-=32;
+        
+        for (int i = 0; i<_octo.lives; i++){
+        OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+        [_gameNode addChild:tent z:0];
+        cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, _octo.CPBody, anch2, anch1));
+        }
+        
+
         // Add Crab
         _crab = [[MuscleCrab alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
-        [_gameNode addChild:_crab];
+        [_gameNode addChild:_crab z:8];
 
         _score = 0;
         _extraScore = 0;
