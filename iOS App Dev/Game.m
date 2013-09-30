@@ -14,6 +14,7 @@
 #import "Sand.h"
 #import "Portal.h"
 #import "SimpleAudioEngine.h"
+#import "OctopusTentacle.h"
 
 @implementation Game
 
@@ -60,7 +61,24 @@
         
         // Add Octo
         _octo = [[Octopus alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"startPosition"]) lives:3	];
-        [_gameNode addChild:_octo];
+        [_gameNode addChild:_octo z:10];
+        
+        cpVect anch1;
+        anch1.x = 0;
+        anch1.y = 0;
+        cpVect anch2;
+        anch2.x = 0;
+        anch2.y = 32;
+        
+        CGPoint tPos = _octo.position;
+        tPos.y-=32;
+        
+        for (int i = 0; i<_octo.lives; i++){
+        OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+        [_gameNode addChild:tent z:0];
+        cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, _octo.CPBody, anch2, anch1));
+        }
+        
         
 
         _score = 0;
@@ -103,7 +121,7 @@
         
         // Setup a Chipmunk debug thingy:
         CCPhysicsDebugNode *debug = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debug.visible = YES;
+        debug.visible = NO;
         [_gameNode addChild:debug z:20];
         
         

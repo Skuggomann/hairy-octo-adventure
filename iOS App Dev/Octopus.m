@@ -10,6 +10,9 @@
 #import "ChipmunkAutoGeometry.h"
 #import "SimpleAudioEngine.h"
 #import "ccTypes.h"
+#import "OctopusTentacle.h"
+#define PhysicsIdentifier(key) ((__bridge id)(void *)(@selector(key)))
+
 
 @implementation Octopus 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position lives:(int)lives;
@@ -43,9 +46,9 @@
             //ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:octoBody width:size.width height:size.height];// Make it the correct shape. 
             ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
             
-            shape.elasticity = 1.0f;
+            shape.elasticity = 1.0f;	
             shape.friction = 1000.0f;
-            
+            shape.group = PhysicsIdentifier(OCTO);
             /*
             NSURL *url = [[NSBundle mainBundle] URLForResource:@"Octo" withExtension:@"png"];
             ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
@@ -73,13 +76,29 @@
             [_space addBody:octoBody];
             [_space addShape:shape];
             
+            CGPoint tPos = position;
+            tPos.y-=32;
             
-            
-            
+
             
             // Add self to body and body to self
             octoBody.data = self;
             self.chipmunkBody = octoBody;
+            
+            /*cpVect anch1;
+            anch1.x = 0;
+            anch1.y = 0;
+            cpVect anch2;
+            anch2.x = 0;
+            anch2.y = 32;
+            
+            
+            OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+            //[self addChild:tent];
+            cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1));
+                                 //(tent.CPBody,octoBody.body, 0, 360));
+                  */               
+            
         }
     }
     return self;
