@@ -20,6 +20,8 @@
 	<string>180.0f</string>
 	<key>rightForce</key>
 	<string>{80,0}</string>
+	<key>crabWalk</key>
+	<string>{-80,0}</string>
 	<key>gravity</key>
 	<string>100.0f</string>
 </dict>

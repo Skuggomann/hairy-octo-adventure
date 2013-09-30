@@ -18,13 +18,15 @@
         if (_space != nil)
         {
             CGSize size = self.textureRect.size;;
-            cpFloat mass = (size.width * size.height)/10;
+            cpFloat mass = size.width * size.height;
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);
             
             ChipmunkBody *crabBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
+            crabBody.angVelLimit = 0.1f;
             ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:crabBody width:size.width height:size.height];
             shape.elasticity = 1.0f;
-            shape.friction = 1.0f;
+            shape.friction = 0.0f;
+            
 
             crabBody.pos = position;
             // Add to space

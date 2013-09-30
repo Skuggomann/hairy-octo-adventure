@@ -317,7 +317,9 @@
     cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
     [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
-    [_crab.chipmunkBody applyImpulse:(Rightforce) offset:cpvzero];
+    cpVect crabWalk = cpvsub(CGPointFromString(_configuration[@"crabWalk"]), CGPointZero);
+    crabWalk = cpvmult(crabWalk, _octo.chipmunkBody.mass*delta);
+    [_crab.chipmunkBody applyImpulse:(crabWalk) offset:cpvzero];
     
 
     _swimTime -= delta;
