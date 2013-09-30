@@ -21,6 +21,7 @@
     if (self)
     {
         _space = space;
+        _GameNode = parent;
         
         // Load configuration file
         _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configurations" ofType:@"plist"]];
@@ -95,19 +96,20 @@
             octoBody.data = self;
             self.chipmunkBody = octoBody;
             
-            /*cpVect anch1;
+            cpVect anch1;
             anch1.x = 0;
             anch1.y = 0;
             cpVect anch2;
             anch2.x = 0;
             anch2.y = 32;
             
-            
-            OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
-            //[self addChild:tent];
-            cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1));
-                                 //(tent.CPBody,octoBody.body, 0, 360));
-                  */               
+            _tentacles = [NSMutableArray array];
+            for (int i = 0; i<lives; i++){
+                OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+                [_GameNode addChild:tent];
+                cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1));
+                [_tentacles addObject:tent];
+            }
             
         }
     }

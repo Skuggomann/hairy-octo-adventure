@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Game.h"
+#import "OctopusTentacle.h"
 
 @interface Octopus : CCPhysicsSprite
 {
     ChipmunkSpace *_space;
+    CCNode *_GameNode;
     CCParticleSystemQuad *_goFast;
     CCParticleSystemQuad *_inkSpurt;
     NSDictionary *_configuration;
@@ -25,5 +27,6 @@
 - (void)goingFast;
 - (void)inkSpurt;
 @property int lives;
+@property NSMutableArray *tentacles;
 
 @end
