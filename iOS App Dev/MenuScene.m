@@ -40,6 +40,14 @@
         howToButton.position = ccp([CCDirector sharedDirector].winSize.width/2, [CCDirector sharedDirector].winSize.height - 200); // Position the button in the middle.
         
         
+        // Add a background:
+        CCSprite *background = [CCSprite spriteWithFile:@"MenuBackground.png"];
+        background.anchorPoint = ccp(0, 0);
+        background.position = ccp(0.0f, 0.0f);
+        
+        [self addChild:background];
+        
+
         
         
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"23 Dire, Dire Docks.mp3"];

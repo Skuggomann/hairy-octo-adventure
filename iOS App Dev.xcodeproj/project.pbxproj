@@ -144,6 +144,8 @@
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* Game.m */; };
 		CE0F314517F9EA8600066469 /* Octo-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314417F9EA8600066469 /* Octo-hd.png */; };
+		CE0F314817FA0B8E00066469 /* MenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314617FA0B8E00066469 /* MenuBackground-hd.png */; };
+		CE0F314917FA0B8E00066469 /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314717FA0B8E00066469 /* MenuBackground.png */; };
 		CE5BA44517F9CA1D0043DDEC /* Tentacle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */; };
 		CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAC617F46C0900363F8A /* HowToScene.m */; };
 		CE781E4717F4993D00C8A5C7 /* bird1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD617F4993D00C8A5C7 /* bird1.WAV */; };
@@ -621,6 +623,8 @@
 		0B31313E17E8662800D0829B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0B31313F17E8662800D0829B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		CE0F314417F9EA8600066469 /* Octo-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Octo-hd.png"; path = "Resources/Octo-hd.png"; sourceTree = "<group>"; };
+		CE0F314617FA0B8E00066469 /* MenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuBackground-hd.png"; path = "Resources/MenuBackground-hd.png"; sourceTree = "<group>"; };
+		CE0F314717FA0B8E00066469 /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuBackground.png; path = Resources/MenuBackground.png; sourceTree = "<group>"; };
 		CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tentacle-hd.png"; path = "Resources/Tentacle-hd.png"; sourceTree = "<group>"; };
 		CE76DAC517F46C0900363F8A /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
 		CE76DAC617F46C0900363F8A /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
@@ -893,6 +897,8 @@
 				CE8ACBE617FA06D500D06213 /* JellyFish-hd.png */,
 				CE8ACBE717FA06D500D06213 /* JellyFish.png */,
 				CE781DD517F4993D00C8A5C7 /* Sounds */,
+				CE0F314617FA0B8E00066469 /* MenuBackground-hd.png */,
+				CE0F314717FA0B8E00066469 /* MenuBackground.png */,
 				CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */,
 				CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */,
 				CE906BE317F8E0360007EBAA /* Tentacle.png */,
@@ -1681,6 +1687,8 @@
 				CE0F314517F9EA8600066469 /* Octo-hd.png in Resources */,
 				CE8ACBE817FA06D600D06213 /* JellyFish-hd.png in Resources */,
 				CE8ACBE917FA06D600D06213 /* JellyFish.png in Resources */,
+				CE0F314817FA0B8E00066469 /* MenuBackground-hd.png in Resources */,
+				CE0F314917FA0B8E00066469 /* MenuBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 #import "SimpleAudioEngine.h"
 #import "ccTypes.h"
 #import "OctopusTentacle.h"
+#import "cocos2d.h"
 #define PhysicsIdentifier(key) ((__bridge id)(void *)(@selector(key)))
 
 
@@ -29,7 +30,7 @@
         
         if (_space != nil)
         {
-            self.scale = 0.7+lives*.1;
+            //self.scale = 0.7+lives*.1;
             CGSize size = self.textureRect.size;
             size.height = size.height*(0.7+lives*.1);
             size.width = size.width*(0.7+lives*.1);
@@ -105,11 +106,19 @@
 
             
             _tentacles = [NSMutableArray array];
+            constraintDeleteIndex = 0;
+            constraintIndex = 0;
+
             for (int i = 0; i<lives; i++){
                 OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
                 [_GameNode addChild:tent];
                 anch2.y = tent.textureRect.size.height/2;
-                cpSpaceAddConstraint(_space.space, cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1));
+                cpConstraint *derp = cpPinJointNew(tent.CPBody, octoBody.body, anch2, anch1);
+                cpSpaceAddConstraint(_space.space, derp);
+                
+                _constraints[i] = derp;
+                constraintIndex++;
+                
                 [_tentacles addObject:tent];
             }
             
@@ -137,8 +146,7 @@
 
 - (void)shrink:(Game*)game
 {
-    _lives--;
-    if(_lives<=0){
+    if(--_lives<=0){
             CCLabelTTF *dead = [CCLabelTTF labelWithString:@"YOU ARE DEAD"	 fontName:@"Arial" fontSize:30];
             dead.position = ccp(CCRANDOM_0_1()*game->_winSize.width,CCRANDOM_0_1()*game->_winSize.height);
             dead.rotationX = CCRANDOM_0_1()*360;
@@ -148,7 +156,7 @@
         //lose game
     }
     else{
-        self.scale = 0.7+_lives*.1;
+        /*self.scale = 0.7+_lives*.1;
         CGSize size = self.textureRect.size;
         size.height = size.height*(0.7+_lives	*.1);
         size.width = size.width*(0.7+_lives*.1);
@@ -178,6 +186,25 @@
         // Add self to body and body to self
         octoBody.data = self;
         self.chipmunkBody = octoBody;
+         */
+        
+        //OctopusTentacle *tent = _tentacles.lastObject;
+        //[tent removeAllChildren];
+
+        
+        //cpSpaceRemoveConstraint(cpConstraintGetSpace(_constraints[constraintDeleteIndex]),_constraints[constraintDeleteIndex++]);
+        if(_constraints[constraintDeleteIndex]!=NULL)
+            cpSpaceAddPostStepCallback(_space.space, (cpPostStepFunc)postStepRemove, _constraints[constraintDeleteIndex], NULL);
+        _constraints[constraintDeleteIndex++] = NULL;
+        if (constraintDeleteIndex >= 8)
+            constraintDeleteIndex = 0;
+
+        /*for (ChipmunkShape *shape in tent.chipmunkBody.shapes)
+        {
+            [_space smartRemove:shape];
+        }
+        [tent.chipmunkBody.data removeFromParentAndCleanup:YES];
+        */
     }
 }
 
@@ -187,7 +214,7 @@
         ;//8 is the maximum number of extra lives
     else{
         _lives++;
-        self.scale = 0.7+_lives*.1;
+        /*self.scale = 0.7+_lives*.1;
         CGSize size = self.textureRect.size;
         size.height = size.height*(0.7+_lives*.1);
         size.width = size.width*(0.7+_lives*.1);
@@ -217,6 +244,29 @@
         // Add self to body and body to self
         octoBody.data = self;
         self.chipmunkBody = octoBody;
+         */
+        
+        CGPoint tPos = self.position;
+        tPos.y-=self.textureRect.size.height/1.2;
+        
+        cpVect anch1;
+        anch1.x = 0;
+        anch1.y = 0;
+        cpVect anch2;
+        anch2.x = 0;
+        
+        OctopusTentacle *tent = [[OctopusTentacle alloc] initWithSpace:_space position:tPos];
+        [_GameNode addChild:tent];
+        anch2.y = tent.textureRect.size.height/2;
+        cpConstraint *derp = cpPinJointNew(tent.CPBody, self.chipmunkBody.body, anch2, anch1);
+        cpSpaceAddConstraint(_space.space, derp);
+        
+        _constraints[constraintIndex++] = derp;
+        if (constraintIndex>=8)
+            constraintIndex = 0;
+        
+        [_tentacles addObject:tent];
+
     }
 }
 -(void) goingFast
@@ -235,5 +285,17 @@
     NSLog(@"splash: %@", NSStringFromCGPoint(_inkSpurt.position));
     [_inkSpurt resetSystem];
 }
+
+static void
+postStepRemove(cpSpace *space, cpConstraint *constraint, void *unused)
+{
+    cpSpaceRemoveConstraint(space,constraint);
+}
+static void
+postStepAdd(cpSpace *space, cpConstraint *constraint, void *unused)
+{
+    cpSpaceRemoveConstraint(space,constraint);
+}
+
 
 @end

@@ -10,6 +10,8 @@
 #import "cocos2d.h"
 #import "Game.h"
 #import "OctopusTentacle.h"
+#import "ChipmunkAutoGeometry.h"
+
 
 @interface Octopus : CCPhysicsSprite
 {
@@ -18,6 +20,9 @@
     CCParticleSystemQuad *_goFast;
     CCParticleSystemQuad *_inkSpurt;
     NSDictionary *_configuration;
+    cpConstraint *_constraints[8];
+    int constraintIndex;
+    int constraintDeleteIndex;
 }
 
 - (id)initWithSpaceAndParentNode:(ChipmunkSpace *)space position:(CGPoint)position parent:(CCNode*)parent lives:(int)lives;

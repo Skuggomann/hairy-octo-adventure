@@ -114,7 +114,7 @@
         ++_Game->_collectablesCollected;
         _Game->_extraScore += (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected);
         [_Game->_octo inkSpurt];
-        
+        //[_Game->_octo grow];
         
             
         //NSLog(@"Octo got ink! %d", (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected));
@@ -147,7 +147,7 @@
         //[space addPostStepCallback:self selector:@selector(sleep:) key:enemyChipmunkBody];
         //cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)SleepEnemy, enemyChipmunkBody.body, NULL);
         //cpBodySleep(enemyChipmunkBody.body);
-        //[_Game->_octo shrink:_Game];
+        [_Game->_octo shrink:_Game];
         return YES;
     }
     

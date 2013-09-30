@@ -54,4 +54,12 @@
     }
     return self;
 }
+
+
+static void
+postStepAddTentacle(cpSpace *space, cpConstraint *constraint, void *unused)
+{
+    cpSpaceRemoveConstraint(space,constraint);
+}
+
 @end
