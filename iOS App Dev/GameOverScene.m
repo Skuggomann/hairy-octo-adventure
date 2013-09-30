@@ -9,6 +9,7 @@
 #import "GameOverScene.h"
 #import "cocos2d.h"
 #import "Game.h"
+#import "SimpleAudioEngine.h"
 
 @implementation GameOverScene
 
@@ -55,7 +56,7 @@
         
         
         
-        
+        [[SimpleAudioEngine sharedEngine] playEffect:@"GameOverYeah.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:5.0f];
         
         
         

@@ -11,6 +11,7 @@
 #import "IntroLayer.h"
 #import "Game.h"
 #import "MenuScene.h"
+#import "SimpleAudioEngine.h"
 
 #pragma mark - IntroLayer
 
@@ -51,6 +52,13 @@
 		}
 		background.position = ccp(size.width/2, size.height/2);
 
+        
+        
+        // Preload sound:
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"GameOverYeah.mp3"];
+        
+        
+        
 		// add the label as a child to this Layer
 		[self addChild: background];
 	}

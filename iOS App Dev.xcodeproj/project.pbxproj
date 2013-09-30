@@ -147,6 +147,9 @@
 		CE0F314817FA0B8E00066469 /* MenuBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314617FA0B8E00066469 /* MenuBackground-hd.png */; };
 		CE0F314917FA0B8E00066469 /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314717FA0B8E00066469 /* MenuBackground.png */; };
 		CE0F314B17FA150D00066469 /* GameOverBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314A17FA150D00066469 /* GameOverBackground-hd.png */; };
+		CE0F314D17FA1D8E00066469 /* GameOverYeah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314C17FA1D8E00066469 /* GameOverYeah.mp3 */; };
+		CE0F315017FA238900066469 /* HowToBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314E17FA238900066469 /* HowToBackground-hd.png */; };
+		CE0F315117FA238900066469 /* HowToBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0F314F17FA238900066469 /* HowToBackground.png */; };
 		CE5BA44517F9CA1D0043DDEC /* Tentacle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */; };
 		CE76DAC717F46C0900363F8A /* HowToScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE76DAC617F46C0900363F8A /* HowToScene.m */; };
 		CE781E4717F4993D00C8A5C7 /* bird1.WAV in Resources */ = {isa = PBXBuildFile; fileRef = CE781DD617F4993D00C8A5C7 /* bird1.WAV */; };
@@ -627,6 +630,9 @@
 		CE0F314617FA0B8E00066469 /* MenuBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuBackground-hd.png"; path = "Resources/MenuBackground-hd.png"; sourceTree = "<group>"; };
 		CE0F314717FA0B8E00066469 /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuBackground.png; path = Resources/MenuBackground.png; sourceTree = "<group>"; };
 		CE0F314A17FA150D00066469 /* GameOverBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GameOverBackground-hd.png"; path = "Resources/GameOverBackground-hd.png"; sourceTree = "<group>"; };
+		CE0F314C17FA1D8E00066469 /* GameOverYeah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOverYeah.mp3; sourceTree = "<group>"; };
+		CE0F314E17FA238900066469 /* HowToBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HowToBackground-hd.png"; path = "Resources/HowToBackground-hd.png"; sourceTree = "<group>"; };
+		CE0F314F17FA238900066469 /* HowToBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HowToBackground.png; path = Resources/HowToBackground.png; sourceTree = "<group>"; };
 		CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tentacle-hd.png"; path = "Resources/Tentacle-hd.png"; sourceTree = "<group>"; };
 		CE76DAC517F46C0900363F8A /* HowToScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToScene.h; sourceTree = "<group>"; };
 		CE76DAC617F46C0900363F8A /* HowToScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToScene.m; sourceTree = "<group>"; };
@@ -901,6 +907,8 @@
 				CE8ACBE717FA06D500D06213 /* JellyFish.png */,
 				CE0F314617FA0B8E00066469 /* MenuBackground-hd.png */,
 				CE0F314717FA0B8E00066469 /* MenuBackground.png */,
+				CE0F314E17FA238900066469 /* HowToBackground-hd.png */,
+				CE0F314F17FA238900066469 /* HowToBackground.png */,
 				CED3D3FA17F9DEAE007FC560 /* GameOverBackground.png */,
 				CE0F314A17FA150D00066469 /* GameOverBackground-hd.png */,
 				CE5BA44417F9CA1D0043DDEC /* Tentacle-hd.png */,
@@ -1372,6 +1380,7 @@
 		CE781DD517F4993D00C8A5C7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				CE0F314C17FA1D8E00066469 /* GameOverYeah.mp3 */,
 				CE781DD617F4993D00C8A5C7 /* bird1.WAV */,
 				CE781DD717F4993D00C8A5C7 /* bird2.WAV */,
 				CE781DD817F4993D00C8A5C7 /* bird3.WAV */,
@@ -1693,6 +1702,9 @@
 				CE0F314817FA0B8E00066469 /* MenuBackground-hd.png in Resources */,
 				CE0F314917FA0B8E00066469 /* MenuBackground.png in Resources */,
 				CE0F314B17FA150D00066469 /* GameOverBackground-hd.png in Resources */,
+				CE0F314D17FA1D8E00066469 /* GameOverYeah.mp3 in Resources */,
+				CE0F315017FA238900066469 /* HowToBackground-hd.png in Resources */,
+				CE0F315117FA238900066469 /* HowToBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
