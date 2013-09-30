@@ -55,8 +55,8 @@
 
         
         
-        
-        [[SimpleAudioEngine sharedEngine] playEffect:@"GameOverYeah.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:5.0f];
+        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"GameOverYeah.mp3" pitch: 1 pan:0 gain:20.0f];
         
         
         

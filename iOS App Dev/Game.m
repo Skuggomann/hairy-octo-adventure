@@ -120,6 +120,15 @@
         
         
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"swim-below.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"tinyzap.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"warp2.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"step-metalcap.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"pokeoutofsand.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"GameOverYeah.mp3"];
+
+
+
+
 
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         

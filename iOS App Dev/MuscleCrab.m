@@ -8,6 +8,7 @@
 
 #import "MuscleCrab.h"
 #import "ChipmunkAutoGeometry.h"
+#import "SimpleAudioEngine.h"
 
 @implementation MuscleCrab
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
@@ -71,6 +72,7 @@
 }
 - (void) hitOcto;
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"step-metalcap.WAV" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1.0f];
     NSLog(@"SnipSnip");
     [super hitOcto];
 }

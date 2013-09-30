@@ -283,6 +283,8 @@
 }
 -(void) goingFast
 {
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"warp2.WAV" pitch:self.chipmunkBody.vel.x/10000 + 1 pan:0 gain:1.0f];
     // Play particle effect
     _goFast.position = self.position;
     NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
@@ -292,6 +294,7 @@
 }
 -(void) inkSpurt
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"pokeoutofsand.WAV"pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1.0f];
     // Play particle effect
     _inkSpurt.position = self.position;
     NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));

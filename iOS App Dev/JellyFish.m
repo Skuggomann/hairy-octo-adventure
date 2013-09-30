@@ -7,6 +7,7 @@
 //
 
 #import "JellyFish.h"
+#import "SimpleAudioEngine.h"
 
 @implementation JellyFish
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
@@ -34,6 +35,7 @@
 }
 - (void) hitOcto;
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"tinyzap.WAV"];
     NSLog(@"Jell-o");
     [super hitOcto];
 }
