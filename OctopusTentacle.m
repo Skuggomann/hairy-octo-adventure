@@ -50,7 +50,6 @@
             [_space addShape:shape];
             tentacleBody.data = self;
             self.chipmunkBody = tentacleBody;
-            //self.anchorPoint = cpvzero;
         }
     }
     return self;
