@@ -5,7 +5,7 @@
 //  Created by Lion User on 25/09/2013.
 //  Copyright (c) 2013 Sveinn Fannar Kristjansson. All rights reserved.
 // Used http://www.raywenderlich.com/32954/how-to-create-a-game-like-tiny-wings-with-cocos2d-2-x-part-1
-// for the ground, but since he uses box2d for collisions we had to do that for the collisions. TODO: refactor into configuration file, there are a lot of magic numbers which we can tweak for nicer sand.
+// for the ground, but since he uses box2d for collisions we had to do that for the collisions. We also had to change a a lot of things due to it not being endless. It crashed after 1000 points so we had to make it generate more lines.
 //
 
 #import "Sand.h"
@@ -54,10 +54,7 @@
         for (int i=_fromKeyPointI+1; i<=_toKeyPointI; i++) {
             p1 = _hillKeyPoints[i];
             
-            /*if(p1.x-p0.x >300){
-                p0.x = p1.x-140;
-                p0.y = p1.y;
-            }*/
+            
             // triangle strip between p0 and p1
             int hSegments = floorf((p1.x-p0.x)/kHillSegmentWidth);
             float dx = (p1.x - p0.x) / hSegments;
@@ -95,16 +92,19 @@
 
 - (void) draw {
     CC_NODE_DRAW_SETUP();
-    
+    // This sets the texture that will be drawn.
     ccGLBindTexture2D(_stripes.texture.name);
     ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position | kCCVertexAttribFlag_TexCoords);
     
+    // This draws the vertices created in generateHills.
     ccDrawColor4F(1.0f, 1.0f, 1.0f, 1.0f);
     glVertexAttribPointer(kCCVertexAttrib_Position, 2, GL_FLOAT, GL_FALSE, 0, _hillVertices);
     glVertexAttribPointer(kCCVertexAttrib_TexCoords, 2, GL_FLOAT, GL_FALSE, 0, _hillTexCoords);
     
     glDrawArrays(GL_TRIANGLE_STRIP, 0, (GLsizei)_nHillVertices);
     
+    
+    // This commented out code draws a red line between the points generated, this could be shown for debug purposes.
     /*for(int i = MAX(_fromKeyPointI, 1); i <= _toKeyPointI; ++i) {
         ccDrawColor4F(1.0, 0, 0, 1.0);
         ccDrawLine(_hillKeyPoints[i-1], _hillKeyPoints[i]);
@@ -166,10 +166,19 @@
 
 - (void) generateHills:(float)startX {
     
+    // Minimum difference between X´s
     float minDX = [_configuration[@"sandMinDX"]floatValue];
+    
+    // Minimum difference between Y´s
     float minDY = [_configuration[@"sandMinDY"]floatValue];
+    
+    // Range of the X random
     int rangeDX = [_configuration[@"sandRangeDX"]intValue];
+    
+    // Range of the Y random
     int rangeDY = [_configuration[@"sandRangeDY"]intValue];
+    
+    
     _fromKeyPointI = 0;
     _toKeyPointI = 0;
     float x = startX;
@@ -180,6 +189,7 @@
     float paddingTop = _winSize.height/4;
     float paddingBottom = _winSize.height/20;
     
+    // Generates kMaxHillkeyPoints number of points.
     for (int i=0; i<kMaxHillKeyPoints; i++) {
         _hillKeyPoints[i] = CGPointMake(x, y);
         if (i == 0) {
@@ -187,36 +197,27 @@
             y = _winSize.height/4;
         } else {
             x += rand()%rangeDX+minDX;
-            //while(true) {
-                dy = rand()%rangeDY+minDY;
-                ny = y + dy*sign;
-                if(ny<paddingBottom)
-                    ny = paddingBottom;
-                if(ny>paddingTop)
-                    ny = paddingTop;
-                /*if(ny < _winSize.height-paddingTop && ny > paddingBottom) {
-                    break;
-                }
-            }*/
+            dy = rand()%rangeDY+minDY;
+            ny = y + dy*sign;
+            if(ny<paddingBottom) //below lowest point.
+                ny = paddingBottom;
+            if(ny>paddingTop) // above highest point.
+                ny = paddingTop;
             y = ny;
         }
-        sign *= -1;
+        sign *= -1; // so the hills go up and down.
     }
 }
 
 - (void) setOffsetX:(float)newOffsetX {
     _offsetX = newOffsetX;
-    //self.position = CGPointMake(-_offsetX*self.scale, 0);
+    // Resets the hillVertices.
     [self resetHillVertices];
+    // if we´re reaching the highest amount of points, we generate new hills.
     if(_fromKeyPointI>900||_toKeyPointI>900)
     {
         [self generateHills:_offsetX];
     }
 }
 
-/*- (void)dealloc {
-    [_stripes release];
-    _stripes = NULL;
-    [super dealloc];
-}*/
 @end
