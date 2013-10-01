@@ -54,8 +54,14 @@
 
         
         
-        // Preload sound:
+        // Preload the sound effects used.
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"swim-below.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"tinyzap.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"warp2.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"step-metalcap.WAV"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"pokeoutofsand.WAV"];
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"GameOverYeah.mp3"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"23 Dire, Dire Docks.mp3"];
         
         
         

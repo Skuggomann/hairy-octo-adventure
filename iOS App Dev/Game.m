@@ -97,16 +97,10 @@
             [self addChild:_scoreText];
         }
         
-        _portal = [[Portal alloc] initWithSpace:_space position:ccp(300,200)];//CGPointFromString(_configuration[@"goalPosition"])];
+        // Add portal (speed boost)
+        _portal = [[Portal alloc] initWithSpace:_space position:ccp(300,200)];
         [_gameNode addChild:_portal];
 
-        
-        // Add collectables container (Ink goes in here).
-        //_colletables = [CCNode node];
-        //[_gameNode addChild:_colletables];
-        
-        
-        
         
         
         // Create an input layer
@@ -123,12 +117,7 @@
         [_gameNode addChild:debug z:20];
         
         
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"swim-below.WAV"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"tinyzap.WAV"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"warp2.WAV"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"step-metalcap.WAV"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"pokeoutofsand.WAV"];
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"GameOverYeah.mp3"];
+        
 
 
 

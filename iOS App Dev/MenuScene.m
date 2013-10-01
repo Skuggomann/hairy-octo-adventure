@@ -49,8 +49,6 @@
         
 
         
-        
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"23 Dire, Dire Docks.mp3"];
 
         
         
