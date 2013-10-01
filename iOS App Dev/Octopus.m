@@ -30,7 +30,6 @@
         
         if (_space != nil)
         {
-            //self.scale = 0.7+lives*.1;
             CGSize size = self.textureRect.size;
             size.height = size.height*(0.7+lives*.1);
             size.width = size.width*(0.7+lives*.1);
@@ -40,10 +39,6 @@
             ChipmunkBody *octoBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
             
             
-            //cpBodySetMoment(octoBody.body, INFINITY);
-            //octoBody.angVelLimit = 0.0f;
-            
-            
             octoBody.pos = position;
             //ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:octoBody width:size.width height:size.height];// Make it the correct shape. 
             ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
@@ -51,22 +46,6 @@
             shape.elasticity = 1.0f;	
             shape.friction = 1000.0f;
             shape.group = PhysicsIdentifier(OCTO);
-            /*
-            NSURL *url = [[NSBundle mainBundle] URLForResource:@"Octo" withExtension:@"png"];
-            ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
-            
-            ChipmunkPolylineSet *contour = [sampler marchAllWithBorder:NO hard:YES];
-            ChipmunkPolyline *line = [contour lineAtIndex:0];
-            ChipmunkPolyline *simpleLine = [line simplifyCurves:1];
-            
-
-            NSArray *terrainShapes = [simpleLine asChipmunkSegmentsWithBody:octoBody radius:0 offset:cpvzero];
-            for (ChipmunkShape *shape in terrainShapes)
-            {
-                shape.elasticity = 1.0f;
-                [_space addShape:shape];
-            }
-             */
             
             
             _lives = lives;
@@ -87,12 +66,14 @@
             _goFast.position = position;
             [_goFast stopSystem];
             [parent addChild:_goFast];
+            
             // Setup particle system for inkspurt
-            //_inkSpurt = [CCParticleGalaxy node];
             _inkSpurt = [CCParticleSystemQuad particleWithFile:@"InkSpurt.plist"];
             _inkSpurt.position = position;
             [_inkSpurt stopSystem];
             [parent addChild:_inkSpurt];
+            
+            // Setup particle system for blood
             _blood = [CCParticleSystemQuad particleWithFile:@"blood.plist"];
             _blood.position = position;
             [_blood stopSystem];
@@ -165,49 +146,15 @@
         //lose game
     }
     else{
+        
+        // Play particle effect blood.
         _blood.position = self.position;
         NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
         NSLog(@"blood: %@", NSStringFromCGPoint(_blood.position));
         [_blood resetSystem];
-        /*self.scale = 0.7+_lives*.1;
-        CGSize size = self.textureRect.size;
-        size.height = size.height*(0.7+_lives	*.1);
-        size.width = size.width*(0.7+_lives*.1);
-        cpFloat mass = size.width * size.height;
-        cpFloat moment = cpMomentForBox(mass, size.width, size.height);
-    
-        ChipmunkBody *octoBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
-    
-    
-        octoBody.pos = self.position;
-        ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
-    
-        shape.elasticity = 1.0f;
-        shape.friction = 1000.0f;
-    
-    
-        [_space removeBody:self.chipmunkBody];
-        for (ChipmunkShape * s in self.chipmunkBody.shapes){
-            [_space removeShape:s];
-        }
-        [_space addBody:octoBody];
-        [_space addShape:shape];
-    
-    
-    
-    
-        // Add self to body and body to self
-        octoBody.data = self;
-        self.chipmunkBody = octoBody;
-         */
         
-        //OctopusTentacle *tent = _tentacles.lastObject;
-        //[tent removeAllChildren];
-
-        
-        //cpSpaceRemoveConstraint(cpConstraintGetSpace(_constraints[constraintDeleteIndex]),_constraints[constraintDeleteIndex++]);
+        //drop a tentacle.
         if(_constraints[constraintDeleteIndex]!=NULL){
-            //OctopusTentacle *tent = [_tentacles firstObjectCommonWithArray:_tentacles];
             OctopusTentacle *tent = _tentacles[tentacleDeleteIndex++];
             tent.isDead = YES;
             cpSpaceAddPostStepCallback(_space.space, (cpPostStepFunc)postStepRemove, _constraints[constraintDeleteIndex], NULL);
@@ -215,13 +162,6 @@
         _constraints[constraintDeleteIndex++] = NULL;
         if (constraintDeleteIndex >= 8)
             constraintDeleteIndex = 0;
-
-        /*for (ChipmunkShape *shape in tent.chipmunkBody.shapes)
-        {
-            [_space smartRemove:shape];
-        }
-        [tent.chipmunkBody.data removeFromParentAndCleanup:YES];
-        */
     }
 }
 
@@ -231,38 +171,9 @@
         ;//8 is the maximum number of extra lives
     else{
         _lives++;
-        /*self.scale = 0.7+_lives*.1;
-        CGSize size = self.textureRect.size;
-        size.height = size.height*(0.7+_lives*.1);
-        size.width = size.width*(0.7+_lives*.1);
-        cpFloat mass = size.width * size.height;
-        cpFloat moment = cpMomentForBox(mass, size.width, size.height);
-        
-        ChipmunkBody *octoBody = [ChipmunkBody bodyWithMass:mass andMoment:moment];
         
         
-        octoBody.pos = self.position;
-        ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:octoBody radius:size.width/2 offset:cpvzero];
-        
-        shape.elasticity = 1.0f;
-        shape.friction = 1000.0f;
-        
-        
-        [_space removeBody:self.chipmunkBody];
-        for (ChipmunkShape * s in self.chipmunkBody.shapes){
-            [_space removeShape:s];
-        }
-        [_space addBody:octoBody];
-        [_space addShape:shape];
-        
-        
-        
-        
-        // Add self to body and body to self
-        octoBody.data = self;
-        self.chipmunkBody = octoBody;
-         */
-        
+        //Make a new tentacle and add it by a constraint to the octopus.
         CGPoint tPos = self.position;
         tPos.y-=self.textureRect.size.height/1.2;
         
@@ -291,13 +202,13 @@
 }
 -(void) goingFast
 {
-    
+    //Play a sound with pitch 
     [[SimpleAudioEngine sharedEngine] playEffect:@"warp2.WAV" pitch:self.chipmunkBody.vel.x/10000 + 1 pan:0 gain:1.0f];
     // Play particle effect
     _goFast.position = self.position;
     NSLog(@"OCTO: %@", NSStringFromCGPoint(self.position));
     NSLog(@"goingFast: %@", NSStringFromCGPoint(_goFast.position));
-    _immunity = 2.0f;
+    _immunity = 1.0f;
     [_goFast resetSystem];
 }
 -(void) inkSpurt
