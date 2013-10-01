@@ -117,12 +117,7 @@
         [_gameNode addChild:debug z:20];
         
         
-        
-
-
-
-
-
+        // Play the game music.
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"23 Dire, Dire Docks.mp3" loop:YES];
         
         // Your initilization code goes here
@@ -165,10 +160,10 @@
 }
 - (void)genBackground {
     
-    
-    //ccColor4F color3 = [self randomBrightColor];//ccc4f(240, 233, 180, 1.0f);
+    // Generates the texture.
+    //ccColor4F color3 = [self randomBrightColor]; This would be used for randomly colored ground.
     ccColor4F color3 = ccc4FFromccc4B(ccc4(210, 200, 150, 255));
-    //ccColor4F color4 = [self randomBrightColor];//ccc4f(50, 250, 50, 1.0f);
+    //ccColor4F color4 = [self randomBrightColor]; This would be used for randomly colored ground.
     ccColor4F color4 = ccc4FFromccc4B(ccc4(201, 188, 145, 255));
     CCSprite *stripes = [self stripedSpriteWithColor1:color3 color2:color4
                                          textureWidth:512
@@ -176,6 +171,7 @@
                                               stripes:20];
     ccTexParams tp2 = {GL_LINEAR, GL_LINEAR, GL_REPEAT,GL_CLAMP_TO_EDGE};
     [stripes.texture setTexParameters:&tp2];
+    //adds the texture to the _sand.
     _sand.stripes = stripes;
     
 }
@@ -286,7 +282,7 @@
     // 5: Create a new Sprite from the texture
     return [CCSprite spriteWithTexture:rt.sprite.texture];
 }
-
+// Returns a random bright color, this is not used at the moment, but could be useful for a theme perhaps.
 - (ccColor4F)randomBrightColor {
     
     while (true) {
@@ -307,9 +303,11 @@
 // Update logic goes here
 - (void)update:(ccTime)delta
 {
+    //Updates the octopus and enemies.
     [_octo update:delta];
     [_crab update:delta];
     [_jelly update:delta];
+    
     // Run the physics engine.
     CGFloat fixedTimeStep = 1.0f / 240.0f;
     _accumulator += delta;
@@ -320,35 +318,42 @@
     }
     
 
-    
-    if (_octo.position.x >= (_winSize.width / 4)) //&& _octo.position.x < (_landscapeWidth - (_winSize.width / 2)))
+    //Moves the parallaxnode if the octopus moves.
+    if (_octo.position.x >= (_winSize.width / 4))
     {
         _parallaxNode.position = ccp(-(_octo.position.x - (_winSize.width / 4)), 0);
+        
+        //Sets the offset in sand, this has to happen for the generation of the sand.
         [_sand setOffsetX:(_octo.position.x)];
     }
 
     
-
+    // Applies impulse so the octopus moves to the right
     cpVect Rightforce = cpvsub(CGPointFromString(_configuration[@"rightForce"]), CGPointZero);
     Rightforce = cpvmult(Rightforce, _octo.chipmunkBody.mass*delta);
     [_octo.chipmunkBody applyImpulse:(Rightforce) offset:(cpvzero)];
+    
+    // Applies impulse so the crab walk to the left.
     cpVect crabWalk = cpvsub(CGPointFromString(_configuration[@"crabWalk"]), CGPointZero);
     crabWalk = cpvmult(crabWalk, _crab.chipmunkBody.mass*delta);
     [_crab.chipmunkBody applyImpulse:(crabWalk) offset:cpvzero];
     
 
+    // This is to swim up, We wanted the octopus to move in "jumps" instead of steady movement.
     _swimTime -= delta;
     if(_swimming && _swimTime <= 0 && _octo.position.y < _winSize.height-40){
         _swimTime = 0.5;
         [_octo swimUp];
     }
     
+    // Update score.
     _score = _octo.position.x+_extraScore;
     
+    // Write out the hud.
     _lifeText.string = [NSString stringWithFormat:@"Lives:%d", _octo.lives];
     _scoreText.string =[NSString stringWithFormat:@"Score:%d", _score];
     
-    //Adding portal(speed boost)
+    // Adding portal if it is time to add it.
     if(_portal.position.x < _octo.position.x-(_winSize.width/4+_portal.textureRect.size.width))
     {
         for (ChipmunkShape *shape in _portal.chipmunkBody.shapes){
@@ -365,9 +370,8 @@
         
     }
     
-    //NSLog(@"OCTO: %@", NSStringFromCGPoint(_octo.position));
     
-    //adding crab
+    //adding crab if it is the time to add it, it´s added at a specific length from the crab so it spawns ontop of sand that is being generated.
     if(_crab.position.x < _octo.position.x-(_winSize.width+(CCRANDOM_0_1()*_winSize.width)))
     {
         for (ChipmunkShape *shape in _crab.chipmunkBody.shapes){
@@ -384,7 +388,7 @@
         
     }
     
-    //adding jellyfish
+    //adding jellyfish if it is the time to add it.
     if(_jelly.position.x < _octo.position.x-(_winSize.width+(CCRANDOM_0_1()*_winSize.width)))
     {
         for (ChipmunkShape *shape in _jelly.chipmunkBody.shapes){
@@ -415,53 +419,10 @@
         _ink = [[OctopusFood alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),inky) post:NO];
         [_gameNode addChild:_ink];
         NSLog(@"added ink");
-        // Play particle effect
-        //[_splashParticles resetSystem];
         
     }
-    /*
-    if (_colletables.children.count < 2)
-    {
-        OctopusFood *lastInk = _colletables.children.lastObject;
-        
-        if(lastInk != nil)
-        {
-            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*_winSize.width+(_winSize.width*3), CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-lastInk.boundingBox.size.height)+_winSize.height/3)];
-            [_colletables addChild:inkTest];
-        }
-        else
-        {
-            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(400,200)];
-            [_colletables addChild:inkTest];
-        }
-        
-        
-        
-    }
-    else
-    {
-        // chekk if the oldest collectable is still on screen.        
-        OctopusFood *firstInk = [_colletables.children objectAtIndex:0];
-        
-        
-        //CGPoint position = [_colletables convertToWorldSpace:firstInk.position];
-        //NSLog(@"touch: %@", NSStringFromCGPoint(position));
-        //NSLog(@"tank: %@", NSStringFromCGPoint(firstInk.position));
-        
-        if(firstInk.position.x<_octo.position.x-_winSize.width/4)
-        {
-            
-            for (ChipmunkShape *shape in firstInk.chipmunkBody.shapes)
-            {
-                [_space smartRemove:shape];
-            }
-            [firstInk removeFromParentAndCleanup:YES];
-        
-        }
-        
-        
-    }*/
     
+    // Removing Tentacles that have fallen off and are off screen.
     for(OctopusTentacle *tent in self->_octo.tentacles){
         if(tent.isDead){
             if(tent.position.x<_octo.position.x-_winSize.width/4){
@@ -474,7 +435,7 @@
         }
     }
 
-    
+    // Check if gameOver.
     if(_octo.lives <= 0)
     {
         [self gameOver];
@@ -485,10 +446,7 @@
 
 - (void)gameOver
 {
-    //NSLog(@"You lost!");    
-    
     GameOverScene *gameOverScene = [[GameOverScene alloc] initWithScore:(_score + _extraScore)];
-    //NSLog(@"gameOverScene suxsessfully initialysed.");
     
     [[CCDirector sharedDirector] replaceScene:gameOverScene];
     
@@ -501,8 +459,6 @@
 
 - (void)touchBegan
 {
-    //NSLog(@"touch!");
-    
     _swimming = YES;
 }
 
