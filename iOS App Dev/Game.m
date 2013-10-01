@@ -422,7 +422,7 @@
         }
         [_ink removeFromParentAndCleanup:YES];
         NSLog(@"removed ink");
-        float inky= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-45)+_winSize.height/3-60;
+        float inky= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-45)+_winSize.height/3;
         _ink = [[OctopusFood alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),inky) post:NO];
         [_gameNode addChild:_ink];
         NSLog(@"added ink");

@@ -144,8 +144,8 @@
         [_Game->_octo inkSpurt];
         [_Game->_octo grow];
         NSLog(@"removed ink");
-        float inky= _Game->_winSize.height-44.0f;
-        _Game->_ink = [[OctopusFood alloc] initWithSpace:space position:ccp(_Game->_octo.position.x+(_Game->_winSize.width*1.2f),inky) post:YES];
+        float inky= CCRANDOM_0_1()*(_Game->_winSize.height-_Game->_winSize.height/3-45)+_Game->_winSize.height/3;
+        _Game->_ink = [[OctopusFood alloc] initWithSpace:space position:ccp(_Game->_octo.position.x+(_Game->_winSize.width*3.2f),inky) post:YES];
         [_Game->_gameNode addChild:_Game->_ink];
         ChipmunkShape *s = deleteChipmunkBody.shapes.lastObject;
         cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)postStepRemoveBody,deleteChipmunkBody.body, s.shape);
