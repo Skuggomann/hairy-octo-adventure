@@ -77,6 +77,10 @@
         _jelly = [[JellyFish alloc] initWithSpace:_space position:ccp(520.0f,200.0f)];
         [_gameNode addChild:_jelly z:8];
 
+        // Add ink
+        _ink = [[OctopusFood alloc] initWithSpace:_space position:ccp(1000.0f,200.0f) post:NO];
+        [_gameNode addChild:_ink z:8];
+        
         _score = 0;
         _extraScore = 0;
         _collectablesCollected = 0;
@@ -98,8 +102,8 @@
 
         
         // Add collectables container (Ink goes in here).
-        _colletables = [CCNode node];
-        [_gameNode addChild:_colletables];
+        //_colletables = [CCNode node];
+        //[_gameNode addChild:_colletables];
         
         
         
@@ -411,15 +415,29 @@
     
     
     // Add some ink bottles.
-    
-    
-    if (_colletables.children.count < 10)
+    if(_ink.position.x < _octo.position.x-((_winSize.width*3)+(CCRANDOM_0_1()*_winSize.width)))
+    {
+        for (ChipmunkShape *shape in _ink.chipmunkBody.shapes){
+            [_space smartRemove:shape];
+        }
+        [_ink removeFromParentAndCleanup:YES];
+        NSLog(@"removed ink");
+        float inky= CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-45)+_winSize.height/3-60;
+        _ink = [[OctopusFood alloc] initWithSpace:_space position:ccp(_octo.position.x+(_winSize.width*1.2f),inky) post:NO];
+        [_gameNode addChild:_ink];
+        NSLog(@"added ink");
+        // Play particle effect
+        //[_splashParticles resetSystem];
+        
+    }
+    /*
+    if (_colletables.children.count < 2)
     {
         OctopusFood *lastInk = _colletables.children.lastObject;
         
         if(lastInk != nil)
         {
-            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*400+500, CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-lastInk.boundingBox.size.height)+_winSize.height/3)];
+            OctopusFood *inkTest = [[OctopusFood alloc] initWithSpace:_space position:ccp(lastInk.position.x + CCRANDOM_0_1()*_winSize.width+(_winSize.width*3), CCRANDOM_0_1()*(_winSize.height-_winSize.height/3-lastInk.boundingBox.size.height)+_winSize.height/3)];
             [_colletables addChild:inkTest];
         }
         else
@@ -437,11 +455,11 @@
         OctopusFood *firstInk = [_colletables.children objectAtIndex:0];
         
         
-        CGPoint position = [_colletables convertToWorldSpace:firstInk.position];
+        //CGPoint position = [_colletables convertToWorldSpace:firstInk.position];
         //NSLog(@"touch: %@", NSStringFromCGPoint(position));
         //NSLog(@"tank: %@", NSStringFromCGPoint(firstInk.position));
         
-        if(position.x < 0)
+        if(firstInk.position.x<_octo.position.x-_winSize.width/4)
         {
             
             for (ChipmunkShape *shape in firstInk.chipmunkBody.shapes)
@@ -453,7 +471,7 @@
         }
         
         
-    }
+    }*/
     
     for(OctopusTentacle *tent in self->_octo.tentacles){
         if(tent.isDead){

@@ -14,5 +14,5 @@
 {
     ChipmunkSpace *_space;
 }
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
+- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position post:(bool)post;
 @end

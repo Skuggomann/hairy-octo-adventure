@@ -17,12 +17,14 @@
 @class Portal;
 @class MuscleCrab;
 @class JellyFish;
+@class OctopusFood;
 @interface Game : CCScene <InputLayerDelegate>
 {
     @public
     Octopus *_octo;
     MuscleCrab *_crab;
     JellyFish *_jelly;
+    OctopusFood *_ink;
     Sand *_sand;
     Portal *_portal;
     CCLayerColor *_seaLayer;
@@ -41,6 +43,7 @@
     int _collectablesCollected;
     int _score;
     int _extraScore;
+    int _inkIndex;
     CCLabelTTF *_lifeText;
     CCLabelTTF *_scoreText;
     

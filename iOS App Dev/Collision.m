@@ -132,18 +132,25 @@
         }
         
         
-        for (ChipmunkShape *shape in deleteChipmunkBody.shapes)
+        /*for (ChipmunkShape *shape in deleteChipmunkBody.shapes)
         {
             [space smartRemove:shape];
-        }
-        [deleteChipmunkBody.data removeFromParentAndCleanup:YES];
+        }*/
+        //[deleteChipmunkBody.data removeFromParentAndCleanup:YES];
 
         //TODO: Give the player some points.
         ++_Game->_collectablesCollected;
         _Game->_extraScore += (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected);
         [_Game->_octo inkSpurt];
         [_Game->_octo grow];
-        
+        NSLog(@"removed ink");
+        float inky= _Game->_winSize.height-44.0f;
+        _Game->_ink = [[OctopusFood alloc] initWithSpace:space position:ccp(_Game->_octo.position.x+(_Game->_winSize.width*1.2f),inky) post:YES];
+        [_Game->_gameNode addChild:_Game->_ink];
+        ChipmunkShape *s = deleteChipmunkBody.shapes.lastObject;
+        cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)postStepRemoveBody,deleteChipmunkBody.body, s.shape);
+        //cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)postStepAddBody, ChipmunkBody.body, s.shape);
+        NSLog(@"added ink");
             
         //NSLog(@"Octo got ink! %d", (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected));
         return YES;
@@ -239,5 +246,14 @@
 
 }
 
+static void
+postStepRemoveBody(cpSpace *space, cpBody *body, cpShape *shape)
+{
+    //[[ChipmunkSpace spaceFromCPSpace:space] remove:[ChipmunkBody bodyFromCPBody:body]];
+    [[ChipmunkSpace spaceFromCPSpace:space] remove:[ChipmunkShape shapeFromCPShape:shape]];
+    [[ChipmunkBody bodyFromCPBody:body].data removeFromParentAndCleanup:YES];
+    
+    //[deleteChipmunkBody.data removeFromParentAndCleanup:YES];
+}
 
 @end

@@ -7,11 +7,11 @@
 //
 
 #import "OctopusFood.h"
-
+#import "ObjectiveChipmunk.h"
 
 
 @implementation OctopusFood
-- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
+- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position post:(bool)post;
 {
     // The Octopus main diet is crabs. They also eat mollusks, crayfish, scallops, snails, turtles, shrimp and fish.
     
@@ -35,19 +35,33 @@
                        
             // Add to space
             //[_space addBody:foodBody];
-            [_space addShape:shape];
+            //[_space addShape:shape];
             
-            
-            
+
             
             
             // Add self to body and body to self
             foodBody.data = self;
             self.chipmunkBody = foodBody;
             
+            
+            if(post)
+                cpSpaceAddPostStepCallback(_space.space, (cpPostStepFunc)postStepAddShape, foodBody.body, shape.shape);
+            else{
+                [_space addShape:shape];
+            }
         }
     }
     return self;
 }
 
+static void
+postStepAddShape(cpSpace *space, cpBody *body, cpShape *shape)
+{
+    
+    //[[ChipmunkSpace spaceFromCPSpace:space] addBody:[ChipmunkBody bodyFromCPBody:body]];
+    [[ChipmunkSpace spaceFromCPSpace:space] addShape:[ChipmunkShape shapeFromCPShape:shape]];
+    //cpSpaceAddShape(space, shape);
+
+}
 @end
