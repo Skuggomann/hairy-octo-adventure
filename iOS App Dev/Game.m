@@ -133,6 +133,15 @@
     _parallaxNode = [CCParallaxNode node];
     [self addChild:_parallaxNode];
     
+    
+    // Add a background:
+    CCSprite *background = [CCSprite spriteWithFile:@"SeaLightsBackground.png"];
+    background.anchorPoint = ccp(0, 0);
+    background.position = ccp(0.0f, 0.0f);
+    
+    [_parallaxNode addChild:background z:-1 parallaxRatio:ccp(0.0f, 0.0f) positionOffset:CGPointZero];
+    
+    
     // Sand
     _sand = [[Sand alloc] initWithSpace:_space];
     [self genBackground];

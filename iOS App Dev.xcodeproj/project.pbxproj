@@ -273,6 +273,10 @@
 		CE7EA10017F351C0006E9A12 /* Noise.png in Resources */ = {isa = PBXBuildFile; fileRef = CE7EA0FD17F351C0006E9A12 /* Noise.png */; };
 		CE7FCBEC17F9C6C500FC92AB /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */; };
 		CE81270517F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */; };
+		CE8244F017FB21300048115C /* SeaBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8244EC17FB21300048115C /* SeaBackground-hd.png */; };
+		CE8244F117FB21300048115C /* SeaBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8244ED17FB21300048115C /* SeaBackground.png */; };
+		CE8244F217FB21300048115C /* SeaLightsBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8244EE17FB21300048115C /* SeaLightsBackground-hd.png */; };
+		CE8244F317FB21300048115C /* SeaLightsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8244EF17FB21300048115C /* SeaLightsBackground.png */; };
 		CE84E96317F2EB48002007C6 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96217F2EB48002007C6 /* InputLayer.m */; };
 		CE84E96617F2EE51002007C6 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96517F2EE51002007C6 /* MenuScene.m */; };
 		CE84E96917F2F091002007C6 /* Octopus.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E96817F2F091002007C6 /* Octopus.m */; };
@@ -760,6 +764,10 @@
 		CE7FCBEA17F9C6C500FC92AB /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		CE7FCBEB17F9C6C500FC92AB /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		CE81270417F48A2000B61DD0 /* 23 Dire, Dire Docks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "23 Dire, Dire Docks.mp3"; path = "Resources/23 Dire, Dire Docks.mp3"; sourceTree = "<group>"; };
+		CE8244EC17FB21300048115C /* SeaBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeaBackground-hd.png"; path = "Resources/SeaBackground-hd.png"; sourceTree = "<group>"; };
+		CE8244ED17FB21300048115C /* SeaBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SeaBackground.png; path = Resources/SeaBackground.png; sourceTree = "<group>"; };
+		CE8244EE17FB21300048115C /* SeaLightsBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SeaLightsBackground-hd.png"; path = "Resources/SeaLightsBackground-hd.png"; sourceTree = "<group>"; };
+		CE8244EF17FB21300048115C /* SeaLightsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SeaLightsBackground.png; path = Resources/SeaLightsBackground.png; sourceTree = "<group>"; };
 		CE84E96117F2EB48002007C6 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		CE84E96217F2EB48002007C6 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
 		CE84E96417F2EE51002007C6 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
@@ -904,6 +912,10 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE8244EC17FB21300048115C /* SeaBackground-hd.png */,
+				CE8244ED17FB21300048115C /* SeaBackground.png */,
+				CE8244EE17FB21300048115C /* SeaLightsBackground-hd.png */,
+				CE8244EF17FB21300048115C /* SeaLightsBackground.png */,
 				CE8ACBEA17FA351000D06213 /* blood.plist */,
 				CE8ACBEB17FA351000D06213 /* GoFast.plist */,
 				CE8ACBEC17FA351000D06213 /* InkSpurt.plist */,
@@ -1709,6 +1721,10 @@
 				CE8ACBED17FA351000D06213 /* blood.plist in Resources */,
 				CE8ACBEE17FA351000D06213 /* GoFast.plist in Resources */,
 				CE8ACBEF17FA351000D06213 /* InkSpurt.plist in Resources */,
+				CE8244F017FB21300048115C /* SeaBackground-hd.png in Resources */,
+				CE8244F117FB21300048115C /* SeaBackground.png in Resources */,
+				CE8244F217FB21300048115C /* SeaLightsBackground-hd.png in Resources */,
+				CE8244F317FB21300048115C /* SeaLightsBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
