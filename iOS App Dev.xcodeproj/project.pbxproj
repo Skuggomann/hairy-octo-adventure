@@ -279,6 +279,7 @@
 		CE84E98A17F311C0002007C6 /* Octo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98917F311C0002007C6 /* Octo.png */; };
 		CE84E98C17F31314002007C6 /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE84E98B17F31314002007C6 /* Configurations.plist */; };
 		CE84E98F17F31BAF002007C6 /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = CE84E98E17F31BAF002007C6 /* Collision.m */; };
+		CE86EE8617FB198D008E30DA /* OctopusTentacle.m in Sources */ = {isa = PBXBuildFile; fileRef = CE86EE8517FB198D008E30DA /* OctopusTentacle.m */; };
 		CE87D4DB17F2FB1300026BE4 /* Cliffs v1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */; };
 		CE8ACAB317FA021700D06213 /* JellyFish.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8ACAB217FA021700D06213 /* JellyFish.m */; };
 		CE8ACBE817FA06D600D06213 /* JellyFish-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CE8ACBE617FA06D500D06213 /* JellyFish-hd.png */; };
@@ -288,7 +289,6 @@
 		CE8ACBEF17FA351000D06213 /* InkSpurt.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE8ACBEC17FA351000D06213 /* InkSpurt.plist */; };
 		CE8B230317F8651100403213 /* Sand.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230217F8651100403213 /* Sand.m */; };
 		CE8B230617F87FAD00403213 /* Portal.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8B230517F87FAD00403213 /* Portal.m */; };
-		CE906BE017F8BDCA0007EBAA /* OctopusTentacle.m in Sources */ = {isa = PBXBuildFile; fileRef = CE906BDF17F8BDCA0007EBAA /* OctopusTentacle.m */; };
 		CE906BE417F8E0360007EBAA /* Tentacle.png in Resources */ = {isa = PBXBuildFile; fileRef = CE906BE317F8E0360007EBAA /* Tentacle.png */; };
 		CEA37D8C17F3792C00DB14C7 /* Cliffs v3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */; };
 		CEA9813717F8873700A29847 /* Speedarrow-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA9813517F8873700A29847 /* Speedarrow-hd.png */; };
@@ -770,6 +770,8 @@
 		CE84E98B17F31314002007C6 /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = "<group>"; };
 		CE84E98D17F31BAF002007C6 /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
 		CE84E98E17F31BAF002007C6 /* Collision.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collision.m; sourceTree = "<group>"; };
+		CE86EE8417FB198D008E30DA /* OctopusTentacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OctopusTentacle.h; sourceTree = "<group>"; };
+		CE86EE8517FB198D008E30DA /* OctopusTentacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OctopusTentacle.m; sourceTree = "<group>"; };
 		CE87D4D917F2FB1300026BE4 /* Cliffs v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v1.png"; path = "Resources/Cliffs v1.png"; sourceTree = "<group>"; };
 		CE8ACAB117FA021700D06213 /* JellyFish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JellyFish.h; sourceTree = "<group>"; };
 		CE8ACAB217FA021700D06213 /* JellyFish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JellyFish.m; sourceTree = "<group>"; };
@@ -782,8 +784,6 @@
 		CE8B230217F8651100403213 /* Sand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sand.m; sourceTree = "<group>"; };
 		CE8B230417F87FAD00403213 /* Portal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Portal.h; sourceTree = "<group>"; };
 		CE8B230517F87FAD00403213 /* Portal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Portal.m; sourceTree = "<group>"; };
-		CE906BDE17F8BDCA0007EBAA /* OctopusTentacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OctopusTentacle.h; path = ../OctopusTentacle.h; sourceTree = "<group>"; };
-		CE906BDF17F8BDCA0007EBAA /* OctopusTentacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OctopusTentacle.m; path = ../OctopusTentacle.m; sourceTree = "<group>"; };
 		CE906BE317F8E0360007EBAA /* Tentacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tentacle.png; path = Resources/Tentacle.png; sourceTree = "<group>"; };
 		CEA37D8B17F3792C00DB14C7 /* Cliffs v3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cliffs v3-hd.png"; path = "Resources/Cliffs v3-hd.png"; sourceTree = "<group>"; };
 		CEA9813517F8873700A29847 /* Speedarrow-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Speedarrow-hd.png"; path = "Resources/Speedarrow-hd.png"; sourceTree = "<group>"; };
@@ -860,6 +860,8 @@
 		0B312F4117E85CF200D0829B /* iOS App Dev */ = {
 			isa = PBXGroup;
 			children = (
+				CE86EE8417FB198D008E30DA /* OctopusTentacle.h */,
+				CE86EE8517FB198D008E30DA /* OctopusTentacle.m */,
 				0B3130D217E85CF400D0829B /* AppDelegate.h */,
 				0B3130D317E85CF400D0829B /* AppDelegate.m */,
 				CE84E98D17F31BAF002007C6 /* Collision.h */,
@@ -888,8 +890,6 @@
 				CE84E96817F2F091002007C6 /* Octopus.m */,
 				CE78B7AD17F85A120011FB88 /* OctopusFood.h */,
 				CE78B7AE17F85A120011FB88 /* OctopusFood.m */,
-				CE906BDE17F8BDCA0007EBAA /* OctopusTentacle.h */,
-				CE906BDF17F8BDCA0007EBAA /* OctopusTentacle.m */,
 				CE8B230417F87FAD00403213 /* Portal.h */,
 				CE8B230517F87FAD00403213 /* Portal.m */,
 				CE8B230117F8651100403213 /* Sand.h */,
@@ -1840,10 +1840,10 @@
 				CE78B7AF17F85A120011FB88 /* OctopusFood.m in Sources */,
 				CE8B230617F87FAD00403213 /* Portal.m in Sources */,
 				CE7FCBEC17F9C6C500FC92AB /* GameOverScene.m in Sources */,
-				CE906BE017F8BDCA0007EBAA /* OctopusTentacle.m in Sources */,
 				CEFDB4F617F9039400DA40AE /* Enemy.m in Sources */,
 				CEFDB4F917F9061800DA40AE /* MuscleCrab.m in Sources */,
 				CE8ACAB317FA021700D06213 /* JellyFish.m in Sources */,
+				CE86EE8617FB198D008E30DA /* OctopusTentacle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

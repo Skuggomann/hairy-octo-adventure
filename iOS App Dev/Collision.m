@@ -31,90 +31,23 @@
 
 - (bool)collisionBegan:(cpArbiter *)arbiter space:(ChipmunkSpace*)space
 {
-    
-    
-    //_Game->_octo;
-    
-    //NSLog(@"Collision happened");
-    
-    
-    /*
-    if ([self collisionBetween:arbiter FirstBody:_tank.chipmunkBody SecondBody:_goal.chipmunkBody]	)
-    {
-        NSLog(@"TANK HIT GOAL :D:D:D xoxoxo");
-        
-        // Play sfx
-        [[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
-        
-        // Remove physics body
-        [_space smartRemove:_tank.chipmunkBody];
-        for (ChipmunkShape *shape in _tank.chipmunkBody.shapes) {
-            [_space smartRemove:shape];
-        }
-        
-        // Remove tank from cocos2d
-        [_tank removeFromParentAndCleanup:YES];
-        
-        // Play particle effect
-        [_splashParticles resetSystem];
-    }
-    */
+    // Check if the octo is colliding with portal (speed boost).
     if([self collisionBetween:arbiter FirstBody:_Game->_portal.chipmunkBody SecondBody:_Game->_octo.chipmunkBody]){
-        //[space smartRemove:_Game->_portal.chipmunkBody];
-        //[_Game->_portal removeFromParentAndCleanup:YES];
-        /*for (ChipmunkShape *shape in _Game->_portal.chipmunkBody.shapes){
-            [space smartRemove:shape];
-        }
-        [_Game->_portal removeFromParentAndCleanup:YES];*/
         cpVect impulseVector = cpvmult(cpv(1, 0.1) , _Game->_octo.chipmunkBody.mass * [_configuration[@"speedBoost"]floatValue]);
         [_Game->_octo.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
         [_Game->_octo goingFast];
         return YES;
     }
     
-    /*
-    if ([self collisionBetween:arbiter FirstBody:_Game->_octo.chipmunkBody SecondBody:_Game->]	)
-    {
-        
-    }
-    */
     
-    
-    // Chekk if you are coliding with a collectable object that gives points! :)
+    //Get the cpBody and Chipmunk body from the arbiter.
     cpBody *firstBody;
     cpBody *secondBody;
     cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
-
-        
-    
     ChipmunkBody *firstChipmunkBody = firstBody->data;
     ChipmunkBody *secondChipmunkBody = secondBody->data;
     
-    /*if(firstChipmunkBody. == NULL||secondChipmunkBody->data == NULL){
-        NSLog(@"SPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\n");
-        return YES;
-    }
-    if (
-        (
-         firstChipmunkBody.body->a == 0 &&
-         firstChipmunkBody.body->w == 0 &&
-         firstChipmunkBody.body->t == 0 &&
-         firstChipmunkBody.body->m_inv == 0 &&
-         firstChipmunkBody.body->i_inv == 0 &&
-         firstChipmunkBody.body->w_bias_private == 0
-         )
-        ||
-        (
-         secondChipmunkBody.body->a == 0 &&
-         secondChipmunkBody.body->w == 0 &&
-         secondChipmunkBody.body->t == 0 &&
-         secondChipmunkBody.body->m_inv == 0 &&
-         secondChipmunkBody.body->i_inv == 0 &&
-         secondChipmunkBody.body->w_bias_private == 0)) {
-            NSLog(@"SPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\nSPACEPIRATE\n");
-            return YES;
-        }
-     */
+    // Chekk if you are coliding with a collectable object that gives points! :)
     if  (
          ([firstChipmunkBody.data isKindOfClass:[OctopusFood class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]])
          ||
@@ -132,27 +65,30 @@
         }
         
         
-        /*for (ChipmunkShape *shape in deleteChipmunkBody.shapes)
-        {
-            [space smartRemove:shape];
-        }*/
-        //[deleteChipmunkBody.data removeFromParentAndCleanup:YES];
-
-        //TODO: Give the player some points.
+        //Give the player points for the collectable (ink).
         ++_Game->_collectablesCollected;
         _Game->_extraScore += (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected);
+        
+        //play particle effect.
         [_Game->_octo inkSpurt];
+        
+        //make the octo grow (add a tentacle).
         [_Game->_octo grow];
+        
         NSLog(@"removed ink");
+        //random y for the next ink object spawned.
         float inky= CCRANDOM_0_1()*(_Game->_winSize.height-_Game->_winSize.height/3-45)+_Game->_winSize.height/3;
+        
+        //Make a new ink object with post:YES since its happening insidea collision handler. So that it´s added after the collision.
         _Game->_ink = [[OctopusFood alloc] initWithSpace:space position:ccp(_Game->_octo.position.x+(_Game->_winSize.width*3.2f),inky) post:YES];
         [_Game->_gameNode addChild:_Game->_ink];
+        
+        //Delete the old object.
         ChipmunkShape *s = deleteChipmunkBody.shapes.lastObject;
+        
+        //Remove the old object in post step callback function.
         cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)postStepRemoveBody,deleteChipmunkBody.body, s.shape);
-        //cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)postStepAddBody, ChipmunkBody.body, s.shape);
         NSLog(@"added ink");
-            
-        //NSLog(@"Octo got ink! %d", (int)(0.005 * _Game->_octo.position.x * _Game->_collectablesCollected));
         return YES;
     }
     
@@ -172,17 +108,18 @@
         {
             enemyChipmunkBody = secondChipmunkBody;
         }
+        
+        //Check if the enemy isLethal, it is nonlethal for 2 seconds after collision with octo.
         NSLog(@"%s",[enemyChipmunkBody.data isLethal]? "true" : "false");
         if([enemyChipmunkBody.data isLethal])
         {
+            //Call the hitOcto function which makes the enemy nonlethal.
             [enemyChipmunkBody.data hitOcto];
-            [_Game->_octo shrink:_Game];
             
+            //Shrink the octo due to damage ( Lose a tentacle)
+            [_Game->_octo shrink:_Game];
         }
         
-        //[space addPostStepCallback:self selector:@selector(sleep:) key:enemyChipmunkBody];
-        //cpSpaceAddPostStepCallback(space.space, (cpPostStepFunc)SleepEnemy, enemyChipmunkBody.body, NULL);
-        //cpBodySleep(enemyChipmunkBody.body);
         return YES;
     }
     
@@ -191,40 +128,6 @@
         
     return YES;
 }
-/*
-- (bool)collisionEnded:(cpArbiter *)arbiter space:(ChipmunkSpace*)space
-{
-    cpBody *firstBody;
-    cpBody *secondBody;
-    cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
-    
-    ChipmunkBody *firstChipmunkBody = firstBody->data;
-    ChipmunkBody *secondChipmunkBody = secondBody->data;
-    //Enemy hit
-    if  (
-         ([firstChipmunkBody.data isKindOfClass:[Enemy class]] && [secondChipmunkBody.data isKindOfClass:[Octopus class]])
-         ||
-         ([firstChipmunkBody.data isKindOfClass:[Octopus class]] && [secondChipmunkBody.data isKindOfClass:[Enemy class]])
-         )
-    {
-        ChipmunkBody *enemyChipmunkBody;
-        if([firstChipmunkBody.data isKindOfClass:[Enemy class]])
-        {
-            enemyChipmunkBody = firstChipmunkBody;
-        }
-        else
-        {
-            enemyChipmunkBody = secondChipmunkBody;
-        }
-        [enemyChipmunkBody sleep];
-    }
-    return YES;
-}
-- (void) sleep:(ChipmunkBody*) body
-{
-    //[body sleep];
-}*/
-
 - (bool)collisionBetween:(cpArbiter *)arbiter FirstBody:(ChipmunkBody*)bodyOne SecondBody: (ChipmunkBody*)bodyTwo
 {
     cpBody *firstBody;
@@ -249,11 +152,9 @@
 static void
 postStepRemoveBody(cpSpace *space, cpBody *body, cpShape *shape)
 {
-    //[[ChipmunkSpace spaceFromCPSpace:space] remove:[ChipmunkBody bodyFromCPBody:body]];
+    //Retarded piece of code that makes a ChipmunkSpace out of cpSpace, then removes a ChipmunkShape which is createed from cpShape from that space. Same for body.
     [[ChipmunkSpace spaceFromCPSpace:space] remove:[ChipmunkShape shapeFromCPShape:shape]];
     [[ChipmunkBody bodyFromCPBody:body].data removeFromParentAndCleanup:YES];
-    
-    //[deleteChipmunkBody.data removeFromParentAndCleanup:YES];
 }
 
 @end
